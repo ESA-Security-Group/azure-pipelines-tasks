@@ -2,9 +2,9 @@
 
 import path = require('path');
 import * as tl from "azure-pipelines-task-lib/task";
-import RegistryAuthenticationToken from "docker-common-v2/registryauthenticationprovider/registryauthenticationtoken";
-import ContainerConnection from "docker-common-v2/containerconnection";
-import { getDockerRegistryEndpointAuthenticationToken } from "docker-common-v2/registryauthenticationprovider/registryauthenticationtoken";
+import RegistryAuthenticationToken from "azure-pipelines-tasks-docker-common-v2/registryauthenticationprovider/registryauthenticationtoken";
+import ContainerConnection from "azure-pipelines-tasks-docker-common-v2/containerconnection";
+import { getDockerRegistryEndpointAuthenticationToken } from "azure-pipelines-tasks-docker-common-v2/registryauthenticationprovider/registryauthenticationtoken";
 
 export async function dockerBuildAndPush() {
     let endpointId = tl.getInput("dockerRegistryServiceConnection");
@@ -16,10 +16,14 @@ export async function dockerBuildAndPush() {
 
     /* tslint:disable:no-var-requires */
     let commandImplementation = require("./dockerbuild");
-    await commandImplementation.runBuild(connection)
+    await commandImplementation.runBuild(connection).then(() => {}).catch((error) => {
+        throw new Error(error.message);
+    });
 
     if (tl.getInput("dockerRegistryServiceConnection")) {
         commandImplementation = require("./dockerpush")
-        await commandImplementation.run(connection)
+        await commandImplementation.run(connection).then(() => {}).catch((error) => {
+            throw new Error(error.message);
+        });
     }
 }

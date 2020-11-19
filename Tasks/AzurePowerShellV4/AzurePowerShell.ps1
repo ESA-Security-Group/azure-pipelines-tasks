@@ -7,12 +7,14 @@ $scriptPath = Get-VstsInput -Name ScriptPath
 $scriptInline = Get-VstsInput -Name Inline
 $scriptArguments = Get-VstsInput -Name ScriptArguments
 $__vsts_input_errorActionPreference = Get-VstsInput -Name errorActionPreference
-$__vsts_input_failOnStandardError = Get-VstsInput -Name FailOnStandardError
+$__vsts_input_failOnStandardError = Get-VstsInput -Name FailOnStandardError -AsBool
 $targetAzurePs = Get-VstsInput -Name TargetAzurePs
 $customTargetAzurePs = Get-VstsInput -Name CustomTargetAzurePs
 $input_pwsh = Get-VstsInput -Name pwsh -AsBool
 $input_workingDirectory = Get-VstsInput -Name workingDirectory -Require
+$restrictContext = Get-VstsInput -Name RestrictContextToCurrentTask -AsBool
 
+Write-Host "## Validating Inputs"
 # Validate the script path and args do not contains new-lines. Otherwise, it will
 # break invoking the script via Invoke-Expression.
 if ($scriptType -eq "FilePath") {
@@ -45,7 +47,9 @@ if ($targetAzurePs -eq $latestVersion) {
 } elseif (-not($regex.IsMatch($targetAzurePs))) {
     throw (Get-VstsLocString -Key InvalidAzurePsVersion -ArgumentList $targetAzurePs)
 }
+Write-Host "## Validating Inputs Complete" 
 
+Write-Host "## Initializing Az module"
 . "$PSScriptRoot\Utility.ps1"
 
 $serviceName = Get-VstsInput -Name ConnectedServiceNameARM -Require
@@ -53,12 +57,24 @@ $endpoint = Get-VstsEndpoint -Name $serviceName -Require
 CleanUp-PSModulePathForHostedAgent
 Update-PSModulePathForHostedAgent -targetAzurePs $targetAzurePs
 
+# troubleshoot link
+$troubleshoot = "https://aka.ms/azurepowershelltroubleshooting"
 try 
 {
     # Initialize Azure.
     Import-Module $PSScriptRoot\ps_modules\VstsAzureHelpers_
     Initialize-AzModule -Endpoint $endpoint -azVersion $targetAzurePs
-    
+    Write-Host "## Az module initialization Complete"
+    $success = $true
+}
+finally {
+    if (!$success) {
+        Write-VstsTaskError "Initializing Az module failed: For troubleshooting, refer: $troubleshoot"
+    }
+}
+
+Write-Host "## Beginning Script Execution"
+try {
     if ($input_pwsh)
     {
             # Generate the script contents.
@@ -246,5 +262,6 @@ finally {
 
     Import-Module $PSScriptRoot\ps_modules\VstsAzureHelpers_
     Remove-EndpointSecrets
-    Disconnect-AzureAndClearContext -ErrorAction SilentlyContinue
+    Disconnect-AzureAndClearContext -restrictContext $restrictContext -ErrorAction SilentlyContinue
 }
+Write-Host "## Script Execution Complete"

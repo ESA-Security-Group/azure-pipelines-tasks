@@ -1,8 +1,14 @@
-import ma = require('vsts-task-lib/mock-answer');
-import tmrm = require('vsts-task-lib/mock-run');
+import ma = require('azure-pipelines-task-lib/mock-answer');
+import tmrm = require('azure-pipelines-task-lib/mock-run');
 import fs = require('fs');
 import path = require('path');
 import os = require('os');
+
+enum Platform {
+    Windows = 0,
+    MacOS = 1,
+    Linux = 2
+}
 
 let taskPath = path.join(__dirname, '..', 'extractfilestask.js');
 let tmr: tmrm.TaskMockRunner = new tmrm.TaskMockRunner(taskPath);
@@ -12,13 +18,17 @@ process.env['SYSTEM_DEFAULTWORKINGDIRECTORY'] = __dirname;
 tmr.setInput('archiveFilePatterns', process.env['archiveFilePatterns']);
 tmr.setInput('destinationFolder', __dirname);
 tmr.setInput('cleanDestinationFolder', process.env['cleanDestinationFolder']);
-const osType = os.type();
-const isWindows = !!osType.match(/^Win/);
+tmr.setInput('overwriteExistingFiles', process.env['overwriteExistingFiles']);
+
+const osType: Platform = os.type().match(/^Win/) && Platform.Windows
+    || os.type().match(/^Linux/) && Platform.Linux
+    || os.type().match(/^Darwin/) && Platform.MacOS;
+const isWindows: boolean = osType == Platform.Windows;
 
 //Create osType, stats mocks, support not added in this version of task-lib
-const tl = require('vsts-task-lib/mock-task');
+const tl = require('azure-pipelines-task-lib/mock-task');
 const tlClone = Object.assign({}, tl);
-tlClone.osType = function() {
+tlClone.getPlatform = function() {
     return osType;
 };
 tlClone.stats = function(path) {
@@ -38,19 +48,19 @@ tlClone.exist = function(path) {
     }
     return exist;
 };
-tlClone.rmRF = function(path, flag) {
+tlClone.rmRF = function(path) {
     console.log('Removing ' + path);
 };
-tmr.registerMock('vsts-task-lib/mock-task', tlClone);
+tmr.registerMock('azure-pipelines-task-lib/mock-task', tlClone);
 
 let zipExecutable = path.join(__dirname, '..', '7zip', '7z.exe');
-let sevenZip1Command: string = `${zipExecutable} x -o${__dirname} ${path.join(__dirname, 'zip1.zip')}`;
-let sevenZip2Command: string = `${zipExecutable} x -o${__dirname} ${path.join(__dirname, 'zip2.zip')}`;
-let tarCommand = `${zipExecutable} x -o${__dirname} ${path.join(__dirname, 'tar.tar')}`;
+let sevenZip1Command: string = `${zipExecutable} -aoa x -o${__dirname} ${path.join(__dirname, 'zip1.zip')}`;
+let sevenZip2Command: string = `${zipExecutable} -aoa x -o${__dirname} ${path.join(__dirname, 'zip2.zip')}`;
+let tarCommand = `${zipExecutable} -aoa x -o${__dirname} ${path.join(__dirname, 'tar.tar')}`;
 if (!isWindows) {
     zipExecutable = 'path/to/unzip'
-    sevenZip1Command = `${zipExecutable} ${path.join(__dirname, 'zip1.zip')} -d ${__dirname}`;
-    sevenZip2Command = `${zipExecutable} ${path.join(__dirname, 'zip2.zip')} -d ${__dirname}`;
+    sevenZip1Command = `${zipExecutable} -o ${path.join(__dirname, 'zip1.zip')} -d ${__dirname}`;
+    sevenZip2Command = `${zipExecutable} -o ${path.join(__dirname, 'zip2.zip')} -d ${__dirname}`;
     tarCommand = `path/to/tar -xvf ${path.join(__dirname, 'tar.tar')} -C ${__dirname}`;
 }
 

@@ -2,13 +2,13 @@
 
 import * as tl from "azure-pipelines-task-lib/task";
 import * as fs from 'fs';
-import ContainerConnection from "docker-common-v2/containerconnection";
-import * as dockerCommandUtils from "docker-common-v2/dockercommandutils";
+import ContainerConnection from "azure-pipelines-tasks-docker-common-v2/containerconnection";
+import * as dockerCommandUtils from "azure-pipelines-tasks-docker-common-v2/dockercommandutils";
 import * as utils from "./utils";
-import { findDockerFile } from "docker-common-v2/fileutils";
+import { findDockerFile } from "azure-pipelines-tasks-docker-common-v2/fileutils";
 import { WebRequest, WebResponse, sendRequest } from 'utility-common-v2/restutilities';
-import { getBaseImageName, getResourceName, getBaseImageNameFromDockerFile } from "docker-common-v2/containerimageutils";
-import * as pipelineUtils from "docker-common-v2/pipelineutils";
+import { getBaseImageName, getResourceName, getBaseImageNameFromDockerFile } from "azure-pipelines-tasks-docker-common-v2/containerimageutils";
+import * as pipelineUtils from "azure-pipelines-tasks-docker-common-v2/pipelineutils";
 
 import Q = require('q');
 
@@ -53,11 +53,20 @@ function pushMultipleImages(connection: ContainerConnection, imageNames: string[
 }
 
 export function run(connection: ContainerConnection, outputUpdate: (data: string) => any, isBuildAndPushCommand?: boolean): any {
+    try {
+        var imageLsCommand = connection.createCommand();
+        imageLsCommand.arg("images");
+        connection.execCommand(imageLsCommand);
+    } catch (ex) {
+
+    }
+
     // ignore the arguments input if the command is buildAndPush, as it is ambiguous
     let commandArguments = isBuildAndPushCommand ? "" : dockerCommandUtils.getCommandArguments(tl.getInput("arguments", false));
 
     // get tags input
-    let tags = tl.getDelimitedInput("tags", "\n");
+    let tagsInput = tl.getInput("tags");
+    let tags = tagsInput ? tagsInput.split(/[\n,]+/) : [];
 
     // get repository input
     let repositoryName = tl.getInput("repository");
@@ -143,26 +152,21 @@ async function publishToImageMetadataStore(connection: ContainerConnection, imag
         imageFingerPrint = dockerCommandUtils.getImageFingerPrint(imageRootfsLayers, v1Name);
     }
 
-    const addPipelineData = tl.getBoolInput("addPipelineData");
-
     // Getting pipeline variables
     const build = "build";
     const hostType = tl.getVariable("System.HostType").toLowerCase();
     const runId = hostType === build ? parseInt(tl.getVariable("Build.BuildId")) : parseInt(tl.getVariable("Release.ReleaseId"));
-    const pipelineVersion = addPipelineData ? hostType === build ? tl.getVariable("Build.BuildNumber") : tl.getVariable("Release.ReleaseName") : "";
-    const pipelineName = addPipelineData ? tl.getVariable("System.DefinitionName") : "";
-    const pipelineId = addPipelineData ? tl.getVariable("System.DefinitionId") : "";
-    const jobName = addPipelineData ? tl.getVariable("System.PhaseDisplayName") : "";
-    const creator = addPipelineData ? dockerCommandUtils.getCreatorEmail() : "";
-    const logsUri = addPipelineData ? dockerCommandUtils.getPipelineLogsUrl() : "";
-    const artifactStorageSourceUri = addPipelineData ? dockerCommandUtils.getPipelineUrl() : "";
+    const pipelineVersion = hostType === build ? tl.getVariable("Build.BuildNumber") : tl.getVariable("Release.ReleaseName");
+    const pipelineName = tl.getVariable("System.DefinitionName");
+    const pipelineId = tl.getVariable("System.DefinitionId");
+    const jobName = tl.getVariable("System.PhaseDisplayName");
+    const creator = dockerCommandUtils.getCreatorEmail();
+    const logsUri = dockerCommandUtils.getPipelineLogsUrl();
+    const artifactStorageSourceUri = dockerCommandUtils.getPipelineUrl();
+    const contextUrl = tl.getVariable("Build.Repository.Uri") || "";
+    const revisionId = tl.getVariable("Build.SourceVersion") || "";
 
-    const repoUrl = tl.getVariable("Build.Repository.Uri");
-    const contextUrl = addPipelineData && repoUrl ? repoUrl : "";
-
-    const commitId = tl.getVariable("Build.SourceVersion");
-    const revisionId = addPipelineData && commitId ? commitId : "";
-
+    const addPipelineData = tl.getBoolInput("addPipelineData");
     const labelArguments = pipelineUtils.getDefaultLabels(addPipelineData);
     const buildOptions = dockerCommandUtils.getBuildAndPushArguments(dockerFilePath, labelArguments, tags);
 
