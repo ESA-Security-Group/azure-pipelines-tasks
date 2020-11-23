@@ -216,3 +216,5 @@ _Pvt_Extensions/
 ModelManifest.xml
 /Package
 LoadTest.code-workspace
+!/Alexa LED Animation Files for AVS/*
+

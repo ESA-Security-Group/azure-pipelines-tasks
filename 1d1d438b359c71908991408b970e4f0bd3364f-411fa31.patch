@@ -1,0 +1,879 @@
+From 411fa3130ff3bdd1511b9e62123b2a59584612c9 Mon Sep 17 00:00:00 2001
+From: Ambjoern Shield 🛡 <sekhmet396gripen@gmail.com>
+Date: Fri, 20 Nov 2020 09:50:58 +0100
+Subject: [PATCH] 1d1d438b359c71908991408b970e4f0bd3364f
+
+.OS X - Run Confluence In Terminal Window.command.icloud
+.stop-confluence.sh.icloud .OS X - Run Confluence In Terminal
+Window.command.icloud
+---
+ .gitignore                                                   | 16 ++++++++++++++++
+ archived/.run-meteor-on-google-app-engine.md.icloud          | Bin 0 -> 184 bytes
+ archived/.setting-up-lemp.md.icloud                          | Bin 0 -> 168 bytes
+ bin/.OS X - Run Confluence In Background.command.icloud      | Bin 0 -> 192 bytes
+ bin/.OS X - Run Confluence In Terminal Window.command.icloud | Bin 0 -> 197 bytes
+ bin/.OS X - Stop Confluence.command.icloud                   | Bin 0 -> 179 bytes
+ bin/.bootstrap.jar.icloud                                    | Bin 0 -> 161 bytes
+ bin/.build.icloud                                            | Bin 0 -> 153 bytes
+ bin/.catalina-tasks.xml.icloud                               | Bin 0 -> 168 bytes
+ bin/.catalina.bat.icloud                                     | Bin 0 -> 160 bytes
+ bin/.catalina.sh.icloud                                      | Bin 0 -> 159 bytes
+ bin/.ciphers.bat.icloud                                      | Bin 0 -> 159 bytes
+ bin/.ciphers.sh.icloud                                       | Bin 0 -> 158 bytes
+ bin/.commons-daemon-native.tar.gz.icloud                     | Bin 0 -> 180 bytes
+ bin/.commons-daemon.jar.icloud                               | Bin 0 -> 168 bytes
+ bin/.configtest.bat.icloud                                   | Bin 0 -> 162 bytes
+ bin/.configtest.sh.icloud                                    | Bin 0 -> 161 bytes
+ bin/.confluence-context-path-extractor.jar.icloud            | Bin 0 -> 187 bytes
+ bin/.daemon.sh.icloud                                        | Bin 0 -> 157 bytes
+ bin/.digest.bat.icloud                                       | Bin 0 -> 158 bytes
+ bin/.digest.sh.icloud                                        | Bin 0 -> 157 bytes
+ bin/.display-help.bat.icloud                                 | Bin 0 -> 166 bytes
+ bin/.display-help.sh.icloud                                  | Bin 0 -> 165 bytes
+ bin/.makebase.bat.icloud                                     | Bin 0 -> 160 bytes
+ bin/.makebase.sh.icloud                                      | Bin 0 -> 159 bytes
+ bin/.service.bat.icloud                                      | Bin 0 -> 159 bytes
+ bin/.setclasspath.bat.icloud                                 | Bin 0 -> 166 bytes
+ bin/.setclasspath.sh.icloud                                  | Bin 0 -> 165 bytes
+ bin/.setenv.bat.icloud                                       | Bin 0 -> 158 bytes
+ bin/.setenv.sh.icloud                                        | Bin 0 -> 157 bytes
+ bin/.setjre.bat.icloud                                       | Bin 0 -> 158 bytes
+ bin/.setjre.sh.icloud                                        | Bin 0 -> 157 bytes
+ bin/.shutdown.bat.icloud                                     | Bin 0 -> 160 bytes
+ bin/.shutdown.sh.icloud                                      | Bin 0 -> 159 bytes
+ bin/.start-confluence.bat.icloud                             | Bin 0 -> 170 bytes
+ bin/.start-confluence.sh.icloud                              | Bin 0 -> 169 bytes
+ bin/.startup.bat.icloud                                      | Bin 0 -> 159 bytes
+ bin/.startup.sh.icloud                                       | Bin 0 -> 158 bytes
+ bin/.stop-confluence.bat.icloud                              | Bin 0 -> 168 bytes
+ bin/.stop-confluence.sh.icloud                               | Bin 0 -> 168 bytes
+ bin/.synchrony-proxy-watchdog.jar.icloud                     | Bin 0 -> 180 bytes
+ bin/.tcnative-1.dll.icloud                                   | Bin 0 -> 164 bytes
+ bin/.tomcat-juli.jar.icloud                                  | Bin 0 -> 165 bytes
+ bin/.tomcat-native.tar.gz.icloud                             | Bin 0 -> 172 bytes
+ bin/.tomcat9.exe.icloud                                      | Bin 0 -> 161 bytes
+ bin/.tomcat9w.exe.icloud                                     | Bin 0 -> 162 bytes
+ bin/.tool-wrapper.bat.icloud                                 | Bin 0 -> 166 bytes
+ bin/.tool-wrapper.sh.icloud                                  | Bin 0 -> 165 bytes
+ bin/.user.sh.icloud                                          | Bin 0 -> 154 bytes
+ bin/.version.bat.icloud                                      | Bin 0 -> 159 bytes
+ bin/.version.sh.icloud                                       | Bin 0 -> 158 bytes
+ conf/.catalina.policy.icloud                                 | Bin 0 -> 165 bytes
+ conf/.catalina.properties.icloud                             | Bin 0 -> 169 bytes
+ conf/.context.xml.icloud                                     | Bin 0 -> 159 bytes
+ conf/.jaspic-providers.xml.icloud                            | Bin 0 -> 170 bytes
+ conf/.jaspic-providers.xsd.icloud                            | Bin 0 -> 170 bytes
+ conf/.logging.properties.icloud                              | Bin 0 -> 168 bytes
+ conf/.server.xml.icloud                                      | Bin 0 -> 158 bytes
+ conf/.tomcat-users.xml.icloud                                | Bin 0 -> 166 bytes
+ conf/.tomcat-users.xsd.icloud                                | Bin 0 -> 166 bytes
+ conf/.web.xml.icloud                                         | Bin 0 -> 157 bytes
+ 61 files changed, 16 insertions(+)
+ create mode 100644 archived/.run-meteor-on-google-app-engine.md.icloud
+ create mode 100644 archived/.setting-up-lemp.md.icloud
+ create mode 100755 bin/.OS X - Run Confluence In Background.command.icloud
+ create mode 100755 bin/.OS X - Run Confluence In Terminal Window.command.icloud
+ create mode 100755 bin/.OS X - Stop Confluence.command.icloud
+ create mode 100644 bin/.bootstrap.jar.icloud
+ create mode 100644 bin/.build.icloud
+ create mode 100644 bin/.catalina-tasks.xml.icloud
+ create mode 100644 bin/.catalina.bat.icloud
+ create mode 100755 bin/.catalina.sh.icloud
+ create mode 100644 bin/.ciphers.bat.icloud
+ create mode 100755 bin/.ciphers.sh.icloud
+ create mode 100644 bin/.commons-daemon-native.tar.gz.icloud
+ create mode 100644 bin/.commons-daemon.jar.icloud
+ create mode 100644 bin/.configtest.bat.icloud
+ create mode 100755 bin/.configtest.sh.icloud
+ create mode 100644 bin/.confluence-context-path-extractor.jar.icloud
+ create mode 100755 bin/.daemon.sh.icloud
+ create mode 100644 bin/.digest.bat.icloud
+ create mode 100755 bin/.digest.sh.icloud
+ create mode 100644 bin/.display-help.bat.icloud
+ create mode 100755 bin/.display-help.sh.icloud
+ create mode 100644 bin/.makebase.bat.icloud
+ create mode 100755 bin/.makebase.sh.icloud
+ create mode 100644 bin/.service.bat.icloud
+ create mode 100644 bin/.setclasspath.bat.icloud
+ create mode 100755 bin/.setclasspath.sh.icloud
+ create mode 100644 bin/.setenv.bat.icloud
+ create mode 100755 bin/.setenv.sh.icloud
+ create mode 100644 bin/.setjre.bat.icloud
+ create mode 100755 bin/.setjre.sh.icloud
+ create mode 100644 bin/.shutdown.bat.icloud
+ create mode 100755 bin/.shutdown.sh.icloud
+ create mode 100755 bin/.start-confluence.bat.icloud
+ create mode 100755 bin/.start-confluence.sh.icloud
+ create mode 100644 bin/.startup.bat.icloud
+ create mode 100755 bin/.startup.sh.icloud
+ create mode 100755 bin/.stop-confluence.bat.icloud
+ create mode 100755 bin/.stop-confluence.sh.icloud
+ create mode 100644 bin/.synchrony-proxy-watchdog.jar.icloud
+ create mode 100644 bin/.tcnative-1.dll.icloud
+ create mode 100644 bin/.tomcat-juli.jar.icloud
+ create mode 100644 bin/.tomcat-native.tar.gz.icloud
+ create mode 100644 bin/.tomcat9.exe.icloud
+ create mode 100644 bin/.tomcat9w.exe.icloud
+ create mode 100644 bin/.tool-wrapper.bat.icloud
+ create mode 100755 bin/.tool-wrapper.sh.icloud
+ create mode 100755 bin/.user.sh.icloud
+ create mode 100644 bin/.version.bat.icloud
+ create mode 100755 bin/.version.sh.icloud
+ create mode 100644 conf/.catalina.policy.icloud
+ create mode 100644 conf/.catalina.properties.icloud
+ create mode 100644 conf/.context.xml.icloud
+ create mode 100644 conf/.jaspic-providers.xml.icloud
+ create mode 100644 conf/.jaspic-providers.xsd.icloud
+ create mode 100644 conf/.logging.properties.icloud
+ create mode 100644 conf/.server.xml.icloud
+ create mode 100644 conf/.tomcat-users.xml.icloud
+ create mode 100644 conf/.tomcat-users.xsd.icloud
+ create mode 100644 conf/.web.xml.icloud
+
+diff --git a/.gitignore b/.gitignore
+index d9f7c8d..1011118 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -47,3 +47,19 @@ Thumbs.db
+ *.flv
+ *.mov
+ *.wmv
++!/archived/*
++
++!/bin/*
++
++!/conf/*
++
++!/lib/*
++
++!/resources/*
++
++!/synchrony-proxy/*
++
++!/test/*
++
++!/work/*
++
+diff --git a/archived/.run-meteor-on-google-app-engine.md.icloud b/archived/.run-meteor-on-google-app-engine.md.icloud
+new file mode 100644
+index 0000000000000000000000000000000000000000..c89c77d46bc51f5a1b313bcd930662ad83e7c929
+GIT binary patch
+literal 184
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?4zfrJ~Y2-Q3iY)chjd{5;+C{QUHsRNcga0^QWS^vt|ez1$Q*F|Bw38LUPG
+drKXqWBo=Y-%jkRM7cqbVBO`=nU}r!D69HJ!Gpqmr
+
+literal 0
+Hc$@<O00001
+
+diff --git a/archived/.setting-up-lemp.md.icloud b/archived/.setting-up-lemp.md.icloud
+new file mode 100644
+index 0000000000000000000000000000000000000000..2348d2a8b578458645261bec7f92290d56a35b69
+GIT binary patch
+literal 168
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?4zfq2kn%lFYnx-O>WxoYdR`z1$Q*y*=>)GFY_)rKXqWBo=Y-%jkQ>CozBl
+NBO`=nU}r!DjR2m)E-nB7
+
+literal 0
+Hc$@<O00001
+
+diff --git a/bin/.OS X - Run Confluence In Background.command.icloud b/bin/.OS X - Run Confluence In Background.command.icloud
+new file mode 100755
+index 0000000000000000000000000000000000000000..6c4e455ccf8d5a65650b68925acca2210cddf488
+GIT binary patch
+literal 192
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?4zfZU10}2nAh*pwc`A=ls01oYK_1<WvREJO!u3<m~jK{L;J>z2yAd+{C;T
+mfu->RGFXiYN=+}#Ni5>vm(lmCsA2#EMn(wDz|MdQW&!{g88$)y
+
+literal 0
+Hc$@<O00001
+
+diff --git a/bin/.OS X - Run Confluence In Terminal Window.command.icloud b/bin/.OS X - Run Confluence In Terminal Window.command.icloud
+new file mode 100755
+index 0000000000000000000000000000000000000000..7c06be04e02b7cd6a709d1a992631f2b6fcd3c7d
+GIT binary patch
+literal 197
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?4zf1OH%!2nAh*pwc`A=ls01oYK_1<WvREJcW?dqTI~9#2kh2%)FHRa=qmI
+r+}y;x6oLKm0y0?53rbBd%}Ffc;Fr<&s;y@L14c#&&A`rp3g!U-apyQh
+
+literal 0
+Hc$@<O00001
+
+diff --git a/bin/.OS X - Stop Confluence.command.icloud b/bin/.OS X - Stop Confluence.command.icloud
+new file mode 100755
+index 0000000000000000000000000000000000000000..4102e2d1331365fff315219628e9d299cf529302
+GIT binary patch
+literal 179
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?4zfIsagV2nAh*;FA0T1?T*{w4Bn^yyR59<ow*+#Jm)N<?#YCSak=brkCa<
+Y7IE;)=zC@7GJpXiBZOvPXFvr#0Oj;CiU0rr
+
+literal 0
+Hc$@<O00001
+
+diff --git a/bin/.bootstrap.jar.icloud b/bin/.bootstrap.jar.icloud
+new file mode 100644
+index 0000000000000000000000000000000000000000..46f07658786d6a29b7d74ae3f926630205b8fb1f
+GIT binary patch
+literal 161
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?5QF*rfdYlH!u0!~(sn#3I2Cjd%eWtZIW&(@S#_i#YgY^t~dY8Nh&%5kfPt
+IGoXSh06lsv8UO$Q
+
+literal 0
+Hc$@<O00001
+
+diff --git a/bin/.build.icloud b/bin/.build.icloud
+new file mode 100644
+index 0000000000000000000000000000000000000000..ed92f959e5805d2def5f52af7c731ce3eee0ba03
+GIT binary patch
+literal 153
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?5QF(4^ALoD@OURq+BcSk(ljrkCa<7IE;)=z9eOGk^gjBZOvPXFvr-0A_M1
+AzyJUM
+
+literal 0
+Hc$@<O00001
+
+diff --git a/bin/.catalina-tasks.xml.icloud b/bin/.catalina-tasks.xml.icloud
+new file mode 100644
+index 0000000000000000000000000000000000000000..ebee55ae0102caf6ee1018a2f230d2104a01f430
+GIT binary patch
+literal 168
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?4zfq2$Dp#GK5$MBS3a;_PC*irgGQw&n2xGFY_)rKXqWBo=Y-%jkQ>CozBl
+NBO`=nU}r!DjR2Q<E*1a)
+
+literal 0
+Hc$@<O00001
+
+diff --git a/bin/.catalina.bat.icloud b/bin/.catalina.bat.icloud
+new file mode 100644
+index 0000000000000000000000000000000000000000..e3ac0fc5c875398a53febead5a38883d9ddaf739
+GIT binary patch
+literal 160
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?5QFnB>Hg#GK5$M7^ZM5<xqecmWx#N`q3<OLG#7IQV7sy~3jyz<`kvLNl;4
+Hpn^&O)Z;4|
+
+literal 0
+Hc$@<O00001
+
+diff --git a/bin/.catalina.sh.icloud b/bin/.catalina.sh.icloud
+new file mode 100755
+index 0000000000000000000000000000000000000000..005fa05580fe710d20007769f291e252aaeeb56a
+GIT binary patch
+literal 159
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?5QF=;Xwb#GK5$M7`n+!RVFo0y0=t2BoH#<|Gzz@XP3Xg+(%e0V5-XW?*MP
+G1r-3y1}kF#
+
+literal 0
+Hc$@<O00001
+
+diff --git a/bin/.ciphers.bat.icloud b/bin/.ciphers.bat.icloud
+new file mode 100644
+index 0000000000000000000000000000000000000000..fe7bd8584b3477638301ca5534eacfabfcdeb866
+GIT binary patch
+literal 159
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?5QF=;X|TjMSoHy`;nvK@RVD0U4|+gHqE=a}tX<_+|9H!Xg>KfRPbGGq5wD
+Gf(ihhiz>eW
+
+literal 0
+Hc$@<O00001
+
+diff --git a/bin/.ciphers.sh.icloud b/bin/.ciphers.sh.icloud
+new file mode 100755
+index 0000000000000000000000000000000000000000..1efae52915793cb4091d4de043ae373a708bfa21
+GIT binary patch
+literal 158
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?5QFsN~FojMSoHz2Xc(_OtN<GFTM`rKXqWBo=Y-%jkQBMlgT@BO`=nU}r!D
+F<p7F;D&PPB
+
+literal 0
+Hc$@<O00001
+
+diff --git a/bin/.commons-daemon-native.tar.gz.icloud b/bin/.commons-daemon-native.tar.gz.icloud
+new file mode 100644
+index 0000000000000000000000000000000000000000..cf0fd6d376995e775409a280f9272d8041b339b3
+GIT binary patch
+literal 180
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?4zfndJQ3-2A*^-IT;sAg!C1Sdv+ms#lU&q?cYL#K5d63RHttdr)e6X-;Ah
+X2fvKIS7sgq7%(zIXa;r$RL~0mGBz=t
+
+literal 0
+Hc$@<O00001
+
+diff --git a/bin/.commons-daemon.jar.icloud b/bin/.commons-daemon.jar.icloud
+new file mode 100644
+index 0000000000000000000000000000000000000000..5776bfa729ce5a09ac569d7b6c79f86731de1630
+GIT binary patch
+literal 168
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?4zfq2&DB-2A*^-IT;sAgz~`SR|Na880A%RZCE6dTCB#5eL7FzE^w_0~jze
+MLTCnd22{`p0FkLJ{Qv*}
+
+literal 0
+Hc$@<O00001
+
+diff --git a/bin/.configtest.bat.icloud b/bin/.configtest.bat.icloud
+new file mode 100644
+index 0000000000000000000000000000000000000000..8de252d12058971ee647d0dcbf18a1200ca578ed
+GIT binary patch
+literal 162
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?5QFxa9o2w9NF9)Z!Aoq{I?I_8;*AGFTM{rKXqWBo=Y-%jkPW#xQ^ZBO`=n
+JU}r!D)c}Z$EWZE%
+
+literal 0
+Hc$@<O00001
+
+diff --git a/bin/.configtest.sh.icloud b/bin/.configtest.sh.icloud
+new file mode 100755
+index 0000000000000000000000000000000000000000..56979cad2441969f7c90aac907e4a4d10d66dc24
+GIT binary patch
+literal 161
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?5QF*yQ}Yw9NF9)Z!Ao;tWCdrg#AvtZIW&(@S#_i#YgY^t~dY8Nh&%5kfPt
+IGoXSh04}vF=>Px#
+
+literal 0
+Hc$@<O00001
+
+diff --git a/bin/.confluence-context-path-extractor.jar.icloud b/bin/.confluence-context-path-extractor.jar.icloud
+new file mode 100644
+index 0000000000000000000000000000000000000000..535c4f753904fdf3612992d65be08612e7ce912c
+GIT binary patch
+literal 187
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?4zf)#UuVw4Bn^yyR3}AhRU3qC~eKu_Qwm$S6uoF3B&_%StQ~l-m?9AcNJE
+epw#rzoWvpyei?nQqEZGhU}S{Q4D1Z3U<v?+!8RBG
+
+literal 0
+Hc$@<O00001
+
+diff --git a/bin/.daemon.sh.icloud b/bin/.daemon.sh.icloud
+new file mode 100755
+index 0000000000000000000000000000000000000000..e89cf308588e417ce8436dc4abb21b15cf190151
+GIT binary patch
+literal 157
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?5QF$dts?-26Pf;tWAW$9Mr5tm=YN(@S#_i#YgY^u0pD8Nh&%5kfPtGoXSp
+E04hQ$@Bjb+
+
+literal 0
+Hc$@<O00001
+
+diff --git a/bin/.digest.bat.icloud b/bin/.digest.bat.icloud
+new file mode 100644
+index 0000000000000000000000000000000000000000..62e5ac4ec8397e628a5a691f107de0b7d5f5a44f
+GIT binary patch
+literal 158
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?5QFsFcj~)Z!Aoq{I?I4()gW8LSF}QqxOw5{o$aW%Rv5BN)Jdkr6^Ourr{7
+FasXI0DlGs2
+
+literal 0
+Hc$@<O00001
+
+diff --git a/bin/.digest.sh.icloud b/bin/.digest.sh.icloud
+new file mode 100755
+index 0000000000000000000000000000000000000000..70baf91a0717bff5e8d7d2e611b81eef83fe22c1
+GIT binary patch
+literal 157
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?5QF$dt_V)Z!Ao;tWCdwebQnSk(okrkCa<7IE;)=zE2PGk^gjBZOvPXFvsI
+E07RTBP5=M^
+
+literal 0
+Hc$@<O00001
+
+diff --git a/bin/.display-help.bat.icloud b/bin/.display-help.bat.icloud
+new file mode 100644
+index 0000000000000000000000000000000000000000..9d6ca0cac64380a8144f4b7c472fff64013920b0
+GIT binary patch
+literal 166
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?71MDVfCuIf<3J8L2r1dP#{Tf{an|0y0=N1f`~z<|Gzz@XP3X#U?O-0V5-X
+KW?*MP1@!;`=q%m<
+
+literal 0
+Hc$@<O00001
+
+diff --git a/bin/.display-help.sh.icloud b/bin/.display-help.sh.icloud
+new file mode 100755
+index 0000000000000000000000000000000000000000..46df795795eda13a986d0f48455b367c12b35612
+GIT binary patch
+literal 165
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?4zf{*=t(f}F%k-Hg<n0=?o4LB`T}0U507gHqE=a}tX<_+|9HV&WOVfRPbG
+KGq5wDf;s@sfGn8+
+
+literal 0
+Hc$@<O00001
+
+diff --git a/bin/.makebase.bat.icloud b/bin/.makebase.bat.icloud
+new file mode 100644
+index 0000000000000000000000000000000000000000..4b0388f4cb397f4a9bde85357edf3f2b54908edc
+GIT binary patch
+literal 160
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?5QFnB2td)TG4XRK29c5<y=6cmWx#N`q3<OLG#7IQV7sy~3jyz<`kvLNl;4
+Hpn^&O!bmFD
+
+literal 0
+Hc$@<O00001
+
+diff --git a/bin/.makebase.sh.icloud b/bin/.makebase.sh.icloud
+new file mode 100755
+index 0000000000000000000000000000000000000000..ab2604b9e062e76a34daab176b0b168d9a8ce68e
+GIT binary patch
+literal 159
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?5QF=-kBY)TG4XRK4O1K^~KM0U4|+gHqE=a}tX<_+|9H!Xg>KfRPbGGq5wD
+Gf(ihXCn}o&
+
+literal 0
+Hc$@<O00001
+
+diff --git a/bin/.service.bat.icloud b/bin/.service.bat.icloud
+new file mode 100644
+index 0000000000000000000000000000000000000000..48bb845dd00183c2a57bc0a2840b273d5a4c77e0
+GIT binary patch
+literal 159
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?5QF=;G9(vdrXEy`;nvL0PMK0U4|+gHqE=a}tX<_+|9H!Xg>KfRPbGGq5wD
+Gf(ihk9V*5E
+
+literal 0
+Hc$@<O00001
+
+diff --git a/bin/.setclasspath.bat.icloud b/bin/.setclasspath.bat.icloud
+new file mode 100644
+index 0000000000000000000000000000000000000000..0badb79e4e79bcf3735d0d437a180d57f49da105
+GIT binary patch
+literal 166
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?71M#i=F9If=!^1&JjYdP#{Tg1jy90y0=N1f`~z<|Gzz@XP3X#U?O-0V5-X
+KW?*MP1@!<Wh%HwD
+
+literal 0
+Hc$@<O00001
+
+diff --git a/bin/.setclasspath.sh.icloud b/bin/.setclasspath.sh.icloud
+new file mode 100755
+index 0000000000000000000000000000000000000000..c4a836273d194253b5c918184f3e8678d1e17836
+GIT binary patch
+literal 165
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?4zf{^Hb<<ebFf;)2AI487tELB5)J0U507gHqE=a}tX<_+|9HV&WOVfRPbG
+KGq5wDf;s@{a4hfu
+
+literal 0
+Hc$@<O00001
+
+diff --git a/bin/.setenv.bat.icloud b/bin/.setenv.bat.icloud
+new file mode 100644
+index 0000000000000000000000000000000000000000..6b78d3487ec468396cc4556b9f730c8be584cfa8
+GIT binary patch
+literal 158
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?5QFsN&R;)Vwmiq{I?I&Y$rDGFTM`rKXqWBo=Y-%jkQBMlgT@BO`=nU}r!D
+F<p7vsD-i$y
+
+literal 0
+Hc$@<O00001
+
+diff --git a/bin/.setenv.sh.icloud b/bin/.setenv.sh.icloud
+new file mode 100755
+index 0000000000000000000000000000000000000000..95cec9fe8c839facc02b924c4d7324433f6e9f7c
+GIT binary patch
+literal 157
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?5QF$l}zJ)Vwmi;tWCVTk!%iSk(okrkCa<7IE;)=zE2PGk^gjBZOvPXFvsI
+E09fTJlmGw#
+
+literal 0
+Hc$@<O00001
+
+diff --git a/bin/.setjre.bat.icloud b/bin/.setjre.bat.icloud
+new file mode 100644
+index 0000000000000000000000000000000000000000..4a13a2e780d931615b121bc93f626da941b1d985
+GIT binary patch
+literal 158
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?5QFsN&R;tfExCq{I?Ij+%G@8LSF}QqxOw5{o$aW%Rv5BN)Jdkr6^Ourr{7
+FasYD;DvJOB
+
+literal 0
+Hc$@<O00001
+
+diff --git a/bin/.setjre.sh.icloud b/bin/.setjre.sh.icloud
+new file mode 100755
+index 0000000000000000000000000000000000000000..3bcf31e311bb7d99c88276b35ed16d3210f0aa6a
+GIT binary patch
+literal 157
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?5QF$l}zJtfExC;tWCN)OZ0Itm=YN(@S#_i#YgY^u0pD8Nh&%5kfPtGoXSp
+E05jMs4*&oF
+
+literal 0
+Hc$@<O00001
+
+diff --git a/bin/.shutdown.bat.icloud b/bin/.shutdown.bat.icloud
+new file mode 100644
+index 0000000000000000000000000000000000000000..a72778dd5cfcd65da1102b1e85f518c5722fdf77
+GIT binary patch
+literal 160
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?5QFnBt7ml9c@NJiVmE5<&JS@d7efl?J7zm*ylEaq!FNdxb|afB_>Tgl1r8
+HKn0Zm5ezHo
+
+literal 0
+Hc$@<O00001
+
+diff --git a/bin/.shutdown.sh.icloud b/bin/.shutdown.sh.icloud
+new file mode 100755
+index 0000000000000000000000000000000000000000..3d024a1531c1e9c36587cebcba206f66fdcd9bea
+GIT binary patch
+literal 159
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?5QF=;Dmhl9c@NJiX!!LH4|O0U4|+gHqE=a}tX<_+|9H!Xg>KfRPbGGq5wD
+Gf(ih)<SP>Z
+
+literal 0
+Hc$@<O00001
+
+diff --git a/bin/.start-confluence.bat.icloud b/bin/.start-confluence.bat.icloud
+new file mode 100755
+index 0000000000000000000000000000000000000000..a9b6e53b70aca0d07345c6fe00ed77f1bd164289
+GIT binary patch
+literal 170
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?4zfk>ZlXq7vQY{JgZB($u`<RK29c5<!-Q@d7efH3g-nm*ylEaq!FNdnKkY
+PfB_>Tgl1r8Kn2YJ74I(T
+
+literal 0
+Hc$@<O00001
+
+diff --git a/bin/.start-confluence.sh.icloud b/bin/.start-confluence.sh.icloud
+new file mode 100755
+index 0000000000000000000000000000000000000000..58d8c9289ca3d26ff3abf12d1fe69ded43781c1d
+GIT binary patch
+literal 169
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?4zf;o_3Sq7vQY{JgZB($u`<RK4O1LAKO*0U4}%f>P5<a}tX<_+|9H5|SCf
+OfRPbGGq5wDf+hgUJuXiG
+
+literal 0
+Hc$@<O00001
+
+diff --git a/bin/.startup.bat.icloud b/bin/.startup.bat.icloud
+new file mode 100644
+index 0000000000000000000000000000000000000000..a2184ee132e86dc8e863d9d4f392d0ad5b3ee21e
+GIT binary patch
+literal 159
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?5QF=;D&ZqLR`Ay`;nvLH1|y0y0=t2BoH#<|Gzz@XP3Xg+(%e0V5-XW?*MP
+G1r-3*AS-?V
+
+literal 0
+Hc$@<O00001
+
+diff --git a/bin/.startup.sh.icloud b/bin/.startup.sh.icloud
+new file mode 100755
+index 0000000000000000000000000000000000000000..8d28b5cf4f75573eaf7d3ef4250686453ec2d16d
+GIT binary patch
+literal 158
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?5QFsN#~uqLR`Az2Xc(_JVi;8LSF}QqxOw5{o$aW%Rv5BN)Jdkr6^Ourr{7
+FasYgCDyRSe
+
+literal 0
+Hc$@<O00001
+
+diff --git a/bin/.stop-confluence.bat.icloud b/bin/.stop-confluence.bat.icloud
+new file mode 100755
+index 0000000000000000000000000000000000000000..981df68582787e56acba634a351c5536c1c7c30b
+GIT binary patch
+literal 168
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?4zf;o_3~0^Q{NytJIs)V$<Wy`;nvf#7%n8LV1@QqxOw5{o$aW%Rugk{G~%
+Nkr6^Ourr{7MgX3}E+_y1
+
+literal 0
+Hc$@<O00001
+
+diff --git a/bin/.stop-confluence.sh.icloud b/bin/.stop-confluence.sh.icloud
+new file mode 100755
+index 0000000000000000000000000000000000000000..0c27934a1a67f97326169427eb1e4cb3675555cd
+GIT binary patch
+literal 168
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?4zfq2iMK0^Q{NytJIs)V$<Wz2Xc(=9qW^8LV1@QqxOw5{o$aW%Rw`lNi8&
+Nkr6^Ourr{7MgWK6E!O}5
+
+literal 0
+Hc$@<O00001
+
+diff --git a/bin/.synchrony-proxy-watchdog.jar.icloud b/bin/.synchrony-proxy-watchdog.jar.icloud
+new file mode 100644
+index 0000000000000000000000000000000000000000..bf4c371183ebe382b1584d5398457c62cc430123
+GIT binary patch
+literal 180
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?4zfnc~X4<cy;Hyh`1IqWp?V-SWhe<cyU3biJ&^A|VF;OKLzhShWYGrkCa<
+Y7IE;)=zC@6F@OOhBZOvPXFvtL0FuBm(*OVf
+
+literal 0
+Hc$@<O00001
+
+diff --git a/bin/.tcnative-1.dll.icloud b/bin/.tcnative-1.dll.icloud
+new file mode 100644
+index 0000000000000000000000000000000000000000..3ac786f11d6760ea80ae1bccb5ddfb9c6bc0f257
+GIT binary patch
+literal 164
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?5QFxRT_&#FEUiR9!>8l$;zP2Dui7cmWx#%7aqVOLG#7IQV7sy&~fnz<`kv
+LLNl;4pn_Teh>k1r
+
+literal 0
+Hc$@<O00001
+
+diff --git a/bin/.tomcat-juli.jar.icloud b/bin/.tomcat-juli.jar.icloud
+new file mode 100644
+index 0000000000000000000000000000000000000000..1be539c14e310d51f79c413960ba7774fcf82cd4
+GIT binary patch
+literal 165
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?4zf{*wIM<irx)tkRrJy{yC{!5u>J0y0?D2c@Q$<|Gzz@XP3X#l$m!0V5-X
+KW?*MP1$6-C9W3ks
+
+literal 0
+Hc$@<O00001
+
+diff --git a/bin/.tomcat-native.tar.gz.icloud b/bin/.tomcat-native.tar.gz.icloud
+new file mode 100644
+index 0000000000000000000000000000000000000000..80adc601f540eab71d5e78dffd4495d513d7a40b
+GIT binary patch
+literal 172
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?4zfk&^t}<irx)yu^~svQ)j2#3H@)Dj^0o+xB<?8LZlZQqxOw5{o$aW%Rug
+R(-^>jkr6^Ourr{7RsdITF7W^W
+
+literal 0
+Hc$@<O00001
+
+diff --git a/bin/.tomcat9.exe.icloud b/bin/.tomcat9.exe.icloud
+new file mode 100644
+index 0000000000000000000000000000000000000000..35bc428c14604626179764c5e4e9ea666a2b88c7
+GIT binary patch
+literal 161
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?5QF=#u>0<irw7z0`_SAqK|%E8+!Yu&ND8O)t$!EaKpo(f10AW&i_5MhMNo
+I&VUN4036dRw*UYD
+
+literal 0
+Hc$@<O00001
+
+diff --git a/bin/.tomcat9w.exe.icloud b/bin/.tomcat9w.exe.icloud
+new file mode 100644
+index 0000000000000000000000000000000000000000..cc5a117dc8af124fbd7b835cc92c9bcb044988c1
+GIT binary patch
+literal 162
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?5QFn3DY5<irxoa=p}wR3Qe&vn%2SWUwj@N=+}#Ni5>vm(lkMk6{1<Mn(wD
+Jz|MdQssUmlEI<GN
+
+literal 0
+Hc$@<O00001
+
+diff --git a/bin/.tool-wrapper.bat.icloud b/bin/.tool-wrapper.bat.icloud
+new file mode 100644
+index 0000000000000000000000000000000000000000..158c4607cc1e9dc73c22ac489462f07ff5874ba3
+GIT binary patch
+literal 166
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?71MCHeU|y5&WQ1qG=^dP#{Tf`a$r1!S;l2ue*a%}Ffc;Fr<&icMeu14c#&
+K&A`rp3hDtg3oViW
+
+literal 0
+Hc$@<O00001
+
+diff --git a/bin/.tool-wrapper.sh.icloud b/bin/.tool-wrapper.sh.icloud
+new file mode 100755
+index 0000000000000000000000000000000000000000..2cc5620e2beda3bb66b1ab69d24d407625a6e43b
+GIT binary patch
+literal 165
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?4zf{*wIs9NqGw#Dap<BE8}aLDB4Z0U507gHqE=a}tX<_+|9HV&WOVfRPbG
+KGq5wDf;s@(K`g@n
+
+literal 0
+Hc$@<O00001
+
+diff --git a/bin/.user.sh.icloud b/bin/.user.sh.icloud
+new file mode 100755
+index 0000000000000000000000000000000000000000..31394fba509cdfdbea3fd48520b16e05dd21e1fd
+GIT binary patch
+literal 154
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?5QF@Y3ScBE8}afr5Ae8LWzeQqxOw5{o$aW%Rv*LKwh+kr6^Ourr{7VgRLO
+BDLw!I
+
+literal 0
+Hc$@<O00001
+
+diff --git a/bin/.version.bat.icloud b/bin/.version.bat.icloud
+new file mode 100644
+index 0000000000000000000000000000000000000000..f9900545eb31f17c1b902d398686aab03956de0b
+GIT binary patch
+literal 159
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?5QF=(5zJ;>`R!y`;nvLH1Yi0y0=t2BoH#<|Gzz@XP3Xg+(%e0V5-XW?*MP
+G1r-3&I4gAk
+
+literal 0
+Hc$@<O00001
+
+diff --git a/bin/.version.sh.icloud b/bin/.version.sh.icloud
+new file mode 100755
+index 0000000000000000000000000000000000000000..95870958d0e75515403c36c1f1bbfaf5e0c420bf
+GIT binary patch
+literal 158
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?5QFsIt_e;>`R!z2Xc(_L6u38LSF}QqxOw5{o$aW%Rv5BN)Jdkr6^Ourr{7
+FasYXkDxUxV
+
+literal 0
+Hc$@<O00001
+
+diff --git a/conf/.catalina.policy.icloud b/conf/.catalina.policy.icloud
+new file mode 100644
+index 0000000000000000000000000000000000000000..ee616572e997277acc228b5e94c902f21dacafd0
+GIT binary patch
+literal 165
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?4zf{^Z1x#GK5$M7@IioXq4(L1UkI0U507gHqE=a}tX<_+|9HV&WOVfRPbG
+KGq5wDf;s@(yDZ26
+
+literal 0
+Hc$@<O00001
+
+diff --git a/conf/.catalina.properties.icloud b/conf/.catalina.properties.icloud
+new file mode 100644
+index 0000000000000000000000000000000000000000..b9300edac9a5ced58a2856aeb318d0cef809c61b
+GIT binary patch
+literal 169
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?4zf;pD`U#GK5$M7@Hd{DRb?lFZa%LD~870y0?j1f`~z<|Gzz@XP3XB_uO|
+O0V5-XW?*MP1x*0%SuWB5
+
+literal 0
+Hc$@<O00001
+
+diff --git a/conf/.context.xml.icloud b/conf/.context.xml.icloud
+new file mode 100644
+index 0000000000000000000000000000000000000000..6edcd267ab56e233c9f96fa4effc1058a3bbc20e
+GIT binary patch
+literal 159
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?5QF=;ZvolGKV4y^7o%LDuQ<0y0=t2BoH#<|Gzz@XP3Xg+(%e0V5-XW?*MP
+G1r-3n#Va`g
+
+literal 0
+Hc$@<O00001
+
+diff --git a/conf/.jaspic-providers.xml.icloud b/conf/.jaspic-providers.xml.icloud
+new file mode 100644
+index 0000000000000000000000000000000000000000..ba36dad1a540771c4a814f5e175f45f44eb78fa1
+GIT binary patch
+literal 170
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?4zfk*vhxg3M&yf};Gg%#_rkV!evo96^>T@d7efH3g-nm*ylEaq!FNdnKkY
+PfB_>Tgl1r8Kn2YJ8`LiT
+
+literal 0
+Hc$@<O00001
+
+diff --git a/conf/.jaspic-providers.xsd.icloud b/conf/.jaspic-providers.xsd.icloud
+new file mode 100644
+index 0000000000000000000000000000000000000000..3bb145fb62eae2a5bf20dd9d62cf90905de00823
+GIT binary patch
+literal 170
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?4zfk*vhxg3M&yf};Gg%#_rkV!evu6hThgcmWx#nu1c(OLG#7IQV7sy%JLx
+Pz<`kvLNl;4pn_%q1dT4L
+
+literal 0
+Hc$@<O00001
+
+diff --git a/conf/.logging.properties.icloud b/conf/.logging.properties.icloud
+new file mode 100644
+index 0000000000000000000000000000000000000000..18bbbfe63b3e298af93ee8b071fa82a1c4da69b4
+GIT binary patch
+literal 168
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?4zfp`85m^vt|;y@I0rg4Cjt%+z8*{*ZV98LV1@QqxOw5{o$aW%Rw`lNi8&
+Nkr6^Ourr{7MgW}iE*}5@
+
+literal 0
+Hc$@<O00001
+
+diff --git a/conf/.server.xml.icloud b/conf/.server.xml.icloud
+new file mode 100644
+index 0000000000000000000000000000000000000000..651032b6e0728a4be4c94cd421286bbea2b326fe
+GIT binary patch
+literal 158
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?5QFsN&S3veY8IirgGQ;i`B68LSF}QqxOw5{o$aW%Rv5BN)Jdkr6^Ourr{7
+FasYs2D!2du
+
+literal 0
+Hc$@<O00001
+
+diff --git a/conf/.tomcat-users.xml.icloud b/conf/.tomcat-users.xml.icloud
+new file mode 100644
+index 0000000000000000000000000000000000000000..eb904560f521698bb7b17cc1522dd118a756ff37
+GIT binary patch
+literal 166
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?71MCHc9@i6y$F#i>QbdKI}jf*cFt1!S;l2ue*a%}Ffc;Fr<&icMeu14c#&
+K&A`rp3hDtSel1`C
+
+literal 0
+Hc$@<O00001
+
+diff --git a/conf/.tomcat-users.xsd.icloud b/conf/.tomcat-users.xsd.icloud
+new file mode 100644
+index 0000000000000000000000000000000000000000..cdd0d9c52a5c571548de880e9bdfb12317f4e727
+GIT binary patch
+literal 166
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?71MCHc9@i6y$F#i>QbdKJYff?Un<0y0=N1f`~z<|Gzz@XP3X#U?O-0V5-X
+KW?*MP1@!<PbuB{x
+
+literal 0
+Hc$@<O00001
+
+diff --git a/conf/.web.xml.icloud b/conf/.web.xml.icloud
+new file mode 100644
+index 0000000000000000000000000000000000000000..d0d097daf4bf2442130e9458dc79547cf026a989
+GIT binary patch
+literal 157
+zc$`Zr$jK}&F)+By$i&RT$`<1n92(@~mzbOComv?$AOPmNW#*&?XI4RkB;Z0psm1xF
+zMaiill?5QF@bc6oy^7o%AqJ+^4)FpqSk(okrkCa<7IE;)=z9f)Gk^gjBZOvPXFvsI
+E02uKpxBvhE
+
+literal 0
+Hc$@<O00001
+
+--
+Working Copy 4.4.8
+
