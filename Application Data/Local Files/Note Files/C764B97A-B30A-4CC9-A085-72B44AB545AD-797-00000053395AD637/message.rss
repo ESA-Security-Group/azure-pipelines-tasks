@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:taxo="http://purl.org/rss/1.0/modules/taxonomy/" version="2.0">
+  <channel>
+    <title>topic Coming Up: Adding Granular Permissions to the Compliance Module in CloudGuard-Dome9</title>
+    <link>https://community.checkpoint.com/t5/CloudGuard-Dome9/Coming-Up-Adding-Granular-Permissions-to-the-Compliance-Module/m-p/63366#M46</link>
+    <description>&lt;P&gt;&lt;SPAN style="font-weight: 400;"&gt;The Dome9 permissions model is evolving! We’re adding additional granular permissions for the Compliance related features, allowing our customers to better define their Dome9 users and roles. The new permission model is scheduled for release on Wednesday, October 2nd.&lt;/SPAN&gt;&lt;/P&gt;
+&lt;P&gt;&amp;nbsp;&lt;/P&gt;
+&lt;H1&gt;&lt;SPAN style="font-weight: 400;"&gt;Background&lt;/SPAN&gt;&lt;/H1&gt;
+&lt;P&gt;&lt;SPAN style="font-weight: 400;"&gt;Dome9 allows you to define users and roles. The Dome9 permissions model includes the ability to specify the permissions to view data for specific Cloud Accounts and Organizational Units, and manage the Network Security permissions (create and manage Security Groups, as well as ability to use Dynamic Access and IAM elevations).&lt;/SPAN&gt;&lt;/P&gt;
+&lt;P&gt;&amp;nbsp;&lt;/P&gt;
+&lt;P&gt;&lt;SPAN style="font-weight: 400;"&gt;The new capabilities we’re adding would allow you to better control the permissions of the Compliance Engine, and include:&lt;/SPAN&gt;&lt;/P&gt;
+&lt;UL&gt;
+&lt;LI style="font-weight: 400;"&gt;&lt;SPAN style="font-weight: 400;"&gt;Add, edit or delete Rulesets&amp;nbsp;&lt;/SPAN&gt;&lt;/LI&gt;
+&lt;LI style="font-weight: 400;"&gt;&lt;SPAN style="font-weight: 400;"&gt;Add, edit or delete notifications and integrations with external systems and control alerts actions&lt;/SPAN&gt;&lt;/LI&gt;
+&lt;LI style="font-weight: 400;"&gt;&lt;SPAN style="font-weight: 400;"&gt;Add, edit or delete Remediations&amp;nbsp;&lt;/SPAN&gt;&lt;/LI&gt;
+&lt;LI style="font-weight: 400;"&gt;&lt;SPAN style="font-weight: 400;"&gt;Add, edit or delete Exclusions&amp;nbsp;&lt;/SPAN&gt;&lt;/LI&gt;
+&lt;LI style="font-weight: 400;"&gt;&lt;SPAN style="font-weight: 400;"&gt;Acknowledge alerts, add comments, assign alerts to users and change alert severity.&lt;/SPAN&gt;&lt;/LI&gt;
+&lt;LI style="font-weight: 400;"&gt;&lt;SPAN style="font-weight: 400;"&gt;Associate/disassociate Compliance Policy&lt;/SPAN&gt;&lt;/LI&gt;
+&lt;/UL&gt;
+&lt;P&gt;&lt;span class="lia-inline-image-display-wrapper lia-image-align-inline" style="width: 400px;"&gt;&lt;img src="https://community.checkpoint.com/t5/image/serverpage/image-id/2583iF7198ED56E5C6BFC/image-size/medium?v=1.0&amp;amp;px=400" alt="clipboard_image_0.png" title="clipboard_image_0.png" /&gt;&lt;/span&gt;&lt;/P&gt;
+&lt;H1&gt;&lt;SPAN style="font-weight: 400;"&gt;How does this change affect us?&lt;/SPAN&gt;&lt;/H1&gt;
+&lt;P&gt;&lt;SPAN style="font-weight: 400;"&gt;Dome9 permissions management screens - Roles screen and Users screen - would include additional permissions related to the Compliance Engine. Dome9 Super Users would be able to assign these new permissions to roles (or specific users directly). Users that do not include these permissions would not be able to perform the relevant actions (i.e. edit exclusions or acknowledge alerts).&lt;/SPAN&gt;&lt;/P&gt;
+&lt;P&gt;&amp;nbsp;&lt;/P&gt;
+&lt;P&gt;&lt;STRONG&gt;These changes will affect the predefined “Auditor” role.&lt;/STRONG&gt;&lt;/P&gt;
+&lt;P&gt;&lt;SPAN style="font-weight: 400;"&gt;Currently this role can perform many types of operations; when adding the new permissions Dome9 users assigned to the &lt;/SPAN&gt;&lt;SPAN style="font-weight: 400;"&gt;predefined&lt;/SPAN&gt;&lt;SPAN style="font-weight: 400;"&gt; “Auditor” role will not be able to:&lt;/SPAN&gt;&lt;/P&gt;
+&lt;UL&gt;
+&lt;LI style="font-weight: 400;"&gt;&lt;SPAN style="font-weight: 400;"&gt;Create or edit rulesets.&lt;/SPAN&gt;&lt;/LI&gt;
+&lt;LI style="font-weight: 400;"&gt;&lt;SPAN style="font-weight: 400;"&gt;Edit Notifications and Integrations with external systems.&lt;/SPAN&gt;&lt;/LI&gt;
+&lt;LI style="font-weight: 400;"&gt;&lt;SPAN style="font-weight: 400;"&gt;Edit Compliance Policies.&lt;/SPAN&gt;&lt;/LI&gt;
+&lt;LI style="font-weight: 400;"&gt;&lt;SPAN style="font-weight: 400;"&gt;Perform actions on alerts (edit Remediations, edit Exclusions, acknowledge alerts, add comments, assign alerts and change severity).&lt;/SPAN&gt;&lt;/LI&gt;
+&lt;/UL&gt;
+&lt;P&gt;&lt;SPAN style="font-weight: 400;"&gt;With that change, the predefined “Auditor” role would become an actual read-only role, and would be dedicated to auditing.&lt;/SPAN&gt;&lt;/P&gt;
+&lt;P&gt;&amp;nbsp;&lt;/P&gt;
+&lt;P&gt;&lt;STRONG&gt;Note:&lt;/STRONG&gt;&lt;SPAN style="font-weight: 400;"&gt; No changes would be applied to the Super User role, it would still be able to perform any action.&lt;/SPAN&gt;&lt;/P&gt;
+&lt;P&gt;&amp;nbsp;&lt;/P&gt;
+&lt;P&gt;&lt;STRONG&gt;What can I do to provide my users permissions the actions they used to perform?&lt;/STRONG&gt;&lt;/P&gt;
+&lt;P&gt;&lt;SPAN style="font-weight: 400;"&gt;When the new permissions would be introduced it would be possible to choose which compliance-related actions your uses would be able to perform.&lt;/SPAN&gt;&lt;/P&gt;
+&lt;P&gt;&lt;SPAN style="font-weight: 400;"&gt;Here are a few suggestions for the new roles you can use or generate:&lt;/SPAN&gt;&lt;/P&gt;
+&lt;OL&gt;
+&lt;LI style="font-weight: 400;"&gt;&lt;SPAN style="font-weight: 400;"&gt;For auditors, that only observe and monitor, the updated “&lt;/SPAN&gt;&lt;STRONG&gt;Auditor&lt;/STRONG&gt;&lt;SPAN style="font-weight: 400;"&gt;” role can be used.&lt;/SPAN&gt;&lt;/LI&gt;
+&lt;LI style="font-weight: 400;"&gt;&lt;SPAN style="font-weight: 400;"&gt;For users that also need to review alerts, process generated alerts and acknowledge, a new role should be created, and it should include the “&lt;/SPAN&gt;&lt;STRONG&gt;Alerts Configurations&lt;/STRONG&gt; &lt;STRONG&gt;and Actions&lt;/STRONG&gt;&lt;SPAN style="font-weight: 400;"&gt;” permission.&lt;/SPAN&gt;&lt;/LI&gt;
+&lt;LI style="font-weight: 400;"&gt;&lt;SPAN style="font-weight: 400;"&gt;Users that modify compliance content (create or modify compliance rulesets) should be assigned with the “&lt;/SPAN&gt;&lt;STRONG&gt;Rulesets and Content&lt;/STRONG&gt;&lt;SPAN style="font-weight: 400;"&gt;” permission.&lt;/SPAN&gt;&lt;/LI&gt;
+&lt;LI style="font-weight: 400;"&gt;&lt;SPAN style="font-weight: 400;"&gt;Users that need to create notifications (send alert reports via emails, or other types of integrations such as AWS SNS, HTTP endpoints and more), as well as association of cloud accounts with compliance rulesets and notifications (“Continuous Compliance” policies) should be assigned with “&lt;/SPAN&gt;&lt;STRONG&gt;Integrations and Notifications&lt;/STRONG&gt;&lt;SPAN style="font-weight: 400;"&gt;” permission.&lt;/SPAN&gt;&lt;/LI&gt;
+&lt;/OL&gt;
+&lt;P&gt;&lt;SPAN style="font-weight: 400;"&gt;Use a Super User to edit users and roles and assign the new permissions.&lt;/SPAN&gt;&lt;/P&gt;
+&lt;P&gt;&amp;nbsp;&lt;/P&gt;
+&lt;P&gt;&lt;SPAN style="font-weight: 400;"&gt;If you have any questions or need help, please reach out to Support &lt;/SPAN&gt;&lt;A href="https://accounts.checkpoint.com/#/login/-SM-HTTP%3A%2F%2Fiam--sso.checkpoint.com%2Faffwebservices%2Fredirectjsp%2Fredirect.jsp%3Fcp_partner%3Dsalesforce%26SMPORTALURL%3Dhttps-%3A-%2F-%2Fiam--sso.checkpoint.com-%2Faffwebservices-%2Fpublic-%2Fsaml2sso" target="_blank"&gt;&lt;SPAN style="font-weight: 400;"&gt;here&lt;/SPAN&gt;&lt;/A&gt;&lt;SPAN style="font-weight: 400;"&gt;.&amp;nbsp;&lt;/SPAN&gt;&lt;/P&gt;</description>
+    <pubDate>Sun, 22 Sep 2019 20:18:52 GMT</pubDate>
+    <dc:creator>Offir_Zigelman</dc:creator>
+    <dc:date>2019-09-22T20:18:52Z</dc:date>
+    <item>
+      <title>Coming Up: Adding Granular Permissions to the Compliance Module</title>
+      <link>https://community.checkpoint.com/t5/CloudGuard-Dome9/Coming-Up-Adding-Granular-Permissions-to-the-Compliance-Module/m-p/63366#M46</link>
+      <description>&lt;P&gt;&lt;SPAN style="font-weight: 400;"&gt;The Dome9 permissions model is evolving! We’re adding additional granular permissions for the Compliance related features, allowing our customers to better define their Dome9 users and roles. The new permission model is scheduled for release on Wednesday, October 2nd.&lt;/SPAN&gt;&lt;/P&gt;
+&lt;P&gt;&amp;nbsp;&lt;/P&gt;
+&lt;H1&gt;&lt;SPAN style="font-weight: 400;"&gt;Background&lt;/SPAN&gt;&lt;/H1&gt;
+&lt;P&gt;&lt;SPAN style="font-weight: 400;"&gt;Dome9 allows you to define users and roles. The Dome9 permissions model includes the ability to specify the permissions to view data for specific Cloud Accounts and Organizational Units, and manage the Network Security permissions (create and manage Security Groups, as well as ability to use Dynamic Access and IAM elevations).&lt;/SPAN&gt;&lt;/P&gt;
+&lt;P&gt;&amp;nbsp;&lt;/P&gt;
+&lt;P&gt;&lt;SPAN style="font-weight: 400;"&gt;The new capabilities we’re adding would allow you to better control the permissions of the Compliance Engine, and include:&lt;/SPAN&gt;&lt;/P&gt;
+&lt;UL&gt;
+&lt;LI style="font-weight: 400;"&gt;&lt;SPAN style="font-weight: 400;"&gt;Add, edit or delete Rulesets&amp;nbsp;&lt;/SPAN&gt;&lt;/LI&gt;
+&lt;LI style="font-weight: 400;"&gt;&lt;SPAN style="font-weight: 400;"&gt;Add, edit or delete notifications and integrations with external systems and control alerts actions&lt;/SPAN&gt;&lt;/LI&gt;
+&lt;LI style="font-weight: 400;"&gt;&lt;SPAN style="font-weight: 400;"&gt;Add, edit or delete Remediations&amp;nbsp;&lt;/SPAN&gt;&lt;/LI&gt;
+&lt;LI style="font-weight: 400;"&gt;&lt;SPAN style="font-weight: 400;"&gt;Add, edit or delete Exclusions&amp;nbsp;&lt;/SPAN&gt;&lt;/LI&gt;
+&lt;LI style="font-weight: 400;"&gt;&lt;SPAN style="font-weight: 400;"&gt;Acknowledge alerts, add comments, assign alerts to users and change alert severity.&lt;/SPAN&gt;&lt;/LI&gt;
+&lt;LI style="font-weight: 400;"&gt;&lt;SPAN style="font-weight: 400;"&gt;Associate/disassociate Compliance Policy&lt;/SPAN&gt;&lt;/LI&gt;
+&lt;/UL&gt;
+&lt;P&gt;&lt;span class="lia-inline-image-display-wrapper lia-image-align-inline" style="width: 400px;"&gt;&lt;img src="https://community.checkpoint.com/t5/image/serverpage/image-id/2583iF7198ED56E5C6BFC/image-size/medium?v=1.0&amp;amp;px=400" alt="clipboard_image_0.png" title="clipboard_image_0.png" /&gt;&lt;/span&gt;&lt;/P&gt;
+&lt;H1&gt;&lt;SPAN style="font-weight: 400;"&gt;How does this change affect us?&lt;/SPAN&gt;&lt;/H1&gt;
+&lt;P&gt;&lt;SPAN style="font-weight: 400;"&gt;Dome9 permissions management screens - Roles screen and Users screen - would include additional permissions related to the Compliance Engine. Dome9 Super Users would be able to assign these new permissions to roles (or specific users directly). Users that do not include these permissions would not be able to perform the relevant actions (i.e. edit exclusions or acknowledge alerts).&lt;/SPAN&gt;&lt;/P&gt;
+&lt;P&gt;&amp;nbsp;&lt;/P&gt;
+&lt;P&gt;&lt;STRONG&gt;These changes will affect the predefined “Auditor” role.&lt;/STRONG&gt;&lt;/P&gt;
+&lt;P&gt;&lt;SPAN style="font-weight: 400;"&gt;Currently this role can perform many types of operations; when adding the new permissions Dome9 users assigned to the &lt;/SPAN&gt;&lt;SPAN style="font-weight: 400;"&gt;predefined&lt;/SPAN&gt;&lt;SPAN style="font-weight: 400;"&gt; “Auditor” role will not be able to:&lt;/SPAN&gt;&lt;/P&gt;
+&lt;UL&gt;
+&lt;LI style="font-weight: 400;"&gt;&lt;SPAN style="font-weight: 400;"&gt;Create or edit rulesets.&lt;/SPAN&gt;&lt;/LI&gt;
+&lt;LI style="font-weight: 400;"&gt;&lt;SPAN style="font-weight: 400;"&gt;Edit Notifications and Integrations with external systems.&lt;/SPAN&gt;&lt;/LI&gt;
+&lt;LI style="font-weight: 400;"&gt;&lt;SPAN style="font-weight: 400;"&gt;Edit Compliance Policies.&lt;/SPAN&gt;&lt;/LI&gt;
+&lt;LI style="font-weight: 400;"&gt;&lt;SPAN style="font-weight: 400;"&gt;Perform actions on alerts (edit Remediations, edit Exclusions, acknowledge alerts, add comments, assign alerts and change severity).&lt;/SPAN&gt;&lt;/LI&gt;
+&lt;/UL&gt;
+&lt;P&gt;&lt;SPAN style="font-weight: 400;"&gt;With that change, the predefined “Auditor” role would become an actual read-only role, and would be dedicated to auditing.&lt;/SPAN&gt;&lt;/P&gt;
+&lt;P&gt;&amp;nbsp;&lt;/P&gt;
+&lt;P&gt;&lt;STRONG&gt;Note:&lt;/STRONG&gt;&lt;SPAN style="font-weight: 400;"&gt; No changes would be applied to the Super User role, it would still be able to perform any action.&lt;/SPAN&gt;&lt;/P&gt;
+&lt;P&gt;&amp;nbsp;&lt;/P&gt;
+&lt;P&gt;&lt;STRONG&gt;What can I do to provide my users permissions the actions they used to perform?&lt;/STRONG&gt;&lt;/P&gt;
+&lt;P&gt;&lt;SPAN style="font-weight: 400;"&gt;When the new permissions would be introduced it would be possible to choose which compliance-related actions your uses would be able to perform.&lt;/SPAN&gt;&lt;/P&gt;
+&lt;P&gt;&lt;SPAN style="font-weight: 400;"&gt;Here are a few suggestions for the new roles you can use or generate:&lt;/SPAN&gt;&lt;/P&gt;
+&lt;OL&gt;
+&lt;LI style="font-weight: 400;"&gt;&lt;SPAN style="font-weight: 400;"&gt;For auditors, that only observe and monitor, the updated “&lt;/SPAN&gt;&lt;STRONG&gt;Auditor&lt;/STRONG&gt;&lt;SPAN style="font-weight: 400;"&gt;” role can be used.&lt;/SPAN&gt;&lt;/LI&gt;
+&lt;LI style="font-weight: 400;"&gt;&lt;SPAN style="font-weight: 400;"&gt;For users that also need to review alerts, process generated alerts and acknowledge, a new role should be created, and it should include the “&lt;/SPAN&gt;&lt;STRONG&gt;Alerts Configurations&lt;/STRONG&gt; &lt;STRONG&gt;and Actions&lt;/STRONG&gt;&lt;SPAN style="font-weight: 400;"&gt;” permission.&lt;/SPAN&gt;&lt;/LI&gt;
+&lt;LI style="font-weight: 400;"&gt;&lt;SPAN style="font-weight: 400;"&gt;Users that modify compliance content (create or modify compliance rulesets) should be assigned with the “&lt;/SPAN&gt;&lt;STRONG&gt;Rulesets and Content&lt;/STRONG&gt;&lt;SPAN style="font-weight: 400;"&gt;” permission.&lt;/SPAN&gt;&lt;/LI&gt;
+&lt;LI style="font-weight: 400;"&gt;&lt;SPAN style="font-weight: 400;"&gt;Users that need to create notifications (send alert reports via emails, or other types of integrations such as AWS SNS, HTTP endpoints and more), as well as association of cloud accounts with compliance rulesets and notifications (“Continuous Compliance” policies) should be assigned with “&lt;/SPAN&gt;&lt;STRONG&gt;Integrations and Notifications&lt;/STRONG&gt;&lt;SPAN style="font-weight: 400;"&gt;” permission.&lt;/SPAN&gt;&lt;/LI&gt;
+&lt;/OL&gt;
+&lt;P&gt;&lt;SPAN style="font-weight: 400;"&gt;Use a Super User to edit users and roles and assign the new permissions.&lt;/SPAN&gt;&lt;/P&gt;
+&lt;P&gt;&amp;nbsp;&lt;/P&gt;
+&lt;P&gt;&lt;SPAN style="font-weight: 400;"&gt;If you have any questions or need help, please reach out to Support &lt;/SPAN&gt;&lt;A href="https://accounts.checkpoint.com/#/login/-SM-HTTP%3A%2F%2Fiam--sso.checkpoint.com%2Faffwebservices%2Fredirectjsp%2Fredirect.jsp%3Fcp_partner%3Dsalesforce%26SMPORTALURL%3Dhttps-%3A-%2F-%2Fiam--sso.checkpoint.com-%2Faffwebservices-%2Fpublic-%2Fsaml2sso" target="_blank"&gt;&lt;SPAN style="font-weight: 400;"&gt;here&lt;/SPAN&gt;&lt;/A&gt;&lt;SPAN style="font-weight: 400;"&gt;.&amp;nbsp;&lt;/SPAN&gt;&lt;/P&gt;</description>
+      <pubDate>Sun, 22 Sep 2019 20:18:52 GMT</pubDate>
+      <guid>https://community.checkpoint.com/t5/CloudGuard-Dome9/Coming-Up-Adding-Granular-Permissions-to-the-Compliance-Module/m-p/63366#M46</guid>
+      <dc:creator>Offir_Zigelman</dc:creator>
+      <dc:date>2019-09-22T20:18:52Z</dc:date>
+    </item>
+  </channel>
+</rss>
+

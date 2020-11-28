@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <%= render '/head.*' %>
+    <meta name="robots" content="noindex">
+    <link rel="canonical" href="<%= @config[:base_url] %>/404.html">
+    <link rel="stylesheet" href="<%= @items['/assets/stylesheets/404.*'].path %>">
+  </head>
+  <body>
+    <%= render '/header.*' %>
+    <div class="wrapper d-flex justify-content-center">
+      <div class="main class">
+        <%= yield %>
+        <%= render '/footer.*' %>
+      </div>
+    </div>
+  <%= render '/docsearch.*' %>
+  <script type="application/javascript" src="<%= @items['/assets/javascripts/404.*'].path %>"></script>
+  <script src="<%= @items['/frontend/404/404.*'].path %>"></script>
+  <% if is_production? %>
+  <%# Add analytics only in production %>
+    <%= render '/analytics.*' %>
+  <% end %>
+  </body>
+</html>

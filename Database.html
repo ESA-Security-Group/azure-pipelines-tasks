@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Help:Toolforge/Database - Wikitech</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!1,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"47cc06e9-d3fa-4eaf-adf5-11ef6f2cfbcd","wgCSPNonce":!1,"wgCanonicalNamespace":"Help","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":12,"wgPageName":"Help:Toolforge/Database","wgTitle":"Toolforge/Database","wgCurRevisionId":1885201,"wgRevisionId":1885201,"wgArticleId":18678,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Toolforge"],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"Help:Toolforge/Database","wgRelevantArticleId":18678,"wgIsProbablyEditable":!1,"wgRelevantPageIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],
+"wgMediaViewerOnClick":!0,"wgMediaViewerEnabledByDefault":!0,"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","pageVariantFallbacks":"en"},"wgMFDisplayWikibaseDescriptions":{"search":!0,"nearby":!0,"watchlist":!0,"tagline":!1},"wgWMESchemaEditAttemptStepOversample":!1,"wgULSCurrentAutonym":"English","wgEditSubmitButtonLabelPublish":!0,"wgULSPosition":"personal"};RLSTATE={"ext.gadget.enwp-boxes":"ready","site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","ext.inputBox.styles":"ready","mediawiki.ui.input":"ready","mediawiki.ui.checkbox":"ready","ext.pygments":"ready","ext.cite.styles":"ready","skins.vector.styles.legacy":"ready","jquery.makeCollapsible.styles":"ready","mediawiki.ui.button":"ready","mediawiki.toc.styles":"ready","ext.visualEditor.desktopArticleTarget.noscript":"ready","ext.uls.pt":"ready"};RLPAGEMODULES=["ext.cite.ux-enhancements","site","mediawiki.page.ready","jquery.makeCollapsible",
+"mediawiki.toc","skins.vector.legacy.js","mmv.head","mmv.bootstrap.autostart","ext.visualEditor.desktopArticleTarget.init","ext.visualEditor.targetLoader","ext.eventLogging","ext.wikimediaEvents","ext.uls.compactlinks","ext.uls.interface"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+});});</script>
+<link rel="stylesheet" href="/w/load.php?lang=en&amp;modules=ext.cite.styles%7Cext.inputBox.styles%7Cext.pygments%7Cext.uls.pt%7Cext.visualEditor.desktopArticleTarget.noscript%7Cjquery.makeCollapsible.styles%7Cmediawiki.toc.styles%7Cmediawiki.ui.button%2Ccheckbox%2Cinput%7Cskins.vector.styles.legacy&amp;only=styles&amp;skin=vector"/>
+<script async="" src="/w/load.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="/w/load.php?lang=en&amp;modules=ext.gadget.enwp-boxes&amp;only=styles&amp;skin=vector"/>
+<link rel="stylesheet" href="/w/load.php?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.36.0-wmf.16"/>
+<meta name="referrer" content="origin"/>
+<meta name="referrer" content="origin-when-crossorigin"/>
+<meta name="referrer" content="origin-when-cross-origin"/>
+<link rel="preconnect" href="//upload.wikimedia.org"/>
+<link rel="shortcut icon" href="/static/favicon/wikitech.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Wikitech (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="//wikitech.wikimedia.org/w/api.php?action=rsd"/>
+<link rel="license" href="//creativecommons.org/licenses/by-sa/3.0/"/>
+<link rel="canonical" href="https://wikitech.wikimedia.org/wiki/Help:Toolforge/Database"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-12 ns-subject page-Help_Toolforge_Database rootpage-Help_Toolforge skin-vector action-view skin-vector-legacy"><div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body" role="main">
+	<a id="top"></a>
+	<div id="siteNotice" class="mw-body-content"></div>
+	<div class="mw-indicators mw-body-content">
+	</div>
+	<h1 id="firstHeading" class="firstHeading" lang="en">Help:Toolforge/Database</h1>
+	<div id="bodyContent" class="mw-body-content">
+		<div id="siteSub" class="noprint">From Wikitech</div>
+		<div id="contentSub"><span class="subpages">&lt; <a href="/wiki/Help:Toolforge" title="Help:Toolforge">Help:Toolforge</a></span></div>
+		<div id="contentSub2"></div>
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="#mw-head">Jump to navigation</a>
+		<a class="mw-jump-link" href="#searchInput">Jump to search</a>
+		<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="mw-parser-output"><table class="vertical-navbox nowraplinks" cellspacing="5" style="float: right; clear: right; background-color: #f9f9f9; border: 1px solid #aaa; width:22em; margin: 0 0 1em 1em; padding: 0.2em; border-spacing: 0.4em 0; text-align: center; line-height: 1.4em; font-size: 88%; background: white; padding:10px; padding-right:13px; margin:5px 0 5px 12px; width: 350px;" cellpadding="0"><tbody><tr>
+<th class="" style="padding: 0.2em 0.4em 0.2em; font-size: 145%; line-height: 1.2em;"><a href="/wiki/Portal:Toolforge" title="Portal:Toolforge">Toolforge</a></th>
+</tr><tr>
+<td class="" style="padding: 0.2em 0 0.4em;"><div class="center"><div class="floatnone"><a href="/wiki/File:Toolforge_logo.svg" class="image"><img alt="Toolforge logo.svg" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Toolforge_logo.svg/50px-Toolforge_logo.svg.png" decoding="async" width="50" height="50" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Toolforge_logo.svg/75px-Toolforge_logo.svg.png 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Toolforge_logo.svg/100px-Toolforge_logo.svg.png 2x" data-file-width="180" data-file-height="180" /></a></div></div></td>
+</tr><tr>
+<td class="" style="padding-top: 0.2em; padding-bottom: 0.2em; text-align: left; font-size: 14px; padding: .5em; line-height: 1.5;;">
+<div style="font-size: 85%;">
+<div class="mw-inputbox-centered" style=""><form name="searchbox" class="searchbox" action="/wiki/Special:Search"><input class="mw-searchInput searchboxInput mw-ui-input mw-ui-input-inline" name="search" type="text" value="" placeholder="Search Toolforge Documentation" size="35" dir="ltr" /><input type="hidden" value="&quot;Help:Tool&quot;" name="prefix" /> <input type="submit" name="fulltext" class="mw-ui-button" value="Search" /><input type="hidden" value="Search" name="fulltext" /></form></div>
+</div></td>
+</tr><tr>
+<td class="" style="padding-bottom: 0.2em; text-align: left; font-size: 14px; padding: .5em; line-height: 1.5;;">
+<ul><li><a href="/wiki/Help:Toolforge" title="Help:Toolforge">Toolforge technical documentation</a></li>
+<li><a href="/wiki/Portal:Toolforge/Admin" title="Portal:Toolforge/Admin">Toolforge administrator documentation</a></li>
+<li><a href="/wiki/Help:Cloud_Services_communication" title="Help:Cloud Services communication">Help and communication</a></li>
+<li><a href="/wiki/Category:Toolforge_tools" title="Category:Toolforge tools">List of tools</a></li>
+<li><a href="/wiki/Help:Toolforge/Terms_and_conditions" title="Help:Toolforge/Terms and conditions">Terms and conditions</a></li>
+<li><a href="/wiki/Help:Glossary" title="Help:Glossary">Glossary</a></li>
+<li><a href="/wiki/Technical_documentation_checklist_and_templates" title="Technical documentation checklist and templates">Technical documentation resources</a></li></ul></td>
+</tr><tr>
+<td class="" style="padding-bottom: 0.2em; text-align: left; font-size: 14px; padding: .5em; line-height: 1.5;;">
+<dl><dt>Getting started</dt></dl>
+<ul><li><a href="/wiki/Help:At_a_glance:_Cloud_VPS_and_Toolforge" title="Help:At a glance: Cloud VPS and Toolforge">Cloud VPS and Toolforge at a glance</a></li>
+<li><a href="/wiki/Portal:Toolforge/About_Toolforge" title="Portal:Toolforge/About Toolforge">About Toolforge</a></li>
+<li><a href="/wiki/Portal:Toolforge/Quickstart" title="Portal:Toolforge/Quickstart">Toolforge quickstart guide</a></li>
+<li><a href="/wiki/Help:Toolforge/How_to" title="Help:Toolforge/How to">How-tos, tutorials and walkthroughs</a></li>
+<li><a href="/wiki/Help:Create_a_Wikimedia_developer_account" title="Help:Create a Wikimedia developer account">Create a Wikimedia developer account</a></li>
+<li><a href="/wiki/Help:Access_to_Toolforge_instances_with_PuTTY_and_WinSCP" title="Help:Access to Toolforge instances with PuTTY and WinSCP">Access Toolforge instances with PuTTY and WinSCP</a></li>
+<li><a href="/wiki/Help:Troubleshooting_Toolforge" title="Help:Troubleshooting Toolforge">Troubleshooting Toolforge</a></li></ul></td>
+</tr><tr>
+<td class="" style="padding-bottom: 0.2em; text-align: left; font-size: 14px; padding: .5em; line-height: 1.5;;">
+<dl><dt>Developing tools</dt></dl>
+<ul><li><a href="/wiki/Portal:Toolforge/Tool_Accounts" title="Portal:Toolforge/Tool Accounts">Tool accounts</a></li>
+<li><a href="/wiki/Help:Toolforge/Developing_successful_tools" title="Help:Toolforge/Developing successful tools">Developing successful tools</a></li>
+<li><a href="/wiki/Help:Toolforge/Java" title="Help:Toolforge/Java">Develop tools in Java</a></li>
+<li><a href="/wiki/Help:Toolforge/Mono" title="Help:Toolforge/Mono">Develop tools in Mono/.NET</a></li>
+<li><a href="/wiki/Help:Toolforge/Python" title="Help:Toolforge/Python">Develop tools in Python</a></li>
+<li><a href="/wiki/Help:Toolforge/Pywikibot" title="Help:Toolforge/Pywikibot">Develop tools using Pywikibot framework</a></li>
+<li><a href="/wiki/Help:Toolforge/Web" title="Help:Toolforge/Web">Web servers for tools</a></li>
+<li><a href="/wiki/Help:Toolforge/Grid" title="Help:Toolforge/Grid">Grid engine</a></li>
+<li><a href="/wiki/Help:Toolforge/Kubernetes" title="Help:Toolforge/Kubernetes">Kubernetes</a></li></ul></td>
+</tr><tr>
+<td class="" style="padding-bottom: 0.2em; text-align: left; font-size: 14px; padding: .5em; line-height: 1.5;;">
+<dl><dt>Additional documentation</dt></dl>
+<ul><li><a href="/wiki/Help:Toolforge/Version_Control_in_Toolforge" title="Help:Toolforge/Version Control in Toolforge">Version control in Toolforge</a></li>
+<li><a href="/wiki/Help:Toolforge/Elasticsearch" title="Help:Toolforge/Elasticsearch">Elasticsearch for Toolforge</a></li>
+<li><a href="/wiki/Help:Toolforge/Redis_for_Toolforge" title="Help:Toolforge/Redis for Toolforge">Redis for Toolforge</a></li>
+<li><a href="/wiki/Help:Toolforge/Dumps" title="Help:Toolforge/Dumps">Dumps and Toolforge</a></li>
+<li><a class="mw-selflink selflink">Database</a></li></ul></td>
+</tr><tr>
+<td style="text-align: right; font-size: 115%;"><span class="noprint plainlinks navbar" style=""><span style="white-space:nowrap;word-spacing:-.12em;"><a href="/wiki/Template:Toolforge_nav" title="Template:Toolforge nav"><span style="" title="View this template">v</span></a><span style="">&#32;<b>&#183;</b>&#32;</span><a href="/w/index.php?title=Template_talk:Toolforge_nav&amp;action=edit&amp;redlink=1" class="new" title="Template talk:Toolforge nav (page does not exist)"><span style="" title="Discuss this template">d</span></a><span style="">&#32;<b>&#183;</b>&#32;</span><a class="external text" href="https://wikitech.wikimedia.org/w/index.php?title=Template:Toolforge_nav&amp;action=edit"><span style="" title="Edit this template">e</span></a></span></span></td>
+</tr>
+</tbody></table><div class="rellink mw-tpl-rellink">See also: <a href="/wiki/Help:MySQL_queries" title="Help:MySQL queries">Help:MySQL queries</a>&#160;and <a href="https://meta.wikimedia.org/wiki/Research:Quarry" class="extiw" title="m:Research:Quarry">m:Research:Quarry</a></div>
+<p>Tool and Tools users are granted access to replicas of the production databases. Private user data has been redacted from these replicas (some rows are elided and/or some columns are made NULL depending on the table). For most practical purposes this is identical to the production databases and sharded into clusters in much the same way.
+</p><p>Database credentials are generated on account creation and placed in a replica.my.cnf file in the home directory of both a Tool and a Tools user account. This file cannot be modified or removed by users.
+</p><p>Symlinking the access file can be practical:
+</p>
+<pre> ln -s $HOME/replica.my.cnf $HOME/.my.cnf
+</pre>
+<p><br />
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Connecting_to_the_database_replicas"><span class="tocnumber">1</span> <span class="toctext">Connecting to the database replicas</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Naming_conventions"><span class="tocnumber">1.1</span> <span class="toctext">Naming conventions</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Connection_handling_policy"><span class="tocnumber">1.2</span> <span class="toctext">Connection handling policy</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Connecting_to_the_wiki_replicas_from_other_Cloud_VPS_projects"><span class="tocnumber">1.3</span> <span class="toctext">Connecting to the wiki replicas from other Cloud VPS projects</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Connecting_to_the_database_replicas_from_your_own_computer"><span class="tocnumber">1.4</span> <span class="toctext">Connecting to the database replicas from your own computer</span></a>
+<ul>
+<li class="toclevel-3 tocsection-6"><a href="#SSH_tunneling_for_local_testing_which_makes_use_of_Wiki_Replica_databases"><span class="tocnumber">1.4.1</span> <span class="toctext">SSH tunneling for local testing which makes use of Wiki Replica databases</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-7"><a href="#TLS_connection_failures"><span class="tocnumber">1.5</span> <span class="toctext">TLS connection failures</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#Databases"><span class="tocnumber">2</span> <span class="toctext">Databases</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="#Replica_database_schema_(tables_and_indexes)"><span class="tocnumber">2.1</span> <span class="toctext">Replica database schema (tables and indexes)</span></a>
+<ul>
+<li class="toclevel-3 tocsection-10"><a href="#Stability_of_the_mediawiki_database_schema"><span class="tocnumber">2.1.1</span> <span class="toctext">Stability of the mediawiki database schema</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="#Tables_for_revision_or_logging_queries_involving_user_names_and_IDs"><span class="tocnumber">2.1.2</span> <span class="toctext">Tables for revision or logging queries involving user names and IDs</span></a></li>
+<li class="toclevel-3 tocsection-12"><a href="#Redacted_tables"><span class="tocnumber">2.1.3</span> <span class="toctext">Redacted tables</span></a></li>
+<li class="toclevel-3 tocsection-13"><a href="#Unused_tables"><span class="tocnumber">2.1.4</span> <span class="toctext">Unused tables</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-14"><a href="#Metadata_database"><span class="tocnumber">2.2</span> <span class="toctext">Metadata database</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#Identifying_lag"><span class="tocnumber">2.3</span> <span class="toctext">Identifying lag</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#User_databases"><span class="tocnumber">2.4</span> <span class="toctext">User databases</span></a>
+<ul>
+<li class="toclevel-3 tocsection-17"><a href="#Privileges_on_the_database"><span class="tocnumber">2.4.1</span> <span class="toctext">Privileges on the database</span></a></li>
+<li class="toclevel-3 tocsection-18"><a href="#Steps_to_create_a_user_database_on_tools.db.svc.eqiad.wmflabs"><span class="tocnumber">2.4.2</span> <span class="toctext">Steps to create a user database on tools.db.svc.eqiad.wmflabs</span></a></li>
+<li class="toclevel-3 tocsection-19"><a href="#ToolsDB_Backups_and_Replication"><span class="tocnumber">2.4.3</span> <span class="toctext">ToolsDB Backups and Replication</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-20"><a href="#Query_Limits"><span class="tocnumber">3</span> <span class="toctext">Query Limits</span></a></li>
+<li class="toclevel-1 tocsection-21"><a href="#Example_queries"><span class="tocnumber">4</span> <span class="toctext">Example queries</span></a></li>
+<li class="toclevel-1 tocsection-22"><a href="#Connecting_with..."><span class="tocnumber">5</span> <span class="toctext">Connecting with...</span></a>
+<ul>
+<li class="toclevel-2 tocsection-23"><a href="#MySQL_Workbench"><span class="tocnumber">5.1</span> <span class="toctext">MySQL Workbench</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#PGAdmin_(for_OpenStreetMap_databases)"><span class="tocnumber">5.2</span> <span class="toctext">PGAdmin (for OpenStreetMap databases)</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#Connecting_to_OSM_via_the_official_CLI_PostgreSQL"><span class="tocnumber">5.3</span> <span class="toctext">Connecting to OSM via the official CLI PostgreSQL</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="#Connecting_from_a_Servlet_in_Tomcat"><span class="tocnumber">5.4</span> <span class="toctext">Connecting from a Servlet in Tomcat</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-27"><a href="#Code_samples_for_common_languages"><span class="tocnumber">6</span> <span class="toctext">Code samples for common languages</span></a>
+<ul>
+<li class="toclevel-2 tocsection-28"><a href="#Bash"><span class="tocnumber">6.1</span> <span class="toctext">Bash</span></a></li>
+<li class="toclevel-2 tocsection-29"><a href="#C"><span class="tocnumber">6.2</span> <span class="toctext">C</span></a></li>
+<li class="toclevel-2 tocsection-30"><a href="#Perl"><span class="tocnumber">6.3</span> <span class="toctext">Perl</span></a></li>
+<li class="toclevel-2 tocsection-31"><a href="#Python"><span class="tocnumber">6.4</span> <span class="toctext">Python</span></a></li>
+<li class="toclevel-2 tocsection-32"><a href="#Python:_Django"><span class="tocnumber">6.5</span> <span class="toctext">Python: Django</span></a></li>
+<li class="toclevel-2 tocsection-33"><a href="#PHP_(using_PDO)"><span class="tocnumber">6.6</span> <span class="toctext">PHP (using PDO)</span></a></li>
+<li class="toclevel-2 tocsection-34"><a href="#PHP_(using_MySQLi)"><span class="tocnumber">6.7</span> <span class="toctext">PHP (using MySQLi)</span></a></li>
+<li class="toclevel-2 tocsection-35"><a href="#Java"><span class="tocnumber">6.8</span> <span class="toctext">Java</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-36"><a href="#See_also"><span class="tocnumber">7</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-37"><a href="#Note"><span class="tocnumber">8</span> <span class="toctext">Note</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Connecting_to_the_database_replicas">Connecting to the database replicas</span></h2>
+<p>You can connect to the database replicas (and/or the cluster where a database replica is hosted) by specifying your access credentials and the alias of the cluster and replicated database. For example:
+</p><p>To connect to the English Wikipedia replica, specify the alias of the hosting cluster (enwiki.analytics.db.svc.eqiad.wmflabs) and the alias of the database replica (enwiki_p)&#160;:
+</p>
+<pre>mysql --defaults-file=$HOME/replica.my.cnf -h enwiki.analytics.db.svc.eqiad.wmflabs enwiki_p
+</pre>
+<p>To connect to the Wikidata cluster:
+</p>
+<pre>mysql --defaults-file=$HOME/replica.my.cnf -h wikidatawiki.analytics.db.svc.eqiad.wmflabs
+</pre>
+<p>To connect to Commons cluster:
+</p>
+<pre>mysql --defaults-file=$HOME/replica.my.cnf -h commonswiki.analytics.db.svc.eqiad.wmflabs
+</pre>
+<p>There is also a shortcut for connecting to the replicas: sql &lt;dbname&gt;[_p] The _p is optional, but implicit (i.e. the sql tool will add it if absent).
+</p><p>To connect to the English Wikipedia database replica using the shortcut, simply type:
+</p>
+<pre>sql enwiki
+</pre>
+<p>To connect to ToolsDB where you can create and write to tables, type:
+</p>
+<pre>sql tools
+</pre>
+<p>This sets server to "tools.db.svc.eqiad.wmflabs" and db to "". It's equivalent to typing-
+</p>
+<pre>mysql --defaults-file=$HOME/replica.my.cnf -h tools.db.svc.eqiad.wmflabs
+</pre>
+<p><br />
+</p>
+<h3><span class="mw-headline" id="Naming_conventions">Naming conventions</span></h3>
+<p>As a convenience, each mediawiki project database (enwiki, bgwiki, etc) has an alias to the cluster it is hosted on. The alias has the form:
+</p>
+<dl><dd><b>${PROJECT}</b>.{analytics,web}.db.svc.eqiad.wmflabs</dd></dl>
+<p>where <b>${PROJECT}</b> is the internal database name of a hosted Wikimedia project. The choice of "analytics" or "web" is up to you. The analytics service name connects to Wiki Replica servers where SQL queries will be allowed to run for a longer duration, but at the cost of all queries being potentially slower. Use of the web service name should be reserved for webservices which are running queries that display to users.
+</p><p>Wikipedia project database names generally follow the format <b>${LANGUAGE_CODE}${PROJECT_FAMILY}</b>. <b>${LANGUAGE_CODE}</b> is the <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes" class="extiw" title="w:List of ISO 639-1 codes">ISO 639 two-letter code</a> for the primary content language (e.g. <code>en</code> for English, <code>es</code> for Spanish, <code>bg</code> for Bulgarian, ...). <b>${PROJECT_FAMILY}</b> is an internal label for the wiki's project family (e.g. <code>wiki</code> for Wikipedia, <code>wiktionary</code> for Wiktionary, ...). Some wikis such as Meta-Wiki have database names that do not follow this pattern (<code>metawiki</code>).
+</p>
+<table class="plainlinks plainlinks ombox ombox-notice" role="presentation"><tbody><tr><td class="mbox-image"><img alt="" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/OOjs_UI_icon_information-progressive.svg/40px-OOjs_UI_icon_information-progressive.svg.png" decoding="async" width="40" height="40" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/OOjs_UI_icon_information-progressive.svg/60px-OOjs_UI_icon_information-progressive.svg.png 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/OOjs_UI_icon_information-progressive.svg/80px-OOjs_UI_icon_information-progressive.svg.png 2x" data-file-width="20" data-file-height="20" /></td><td class="mbox-text">A <a href="https://quarry.wmflabs.org/query/4031" class="extiw" title="quarry:query/4031">full list of projects</a> is available via Quarry.</td></tr></tbody></table>
+<p>The replica database names themselves consist of the Wikimedia project name, suffixed with <code>_p</code> (an underscore, and a p), for example:
+</p>
+<dl><dd><code>enwiki_p</code> for the English Wikipedia replica</dd></dl>
+<p>In addition each cluster can be accessed by the name of its <a class="external text" href="https://noc.wikimedia.org/dbtree/">Wikimedia production shard</a> which follows the format <b>s${SHARD_NUMBER}.{analytics,web}.db.svc.eqiad.wmflabs</b> (for example, <code>s1.analytics.db.svc.eqiad.wmflabs</code> hosts the <code>enwiki_p</code> database). The shard where a particular database is located can change over time. You should only use the shard name for opening a database connection if your application requires it for specific performance reasons such as for heavily crosswiki tools which would otherwise open hundreds of database connections.
+</p>
+<table class="plainlinks plainlinks ombox ombox-content" role="presentation"><tbody><tr><td class="mbox-image"><img alt="" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/OOjs_UI_icon_notice-warning.svg/40px-OOjs_UI_icon_notice-warning.svg.png" decoding="async" width="40" height="40" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/OOjs_UI_icon_notice-warning.svg/60px-OOjs_UI_icon_notice-warning.svg.png 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/OOjs_UI_icon_notice-warning.svg/80px-OOjs_UI_icon_notice-warning.svg.png 2x" data-file-width="20" data-file-height="20" /></td><td class="mbox-text">You may find outdated documentation that uses <code>*.labsdb</code> aliases (for example <i>enwiki.labsdb</i>) to refer to the Wiki Replica databases. These service names are deprecated and have not had new wikis added since January 2018. Please update the docs or code that you find these references in to use the <i>${PROJECT}.{analytics,web}.db.svc.eqiad.wmflabs</i> naming convention.</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Connection_handling_policy">Connection handling policy</span></h3>
+<p>Usage of connection pools (maintaining open connections without them being in use), persistent connections, or any kind of connection pattern that maintains several connections open even if they are unused <b>is not permitted</b> on shared MySQL instances (Wiki Replicas and ToolsDB).
+</p><p>The memory and processing power available to the database servers is a finite resource. Each open connection to a database, even if inactive, consumes some of these resources. Given the number of potential users for the Wiki Replicas and ToolsDB, if even a relatively small percentage of users held open idle connections, the server would quickly run out of resources to allow new connections. Please close your connections as soon as you stop using them. Note that connecting interactively and being idle for a few minutes is not an issue—opening dozens of connections and maintaining them automatically open is.
+</p><p>Idle connections can and will be killed by database and system administrators when discovered. If you (for example, by connector configuration or application policy) then reopen those connections automatically and keep them idle, you will be warned to stop.
+</p>
+<h3><span class="mw-headline" id="Connecting_to_the_wiki_replicas_from_other_Cloud_VPS_projects"><span id="Connecting_to_the_database_replicas_from_other_Labs_instances"></span>Connecting to the wiki replicas from other Cloud VPS projects</span></h3>
+<p>The <code>*.{analytics,web}.db.svc.eqiad.wmflabs</code> servers should be directly accessible from other Cloud VPS projects as well as Toolforge (these are provided in DNS), but there is no automatic creation of database credential files. The easiest way to get user credentials for use in another project is to <a href="/wiki/Help:Toolforge#Creating_a_new_Tool_account" title="Help:Toolforge">create a Toolforge tool account</a> and copy its credentials to your Cloud VPS instance.
+</p>
+<h3><span class="mw-headline" id="Connecting_to_the_database_replicas_from_your_own_computer">Connecting to the database replicas from your own computer</span></h3>
+<p>You can access the database replicas from your own computer by setting up an SSH tunnel. If you use MySQL Workbench, you can find a detailed description for that application <a href="#MySQL_Workbench">below</a>.
+</p><p>Tunneling is a built-in capability of ssh. It allows creating a listening TCP port on your local computer that will transparently forward all connections to a given host and port on the remote side of the ssh connection. The destination host and port do not need to be the host that you are connecting to with your ssh session, but they do need to be reachable from the remote host.
+</p><p>In the general case, need to add a port forwarding in your ssh tool. Windows 10 has OpenSSH included and the <code>ssh</code> command can be used. On older versions of Windows, you can use the tool <a href="https://en.wikipedia.org/wiki/PuTTY" class="extiw" title="w:PuTTY">PuTTY</a> by add in <i>Connection → SSH → Tunnels</i> the following settings.
+</p><p>In Linux or Windows 10, you can add the option <code>-L $LOCAL_PORT:$REMOTE_HOST:$REMOTE_PORT</code> to your <code>ssh</code> call, e. g.:
+</p>
+<div class="mw-highlight mw-highlight-lang-shell-session mw-content-ltr" dir="ltr"><pre><span></span><span class="gp">$</span> ssh -L <span class="m">4711</span>:enwiki.analytics.db.svc.eqiad.wmflabs:3306 login.toolforge.org
+</pre></div>
+<p>This will set up a tunnel so that connections to port <b>4711</b> on your own computer will be relayed to the <b>enwiki.analytics.db.svc.eqiad.wmflabs</b> database replica's MySQL server on port <b>3306</b>. This tunnel will continue to work as long as the SSH session is open.
+</p><p>The <code>mysql</code> command line to connect using the tunnel from the example above would look something like:
+</p>
+<div class="mw-highlight mw-highlight-lang-shell-session mw-content-ltr" dir="ltr"><pre><span></span><span class="gp">$</span> mysql --user<span class="o">=</span><span class="nv">$USER_FROM_REPLICA</span>.MY.CNF --host<span class="o">=</span><span class="m">127</span>.0.0.1 --port<span class="o">=</span><span class="m">4711</span> --password enwiki_p
+</pre></div>
+<p>The <b>user</b> and <b>password</b> values needed can be found in the <code>$HOME/replica.my.cnf</code> credentials file for your Toolforge user account or a tool that you have access to.
+</p><p>Note that you need to explicitly use the <code>127.0.0.1</code> IP address; using <code>localhost</code> instead will give an "Access denied" error. 
+</p>
+<h4><span class="mw-headline" id="SSH_tunneling_for_local_testing_which_makes_use_of_Wiki_Replica_databases">SSH tunneling for local testing which makes use of Wiki Replica databases</span></h4>
+<p><span id="Steps_to_setup_SSH_tunneling_for_testing_a_tool_labs_application_which_makes_use_of_tool_labs_databases_on_your_own_computer"></span>
+</p>
+<ol><li>Setup SSH tunnels: <code>ssh -N yourusername@dev.toolforge.org&#160;-L 3306:enwiki.analytics.db.svc.eqiad.wmflabs:3306</code>
+<ul><li><code>-N</code> prevents ssh from opening an interactive shell. This connection will only be useful for port forwarding.</li>
+<li>The first port is the listening port on your machine and the second one is on the remote server. 3306 is the default port for MySQL.</li>
+<li>For multiple database connections, add additional <code>-L $LOCAL_PORT:$REMOTE_HOST:$REMOTE_PORT</code> sections to the same command or open additional ssh connections.</li>
+<li>If you need to connect to more than one Wiki Replica database server, each database will need a different listening port on your machine (e.g. 3307, 3308, 3309, ...). Change the associated php/python connect command to send requests to that port instead of the default 3306.</li></ul></li>
+<li>(optional) Edit your <code>/etc/hosts</code> file to add something like <code>127.0.0.1 enwiki.analytics.db.svc.eqiad.wmflabs</code> for each of the databases you're connecting to.</li>
+<li>You might need to copy over the replica.my.cnf file to your local machine for this to work.</li></ol>
+<h3><span class="mw-headline" id="TLS_connection_failures">TLS connection failures</span></h3>
+<div style="float:right; clear:right; border:1px solid #999; border-radius: .5em; background-color:#eee; background-image: linear-gradient(#ddd, #eee); font-size:85%; text-align:center; padding:0.5em; margin-left:1em; margin-bottom:1em; width:12em" class="plainlinks mw-trackedTemplate">Tracked in <a href="https://phabricator.wikimedia.org/" class="extiw" title="phabricator:">Phabricator</a><br /><b><a href="https://phabricator.wikimedia.org/T182892" class="extiw" title="phabricator:T182892"><span class="trakfab-T182892">Task T182892</span></a></b>
+<span style="color:green; font-weight:bold; text-transform:uppercase">Resolved</span></div>
+<p>Some client libraries may attempt to enable <a href="https://en.wikipedia.org/wiki/Transport_Layer_Security" class="extiw" title="w:Transport Layer Security">TLS</a> encryption when connecting to the Wiki Replica or ToolsDB databases. Depending on the backing server's configuration, this may either fail silently because TLS is not supported at all, or it may fail with authentication or decryption errors because TLS is partially enabled. In this second case, the problem is caused by MariaDB servers which <i>do</i> support TLS encryption but are using self-signed certificates which are not available to the client and do not match the service names used for connections from Cloud Services hosts.
+</p><p>The "fix" for these failures is to configure your client to avoid TLS encryption. How to do this will vary based on the client libraries in use, but should be something that you can find an answer for by searching the Internet/Stack Overflow/library documentation.
+</p>
+<h2><span class="mw-headline" id="Databases">Databases</span></h2>
+<div class="rellink mw-tpl-rellink">See also: <a href="/wiki/Help:MySQL_queries" title="Help:MySQL queries">Help:MySQL queries</a></div>
+<h3><span id="Replica_database_schema_.28tables_and_indexes.29"></span><span class="mw-headline" id="Replica_database_schema_(tables_and_indexes)">Replica database schema (tables and indexes)</span></h3>
+<p>The database replicas for the various Wikimedia projects follow the standard MediaWiki database schema <a href="https://www.mediawiki.org/wiki/Manual:Database_layout" class="extiw" title="mw:Manual:Database layout">described on mediawiki.org</a> and in <a href="https://phabricator.wikimedia.org/diffusion/MW/browse/master/maintenance/tables.sql" class="extiw" title="phab:diffusion/MW/browse/master/maintenance/tables.sql">the MediaWiki git repository</a>.
+</p><p>Many of the indexes on these tables are actually compound indexes designed to optimize the runtime performance of the MediaWiki software rather than to be convenient for ad hoc queries. For example, a naive query by <code>page_title</code> such at <code>SELECT * FROM page WHERE page_title = 'NOFX';</code> will be slow because the index which includes <code>page_title</code> is a compound index with <code>page_namespace</code>. Adding <code>page_namespace</code> to the <code>WHERE</code> clause will improve the query speed dramatically: <code>SELECT * FROM page WHERE page_namespace = 0 AND page_title = 'NOFX';</code>
+</p>
+<h4><span class="mw-headline" id="Stability_of_the_mediawiki_database_schema">Stability of the mediawiki database schema</span></h4>
+<p><a href="https://phabricator.wikimedia.org/diffusion/MW/browse/master/maintenance/tables.sql" class="extiw" title="phab:diffusion/MW/browse/master/maintenance/tables.sql">maintenance/tables.sql</a> shows the HEAD of the mediawiki changes. Extra tables may be available due to additional extensions setup in production. Also some tables may have been redacted or filtered for containing private data such as the user passwords or private ip addresses. Aside from that, while we try to synchronize production with development HEAD, changes to the database structure may be applied in advance (or more commonly) lag behin its publication. The reason for this is that schema changes are being continuously applied to production databases, and due to the amout of data, it may take a few hours to a few months (in the case of more complex cases) to be finalized.
+</p><p>Core tables, such as revision, page, user, recentchanges rarely change, but <b>cloud maintainers cannot guarantee they will never change</b>, as they have to follow the production changes. While we are happy for people to setup scripts and tools on top of the database copies (wikireplicas) expect the schema to change every now and then. If you cannot do small tweaks from time to time to adapt to the latest schema changes, using the API instead of the database internals is suggested, as <b>API changes have more guarantees of stability and a proper lifecycle and deprecation policy. That is not true for mediawiki database internals</b>, although compatibility views can sometimes be setup to require only minimal changes.
+</p>
+<h4><span class="mw-headline" id="Tables_for_revision_or_logging_queries_involving_user_names_and_IDs">Tables for revision or logging queries involving user names and IDs</span></h4>
+<p>The <code>revision</code> and <code>logging</code> tables do not have indexes on user columns. <a class="external text" href="https://lists.wikimedia.org/pipermail/labs-l/2013-September/001607.html">In an email</a>, one of the system administrators pointed out that this is because "those values are conditionally nulled when supressed" (see also <a href="https://phabricator.wikimedia.org/T68786" class="extiw" title="phab:T68786">phab:T68786</a> for some more detail). One has to instead use the corresponding <code>revision_userindex</code> or <code>logging_userindex</code> for these types of queries. On those views, rows where the column would have otherwise been nulled are elided; this allows the indexes to be usable.
+</p><p>Example query that will use the appropriate index (in this case on the <code>rev_actor</code> column)
+</p>
+<pre>SELECT rev_id, rev_timestamp FROM revision_userindex WHERE rev_actor=1234;
+</pre>
+<p>Example query that <i>fails</i> to use an index because the table doesn't have them:
+</p>
+<pre>SELECT rev_id, rev_timestamp FROM revision WHERE rev_actor=1234;
+</pre>
+<p>You should use the indexes so queries will go faster (performance).
+</p>
+<h4><span class="mw-headline" id="Redacted_tables">Redacted tables</span></h4>
+<p>The majority of the <a href="https://www.mediawiki.org/wiki/Manual:User_properties_table" class="extiw" title="mw:Manual:User properties table">user_properties table</a> has been deemed sensitive and removed from the Wiki Replica databases. Only the <code>disableemail</code>, <code>fancysig</code>, <code>gender</code>, and <code>nickname</code> properties are available.
+</p>
+<h4><span class="mw-headline" id="Unused_tables">Unused tables</span></h4>
+<p>Some of the standard MediaWiki tables that are in use on Wikimedia wikis, are not available. The following tables are missing or empty:
+</p>
+<ul><li><code>interwiki</code> (<a href="https://phabricator.wikimedia.org/T103589" class="extiw" title="phab:T103589">T103589</a>)</li>
+<li><a href="https://www.mediawiki.org/wiki/Manual:text_table" class="extiw" title="mw:Manual:text table"><code>text</code> table</a> (<a href="https://www.mediawiki.org/wiki/Manual:MediaWiki_architecture#Database_and_text_storage" class="extiw" title="mw:Manual:MediaWiki architecture">mw:Manual:MediaWiki architecture#Database and text storage</a>): Users can use the <a href="https://www.mediawiki.org/wiki/API:Query#Sample_query" class="extiw" title="mw:API:Query">API</a>, or <a href="/wiki/Help:Toolforge#Dumps" title="Help:Toolforge">dumps</a> to access page contents. Access to search indexes of page content is tracked at <a href="https://phabricator.wikimedia.org/T109715" class="extiw" title="phab:T109715">phab:T109715</a>.</li></ul>
+<h3><span class="mw-headline" id="Metadata_database">Metadata database</span></h3>
+<div style="float:right; clear:right; border:1px solid #999; border-radius: .5em; background-color:#eee; background-image: linear-gradient(#ddd, #eee); font-size:85%; text-align:center; padding:0.5em; margin-left:1em; margin-bottom:1em; width:12em" class="plainlinks mw-trackedTemplate">Tracked in <a href="https://phabricator.wikimedia.org/" class="extiw" title="phabricator:">Phabricator</a><br /><b><a href="https://phabricator.wikimedia.org/T50626" class="extiw" title="phabricator:T50626"><span class="trakfab-T50626">Task T50626</span></a></b>
+<span style="color:green; font-weight:bold; text-transform:uppercase">Resolved</span></div>
+<p>There is a table with automatically maintained meta information about the replicated databases: meta_p.wiki. See <a rel="nofollow" class="external text" href="http://quarry.wmflabs.org/query/4031">Quarry #4031</a> for an up-to-date version.
+</p>
+<pre>MariaDB [meta_p]&gt; DESCRIBE wiki;
+</pre>
+<pre>+------------------+--------------+------+-----+---------+-------+
+| Field            | Type         | Null | Key | Default | Extra |
++------------------+--------------+------+-----+---------+-------+
+| dbname           | varchar(32)  | NO   | PRI | NULL    |       |
+| lang             | varchar(12)  | NO   |     | en      |       |
+| name             | text         | YES  |     | NULL    |       |
+| family           | text         | YES  |     | NULL    |       |
+| url              | text         | YES  |     | NULL    |       |
+| size             | decimal(1,0) | NO   |     | 1       |       |
+| slice            | text         | NO   |     | NULL    |       |
+| is_closed        | decimal(1,0) | NO   |     | 0       |       |
+| has_echo         | decimal(1,0) | NO   |     | 0       |       |
+| has_flaggedrevs  | decimal(1,0) | NO   |     | 0       |       |
+| has_visualeditor | decimal(1,0) | NO   |     | 0       |       |
+| has_wikidata     | decimal(1,0) | NO   |     | 0       |       |
+| is_sensitive     | decimal(1,0) | NO   |     | 0       |       |
++------------------+--------------+------+-----+---------+-------+
+</pre>
+<p>Example data:
+</p>
+<pre>MariaDB [nlwiki_p]&gt; select * from meta_p.wiki limit 1 \G
+</pre>
+<pre> *************************** 1. row ***************************
+          dbname: aawiki
+            lang: aa
+            name: Wikipedia
+          family: wikipedia
+             url: http://aa.wikipedia.org
+            size: 1
+           slice: s3.labsdb
+       is_closed: 1
+        has_echo: 1
+ has_flaggedrevs: 0
+has_visualeditor: 1
+    has_wikidata: 1
+    is_sensitive: 0
+</pre>
+<h3><span class="mw-headline" id="Identifying_lag">Identifying lag</span></h3>
+<p>If there is a network/Wiki Replica db infrastructure problem, production problem, maintenance (scheduled or unscheduled), excessive load or production or user's queries blocking the replication process, the Wiki Replicas can "lag" behind the production databases.
+</p><p>To identify lag, see <a href="https://iw.toolforge.org/replag/" class="extiw" title="toolforge:replag/">the replag tool</a> or execute yourself on the database host you are connected to:
+</p>
+<pre>(u3518@enwiki.analytics.db.svc.eqiad.wmflabs) [heartbeat_p]&gt; SELECT * FROM heartbeat;
++-------+----------------------------+--------+
+| shard | last_updated               | lag    |
++-------+----------------------------+--------+
+| s1    | 2018-01-09T22:47:05.001180 | 0.0000 |
+| s2    | 2018-01-09T22:47:05.001190 | 0.0000 |
+| s3    | 2018-01-09T22:47:05.001290 | 0.0000 |
+| s4    | 2018-01-09T22:47:05.000570 | 0.0000 |
+| s5    | 2018-01-09T22:47:05.000670 | 0.0000 |
+| s6    | 2018-01-09T22:47:05.000760 | 0.0000 |
+| s7    | 2018-01-09T22:47:05.000690 | 0.0000 |
+| s8    | 2018-01-09T22:47:05.000600 | 0.0000 |
++-------+----------------------------+--------+
+8 rows in set (0.00 sec)
+</pre>
+<p>This table is based on the tool <a rel="nofollow" class="external text" href="https://www.percona.com/doc/percona-toolkit/2.2/pt-heartbeat.html">pt-heartbeat</a>, not on SHOW MASTER STATUS, producing very accurate results, even if replication is broken, and directly comparing it to the original master, and not the replicas's direct master.
+</p>
+<ul><li><b>shard</b>: s1-8. Each of the production masters. The wiki distribution can be seen at: <a class="external free" href="https://noc.wikimedia.org/db.php">https://noc.wikimedia.org/db.php</a></li>
+<li><b>last_updated</b>: Every 1 second, a row in the master is written with the date local to the master. Here you have its value, once replicated. As it is updated every 1 second, it has a measuring error of [0, 1+] seconds.</li>
+<li><b>lag</b>: The difference between the current date and the last_updated column (<code>timestampdiff(MICROSECOND,`heartbeat`.`heartbeat`.`ts`,utc_timestamp())/1000000.0</code>). Again note that updates to this table only happen every second (it can vary on production), so most decimals are meaningless.</li></ul>
+<p>To directly query the replication lag for a particular wiki, use requests like:
+</p>
+<pre>MariaDB [fawiki_p]&gt; SELECT lag FROM heartbeat_p.heartbeat JOIN meta_p.wiki ON shard = SUBSTRING_INDEX(slice, ".", 1) WHERE dbname = 'fawiki';
++------+
+| lag  |
++------+
+|    0 |
++------+
+1 row in set (0.09 sec)
+</pre>
+<p>Please note that some seconds or a few minutes of lag is considered normal, due to the filtering process and the hops done before reaching the public hosts.
+</p>
+<h3><span class="mw-headline" id="User_databases">User databases</span></h3>
+<p>User-created databases can be created on a shared server: <code>tools.db.svc.eqiad.wmflabs</code>. Database names must start with the name of the credential user followed by <i>two underscores</i> and then the name of the database: <b>&lt;credentialUser&gt;__&lt;DBName&gt;</b> (e.g. "s51234__mydb").
+</p><p>The credential user is not your user name. It can be found in your $HOME/replica.my.cnf file. The name of the credential user looks something like 'u1234' for a user and 's51234' for a tool account. You can also find the name of the credential user using a live database connection:
+</p>
+<div class="mw-highlight mw-highlight-lang-sql mw-content-ltr" dir="ltr"><pre><span></span><span class="k">SELECT</span> <span class="n">SUBSTRING_INDEX</span><span class="p">(</span><span class="k">CURRENT_USER</span><span class="p">(),</span> <span class="s1">&#39;@&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</pre></div>
+<h4><span class="mw-headline" id="Privileges_on_the_database">Privileges on the database</span></h4>
+<p>Users have all privileges and have access to all grant options on their databases. Database names ending with <code>_p</code> are granted read access for everyone. Please create a <a class="external text" href="https://phabricator.wikimedia.org/maniphest/task/create/">ticket</a> if you need more fine-grained permissions, like sharing a database only between 2 users, or other special permissions.
+</p>
+<h4><span class="mw-headline" id="Steps_to_create_a_user_database_on_tools.db.svc.eqiad.wmflabs">Steps to create a user database on tools.db.svc.eqiad.wmflabs</span></h4>
+<p>To create a database on <code>tools.db.svc.eqiad.wmflabs</code>:
+</p>
+<ol><li>Become your tool account. <pre>maintainer@tools-login:~$ become toolaccount</pre></li>
+<li>Connect to tools.db.svc.eqiad.wmflabs with the replica.my.cnf credentials: <pre>mysql --defaults-file=$HOME/replica.my.cnf -h tools.db.svc.eqiad.wmflabs</pre> You could also just type: <pre>sql tools</pre></li>
+<li>In the mysql console, create a new database (where CREDENTIALUSER is your credentials user, which can be found in your ~/replica.my.cnf file, and DBNAME the name you want to give to your database. Note that there are 2 underscores between CREDENTIALUSER and DBNAME): <pre>MariaDB [(none)]&gt; CREATE DATABASE CREDENTIALUSER__DBNAME;</pre></li></ol>
+<p>You can then connect to your database using:
+</p>
+<pre>mysql --defaults-file=$HOME/replica.my.cnf -h tools.db.svc.eqiad.wmflabs CREDENTIALUSER__DBNAME
+</pre>
+<p>Or:
+</p>
+<pre>$ sql tools
+MariaDB [(none)]&gt; USE CREDENTIALUSER__DBNAME;
+</pre>
+<p><b>Example</b>
+</p><p>Assuming that your tool account is called "mytool", this is what it would look like:
+</p>
+<pre>maintainer@tools-login:~$ become mytool
+tools.mytool@tools-login:~$ mysql --defaults-file=$HOME/replica.my.cnf -h tools.db.svc.eqiad.wmflabs
+MariaDB [(none)]&gt; select substring_index(current_user(), '@', 1) as uname;
++---------------+
+| uname         |
++---------------+
+| u123something |
++---------------+
+1 row in set (0.00 sec)
+MariaDB [(none)]&gt; create database u123something__wiki;
+</pre>
+<table cellspacing="0" cellpadding="0" border="0" style="background: transparent;"><tbody><tr><td nowrap="nowrap" valign="top"><span style="position: relative; top: -2px;"><img alt="Warning" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Caution_sign_used_on_roads_pn.svg/18px-Caution_sign_used_on_roads_pn.svg.png" decoding="async" title="Warning" width="18" height="15" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Caution_sign_used_on_roads_pn.svg/27px-Caution_sign_used_on_roads_pn.svg.png 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Caution_sign_used_on_roads_pn.svg/36px-Caution_sign_used_on_roads_pn.svg.png 2x" data-file-width="600" data-file-height="500" /></span> <b>Caution</b>: </td><td valign="top" style="padding-left:0.5em;">The legacy <code>tools-db</code> service name was deprecated in September 2017 and removed in May 2019. Use <i>tools.db.svc.eqiad.wmflabs</i> instead.</td></tr></tbody></table><p><b>Note</b>: Some projects like <code>python-Django</code> can throw an exception like <code>MySQLdb._exceptions.OperationalError: (1709, 'Index column size too large. The maximum column size is 767 bytes.')</code> when migrated using the setup above. This can be fixed by altering the database charset to <code>utf-8</code>in most cases. To avoid this, create the database using the following command instead to specify the charset: </p><pre>MariaDB [(none)]&gt; CREATE DATABASE CREDENTIALUSER__DBNAME CHARACTER SET utf8; </pre>
+<h4><span class="mw-headline" id="ToolsDB_Backups_and_Replication">ToolsDB Backups and Replication</span></h4>
+<p>We maintain two copies of the user and tool databases in ToolsDB, with a MySQL master-slave replication setup.
+However, we don't do offline backups of any of the databases in ToolsDB.
+ToolsDB users can backup their data using <a rel="nofollow" class="external text" href="https://mariadb.com/kb/en/mariadb/mysqldump/">mysqldump</a> if necessary:
+</p>
+<div class="mw-highlight mw-highlight-lang-shell mw-content-ltr" dir="ltr"><pre><span></span><span class="nb">umask</span> o-r <span class="c1"># dump should not be public (unless the database is)</span>
+mysqldump --defaults-file<span class="o">=</span>~/replica.my.cnf --host<span class="o">=</span>tools.db.svc.eqiad.wmflabs credentialUser__DBName &gt; ~/DBname-<span class="k">$(</span>date -I<span class="k">)</span>.sql
+<span class="nb">umask</span> <span class="m">0022</span> <span class="c1"># restore default umask</span>
+</pre></div>
+<p>Note that we don't recommend storing backups permanently on NFS (/data/project, /home, or /data/scratch on Toolforge) or on any other Cloud VPS hosted drive. True backups should be kept offsite.
+</p><p>There are some ToolsDB databases which are <b>not</b> replicated for various reasons including size and access patterns:
+</p>
+<ul><li>s51412__data</li>
+<li>s51071__templatetiger_p</li>
+<li>s52721__pagecount_stats_p</li>
+<li>s51290__dpl_p</li></ul>
+<p>Users were warned about this particularity and details can be seen at <a href="https://phabricator.wikimedia.org/T127164" class="extiw" title="phabricator:T127164">task T127164</a>.
+</p>
+<h2><span class="mw-headline" id="Query_Limits">Query Limits</span></h2>
+<p>This information is directed towards the new wikireplica services.
+</p><p>Since MariaDB 10.1 (the version used on tools and the new wikireplicas), one can use <a rel="nofollow" class="external text" href="https://mariadb.com/kb/en/library/server-system-variables/#max_statement_time">max_statement_time</a> (unit is seconds, it allows decimals)&#160;:
+</p>
+<pre>SET max_statement_time = 300;
+</pre>
+<p>And all subsequent queries on the same connection will be killed if they run for longer than the given time.
+</p><p>For example:
+</p>
+<pre>mariadb[(none)]&gt; SET max_statement_time = 10;
+Query OK, 0 rows affected (0.00 sec)
+
+mariadb[(none)]&gt; SELECT sleep(20);
++-----------+
+| sleep(20) |
++-----------+
+|         1 |
++-----------+
+1 row in set (10.00 sec)
+</pre>
+<p>It works on <a rel="nofollow" class="external text" href="https://quarry.wmflabs.org/query/22003">Quarry</a>, too!
+</p><p>
+You can also set limits with a single SQL query. For example:</p><div class="mw-highlight mw-highlight-lang-sql mw-content-ltr" dir="ltr"><pre><span></span><span class="k">SET</span> <span class="k">STATEMENT</span> <span class="n">max_statement_time</span> <span class="o">=</span> <span class="mi">300</span> <span class="k">FOR</span>
+<span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="n">rev_id</span><span class="p">)</span> <span class="k">FROM</span> <span class="n">revision_userindex</span>
+<span class="k">INNER</span> <span class="k">JOIN</span> <span class="n">actor</span>
+ <span class="k">ON</span> <span class="n">rev_actor</span> <span class="o">=</span> <span class="n">actor_id</span>
+<span class="k">WHERE</span> <span class="n">actor_name</span> <span class="o">=</span> <span class="s1">&#39;Jimbo Wales&#39;</span>
+</pre></div>
+<h2><span class="mw-headline" id="Example_queries">Example queries</span></h2>
+<p>See <a href="/wiki/Help:MySQL_queries" title="Help:MySQL queries">Help:MySQL queries</a>. Add yours!
+</p>
+<h2><span class="mw-headline" id="Connecting_with...">Connecting with...</span></h2>
+<h3><span class="mw-headline" id="MySQL_Workbench">MySQL Workbench</span></h3>
+<div class="thumb tright"><div class="thumbinner" style="width:242px;"><a href="/wiki/File:Toolforge_DB_example.png" class="image"><img alt="" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Toolforge_DB_example.png/240px-Toolforge_DB_example.png" decoding="async" width="240" height="150" class="thumbimage" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Toolforge_DB_example.png/360px-Toolforge_DB_example.png 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Toolforge_DB_example.png/480px-Toolforge_DB_example.png 2x" data-file-width="1600" data-file-height="1000" /></a>  <div class="thumbcaption"><div class="magnify"><a href="/wiki/File:Toolforge_DB_example.png" class="internal" title="Enlarge"></a></div>Example configuration of MySQL Workbench for Toolforge</div></div></div>
+<p>You can connect to databases on Toolforge with <a rel="nofollow" class="external text" href="http://www.mysql.com/products/workbench/">MySQL Workbench</a> (or similar client applications) via an SSH tunnel.
+</p><p>Instructions for connecting via MySQL Workbench are as follows:
+</p>
+<ol><li>Launch MySQL Workbench on your local machine.</li>
+<li>Click the plus icon next to "MySQL Connections" in the Workbench window (or choose "Manage Connections..." from the Database menu and click the "new" button).</li>
+<li>Set Connection Method to "Standard TCP/IP over SSH"</li>
+<li>Set the following connection parameters:
+<ul><li>SSH Hostname: login.toolforge.org</li>
+<li>SSH Username: &lt;your Toolforge shell username&gt;</li>
+<li>SSH Key File: &lt;your Toolforge SSH private key file&gt;<sup id="cite_ref-1" class="reference"><a href="#cite_note-1">&#91;1&#93;</a></sup></li>
+<li>SSH Password: password/passphrase of your private key (if set) - <u>not</u> your wiki login password.</li>
+<li>MySQL Hostname: enwiki.analytics.db.svc.eqiad.wmflabs (or whatever server your database lives on)</li>
+<li>MySQL Server Port: 3306</li>
+<li>Username: &lt;your Toolforge MySQL user name (from $HOME/replica.my.cnf)&gt;</li>
+<li>Password: &lt;your Toolforge MySQL password (from $HOME/replica.my.cnf)&gt;</li>
+<li>Default Schema: &lt;name of your Toolforge MySQL database, e.g. enwiki_p&gt;</li></ul></li>
+<li>Click "OK"</li></ol>
+<p>Replica-db hostnames can be found in /etc/hosts. Bear in mind to add the _p suffix if setting a default schema for replica databases. e.g: enwiki_p.
+</p><p><a href="/wiki/File:Ambox_notice.png" class="image"><img alt="Ambox notice.png" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Ambox_notice.png/20px-Ambox_notice.png" decoding="async" width="20" height="20" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Ambox_notice.png/30px-Ambox_notice.png 1.5x, https://upload.wikimedia.org/wikipedia/commons/c/c8/Ambox_notice.png 2x" data-file-width="40" data-file-height="40" /></a> If you are using SSH keys generated with PuTTYgen (Windows users), you need to convert your private key to the 'OpenSSH' format. Load your private key in PuTTYgen, then click Conversions&#160;» Export OpenSSH key. Use this file as SSH Key File above.
+</p><p><a href="/wiki/File:Ambox_notice.png" class="image"><img alt="Ambox notice.png" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Ambox_notice.png/20px-Ambox_notice.png" decoding="async" width="20" height="20" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Ambox_notice.png/30px-Ambox_notice.png 1.5x, https://upload.wikimedia.org/wikipedia/commons/c/c8/Ambox_notice.png 2x" data-file-width="40" data-file-height="40" /></a> If you are getting errors with SSL, you can try disabling it. From the menu bar: Database -&gt; select your connection -&gt; SSL -&gt; Change "Use SSL" to "No".
+</p>
+<h3><span id="PGAdmin_.28for_OpenStreetMap_databases.29"></span><span class="mw-headline" id="PGAdmin_(for_OpenStreetMap_databases)">PGAdmin (for OpenStreetMap databases)</span></h3>
+<p>This guide assumes you already know what PGAdmin is and how to use it.
+</p>
+<table class="navbox mw-collapsible mw-collapsed" style="text-align: left; margin-top: 0.2em;">
+
+<tbody><tr>
+<td>Extended instructions
+</td></tr>
+<tr>
+<td style="border: solid 1px silver; padding: 8px; background-color: white;">
+<p><b>You need a version that support SSH Tunneling. Version 1.18 does.</b>
+</p>
+<ol><li>Launch PGAdmin</li>
+<li>Click File-&gt;Add server</li>
+<li>In the dialog that shows up, under Properties tab fill in the following
+<ul><li>Name: something arbitrary of your own, osm is a nice choice</li>
+<li>Host: osmdb.eqiad.wmnet</li>
+<li>Port: 5432 (leave it as is)</li>
+<li>Service: leave it empty</li>
+<li>Maintenance DB: gis</li>
+<li>Username: osm</li>
+<li>Password: leave it empty, uncheck the box "Store password" (it will happen anyway in the next steps)</li></ul></li>
+<li>In the same dialog switch to the SSH Tunnel tab
+<ul><li>Check Use SSH tunneling, OK the dialog about password storing becoming disabled</li>
+<li>Tunnel host: bastion-eqiad.wmflabs.org</li>
+<li>Username: your labs username</li>
+<li>Authentication: tick Identity file</li>
+<li>Identity file: Browse to the location of your private key file. (You have created one in <a href="/wiki/Nova_Resource:Tools/Help#Generating_and_uploading_an_SSH_key" class="mw-redirect" title="Nova Resource:Tools/Help">Nova_Resource:Tools/Help#Generating and uploading an SSH key</a></li>
+<li>Password/Passphrase: Enter your private key's passphrase (you do have one right?)</li>
+<li>Click OK</li>
+<li>If asked for a password just hit enter</li>
+<li>If asked for a passphrase, that is your private key's passphrase</li></ul></li></ol>
+<p>The application will autoconnect to the server. There will be a warning about server encoding, ignore it for now.
+</p><p>The tables can be found in the following hierarchy
+</p><p>Databases-&gt;gis-&gt;Schemas-&gt;public-&gt;Tables
+</p><p><a href="/wiki/File:Pgadmin_add_server.png" class="image"><img alt="Pgadmin add server.png" src="//upload.wikimedia.org/wikipedia/labs/b/bb/Pgadmin_add_server.png" decoding="async" width="1440" height="807" data-file-width="1440" data-file-height="807" /></a>
+<a href="/wiki/File:Pgadmin_add_server_properties.png" class="image"><img alt="Pgadmin add server properties.png" src="//upload.wikimedia.org/wikipedia/labs/8/84/Pgadmin_add_server_properties.png" decoding="async" width="1440" height="807" data-file-width="1440" data-file-height="807" /></a>
+<a href="/wiki/File:Pgadmin_add_server_ssh.png" class="image"><img alt="Pgadmin add server ssh.png" src="//upload.wikimedia.org/wikipedia/labs/c/c2/Pgadmin_add_server_ssh.png" decoding="async" width="1440" height="807" data-file-width="1440" data-file-height="807" /></a>
+<a href="/wiki/File:Pgadmin_tables_hierarchy.png" class="image"><img alt="Pgadmin tables hierarchy.png" src="//upload.wikimedia.org/wikipedia/labs/0/0e/Pgadmin_tables_hierarchy.png" decoding="async" width="1440" height="807" data-file-width="1440" data-file-height="807" /></a>
+</p>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Connecting_to_OSM_via_the_official_CLI_PostgreSQL">Connecting to OSM via the official CLI PostgreSQL</span></h3>
+<ol><li>SSH to login.toolforge.org or dev.toolforge,org</li>
+<li>psql -h osmdb.eqiad.wmnet -U osm gis</li>
+<li>Start querying</li></ol>
+<p><br />
+</p>
+<h3><span class="mw-headline" id="Connecting_from_a_Servlet_in_Tomcat">Connecting from a Servlet in Tomcat</span></h3>
+<ol><li>create directory "lib" in directory "public_tomcat"</li>
+<li>copy "mysql-connector-java-bin.jar" to "public_tomcat/lib"</li>
+<li><div class="mw-highlight mw-highlight-lang-java mw-content-ltr" dir="ltr"><pre><span></span><span class="kn">import</span> <span class="nn">org.apache.tomcat.jdbc.pool.DataSource</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.tomcat.jdbc.pool.PoolProperties</span><span class="p">;</span>
+
+<span class="n">String</span> <span class="n">DBURL</span> <span class="o">=</span> <span class="s">&quot;jdbc:mysql://tools.db.svc.eqiad.wmflabs:3306/&quot;</span><span class="p">;</span>
+<span class="n">String</span> <span class="n">DBDRIVER</span> <span class="o">=</span> <span class="s">&quot;com.mysql.jdbc.Driver&quot;</span><span class="p">;</span>
+<span class="n">String</span> <span class="n">DATABASE</span> <span class="o">=</span> <span class="n">DBUSER</span> <span class="o">+</span> <span class="s">&quot;__&quot;</span> <span class="o">+</span> <span class="n">PROJECT</span><span class="p">;</span>
+
+<span class="n">PoolProperties</span> <span class="n">p</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PoolProperties</span><span class="p">();</span>
+<span class="n">p</span><span class="p">.</span><span class="na">setUrl</span> <span class="p">(</span><span class="n">DBURL</span> <span class="o">+</span> <span class="n">DATABASE</span><span class="p">);</span>
+<span class="n">p</span><span class="p">.</span><span class="na">setDriverClassName</span><span class="p">(</span><span class="n">DBDRIVER</span> <span class="p">);</span>
+<span class="n">p</span><span class="p">.</span><span class="na">setUsername</span> <span class="p">(</span><span class="n">DBUSER</span> <span class="p">);</span>
+<span class="n">p</span><span class="p">.</span><span class="na">setPassword</span> <span class="p">(</span><span class="n">DBPASSWORD</span> <span class="p">);</span>
+<span class="n">p</span><span class="p">.</span><span class="na">setJdbcInterceptors</span><span class="p">(</span>
+	<span class="s">&quot;org.apache.tomcat.jdbc.pool.interceptor.ConnectionState;&quot;</span> <span class="o">+</span>
+	<span class="s">&quot;org.apache.tomcat.jdbc.pool.interceptor.StatementFinalizer&quot;</span><span class="p">);</span>
+<span class="n">DataSource</span> <span class="n">datasource</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DataSource</span><span class="p">();</span>
+<span class="n">datasource</span><span class="p">.</span><span class="na">setPoolProperties</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
+<span class="n">Connection</span> <span class="n">connection</span> <span class="o">=</span> <span class="n">datasource</span><span class="p">.</span><span class="na">getConnection</span> <span class="p">();</span>
+<span class="n">Statement</span> <span class="n">statement</span> <span class="o">=</span> <span class="n">connection</span><span class="p">.</span><span class="na">createStatement</span><span class="p">();</span>
+</pre></div></li>
+<li><code>javac -classpath javax.servlet.jar:tomcat-jdbc.jar myhttpservlet.java</code></li></ol>
+<h2><span class="mw-headline" id="Code_samples_for_common_languages">Code samples for common languages</span></h2>
+<dl><dd><i>Copied with edits from <a href="https://www.mediawiki.org/wiki/Toolserver:Database_access#Program_access" class="extiw" title="mw:Toolserver:Database access">mw:Toolserver:Database access#Program access</a></i> (not all tested, use with caution!)</dd></dl>
+<p>In most programming languages, it will be sufficient to tell MySQL to use the database credentials found in <tt>$HOME/.my.cnf</tt> assuming that you have created a symlink from <tt>$HOME/.my.cnf</tt> to <tt>$HOME/replica.my.cnf</tt>.
+</p><p>Below are various examples in a few common programming languages.
+</p>
+<h3><span class="mw-headline" id="Bash">Bash</span></h3>
+<div class="mw-highlight mw-highlight-lang-bash mw-content-ltr" dir="ltr"><pre><span></span>-- <span class="m">2</span>&gt; /dev/null<span class="p">;</span> date<span class="p">;</span> <span class="nb">echo</span> <span class="s1">&#39;</span>
+<span class="s1">/* Bash/SQL compatible test structure</span>
+<span class="s1"> *</span>
+<span class="s1"> * Run time:&#160;? &lt;SLOW_OK&gt;</span>
+<span class="s1"> */</span>
+<span class="s1">SELECT 1</span>
+<span class="s1">;-- &#39;</span> <span class="p">|</span> mysql -ch tools.db.svc.eqiad.wmflabs enwiki_p &gt; ~/query_results-enwiki<span class="p">;</span> date<span class="p">;</span>
+</pre></div>
+<h3><span class="mw-headline" id="C">C</span></h3>
+<div class="mw-highlight mw-highlight-lang-c mw-content-ltr" dir="ltr"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;my_global.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;mysql.h&gt;</span><span class="cp"></span>
+
+<span class="p">...</span>
+
+ <span class="kt">char</span> <span class="o">*</span><span class="n">host</span> <span class="o">=</span> <span class="s">&quot;tools.db.svc.eqiad.wmflabs&quot;</span><span class="p">;</span>
+ <span class="n">MYSQL</span> <span class="o">*</span><span class="n">conn</span> <span class="o">=</span> <span class="n">mysql_init</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span>
+
+ <span class="n">mysql_options</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="n">MYSQL_READ_DEFAULT_GROUP</span><span class="p">,</span> <span class="s">&quot;client&quot;</span><span class="p">);</span>
+ <span class="k">if</span> <span class="p">(</span><span class="n">mysql_real_connect</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="n">host</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Error %u: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">mysql_errno</span><span class="p">(</span><span class="n">conn</span><span class="p">),</span> <span class="n">mysql_error</span><span class="p">(</span><span class="n">conn</span><span class="p">));</span>
+    <span class="p">...</span>
+ <span class="p">}</span>
+</pre></div>
+<h3><span class="mw-headline" id="Perl">Perl</span></h3>
+<div class="mw-highlight mw-highlight-lang-perl mw-content-ltr" dir="ltr"><pre><span></span><span class="k">use</span> <span class="nn">User::pwent</span><span class="p">;</span>
+<span class="k">use</span> <span class="nn">DBI</span><span class="p">;</span>
+
+<span class="k">my</span> <span class="nv">$database</span> <span class="o">=</span> <span class="s">&quot;enwiki_p&quot;</span><span class="p">;</span>
+<span class="k">my</span> <span class="nv">$host</span> <span class="o">=</span> <span class="s">&quot;tools.db.svc.eqiad.wmflabs&quot;</span><span class="p">;</span>
+
+<span class="k">my</span> <span class="nv">$dbh</span> <span class="o">=</span> <span class="nn">DBI</span><span class="o">-&gt;</span><span class="nb">connect</span><span class="p">(</span>
+    <span class="s">&quot;DBI:mysql:database=$database;host=$host;&quot;</span>
+    <span class="o">.</span> <span class="s">&quot;mysql_read_default_file=&quot;</span> <span class="o">.</span> <span class="nb">getpwuid</span><span class="p">(</span><span class="vg">$&lt;</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">dir</span> <span class="o">.</span> <span class="s">&quot;/replica.my.cnf&quot;</span><span class="p">,</span>
+    <span class="nb">undef</span><span class="p">,</span> <span class="nb">undef</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">die</span> <span class="s">&quot;Error: $DBI::err, $DBI::errstr&quot;</span><span class="p">;</span>
+</pre></div>
+<h3><span class="mw-headline" id="Python"><span id="Python_2"></span>Python</span></h3>
+<p>Using <a href="/wiki/User:Legoktm/toolforge_library" title="User:Legoktm/toolforge library">User:Legoktm/toolforge library</a> is probably the easiest way. This wrapper library supports both Python 3 and legacy Python 2 applications and provides convenience functions for connecting to the Wiki Replica databases.
+</p>
+<div class="mw-highlight mw-highlight-lang-python mw-content-ltr" dir="ltr"><pre><span></span><span class="kn">import</span> <span class="nn">toolforge</span>
+<span class="n">conn</span> <span class="o">=</span> <span class="n">toolforge</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;enwiki&#39;</span><span class="p">)</span> <span class="c1"># You can also use &quot;enwiki_p&quot;</span>
+<span class="c1"># conn is a pymysql.connection object.</span>
+<span class="k">with</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span> <span class="k">as</span> <span class="n">cur</span><span class="p">:</span>
+    <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>  <span class="c1"># Or something....</span>
+</pre></div>
+<p>We used to recommend <a rel="nofollow" class="external text" href="http://packages.python.org/oursql/">oursql</a> as well, but <a href="https://phabricator.wikimedia.org/T215963" class="extiw" title="phab:T215963">as of 2019-02-20</a> it seems to be abandoned or at least not actively maintained and failing to compile against MariaDB client libraries.
+</p>
+<h3><span class="mw-headline" id="Python:_Django">Python: Django</span></h3>
+<p>If you are using Django, first install install mysqlclient:
+</p>
+<pre>pip install mysqlclient
+</pre>
+<p>Then insert the database in the settings.py file as following, with s12345 your user name:
+</p>
+<div class="mw-highlight mw-highlight-lang-python mw-content-ltr" dir="ltr"><pre><span></span>    <span class="kn">import</span> <span class="nn">configparser</span>
+    <span class="kn">import</span> <span class="nn">os</span>
+
+    <span class="n">HOME</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;HOME&#39;</span><span class="p">)</span> <span class="c1">#get environment variable $HOME</span>
+
+    <span class="n">replica_path</span><span class="o">=</span><span class="n">HOME</span> <span class="o">+</span> <span class="s1">&#39;/replica.my.cnf&#39;</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">replica_path</span><span class="p">):</span>          <span class="c1">#check that the file is found</span>
+        <span class="n">config</span> <span class="o">=</span> <span class="n">configparser</span><span class="o">.</span><span class="n">ConfigParser</span><span class="p">()</span>
+        <span class="n">config</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">replica_path</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;replica.my.cnf file not found&#39;</span><span class="p">)</span>
+
+    <span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="s1">&#39;ENGINE&#39;</span><span class="p">:</span> <span class="s1">&#39;django.db.backends.mysql&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;NAME&#39;</span><span class="p">:</span> <span class="s1">&#39;s12345__mydbname&#39;</span><span class="p">,</span>                                 
+         <span class="s1">&#39;USER&#39;</span><span class="p">:</span> <span class="n">config</span><span class="p">[</span><span class="s1">&#39;client&#39;</span><span class="p">][</span><span class="s1">&#39;user&#39;</span><span class="p">],</span>                          <span class="c1">#for instance &quot;s12345&quot;</span>
+         <span class="s1">&#39;PASSWORD&#39;</span><span class="p">:</span> <span class="n">config</span><span class="p">[</span><span class="s1">&#39;client&#39;</span><span class="p">][</span><span class="s1">&#39;password&#39;</span><span class="p">],</span>
+         <span class="s1">&#39;HOST&#39;</span><span class="p">:</span> <span class="s1">&#39;tools.db.svc.eqiad.wmflabs&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;PORT&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+     <span class="p">}</span>
+    <span class="p">}</span>
+</pre></div>
+<h3><span id="PHP_.28using_PDO.29"></span><span class="mw-headline" id="PHP_(using_PDO)">PHP (using <a rel="nofollow" class="external text" href="http://php.net/manual/book.pdo.php">PDO</a>)</span></h3>
+<div class="mw-highlight mw-highlight-lang-php mw-content-ltr" dir="ltr"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$ts_pw</span> <span class="o">=</span> <span class="nb">posix_getpwuid</span><span class="p">(</span><span class="nb">posix_getuid</span><span class="p">());</span>
+<span class="nv">$ts_mycnf</span> <span class="o">=</span> <span class="nb">parse_ini_file</span><span class="p">(</span><span class="nv">$ts_pw</span><span class="p">[</span><span class="s1">&#39;dir&#39;</span><span class="p">]</span> <span class="o">.</span> <span class="s2">&quot;/replica.my.cnf&quot;</span><span class="p">);</span>
+<span class="nv">$db</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PDO</span><span class="p">(</span><span class="s2">&quot;mysql:host=enwiki.analytics.db.svc.eqiad.wmflabs;dbname=enwiki_p&quot;</span><span class="p">,</span> <span class="nv">$ts_mycnf</span><span class="p">[</span><span class="s1">&#39;user&#39;</span><span class="p">],</span> <span class="nv">$ts_mycnf</span><span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">]);</span>
+<span class="nb">unset</span><span class="p">(</span><span class="nv">$ts_mycnf</span><span class="p">,</span> <span class="nv">$ts_pw</span><span class="p">);</span>
+
+<span class="nv">$q</span> <span class="o">=</span> <span class="nv">$db</span><span class="o">-&gt;</span><span class="na">prepare</span><span class="p">(</span><span class="s1">&#39;select * from page where page_id = :id&#39;</span><span class="p">);</span>
+<span class="nv">$q</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;:id&#39;</span> <span class="o">=&gt;</span> <span class="mi">843020</span><span class="p">));</span>
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$q</span><span class="o">-&gt;</span><span class="na">fetchAll</span><span class="p">());</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+<h3><span id="PHP_.28using_MySQLi.29"></span><span class="mw-headline" id="PHP_(using_MySQLi)">PHP (using <a rel="nofollow" class="external text" href="http://php.net/manual/book.mysqli.php">MySQLi</a>)</span></h3>
+<div class="mw-highlight mw-highlight-lang-php mw-content-ltr" dir="ltr"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$ts_pw</span> <span class="o">=</span> <span class="nb">posix_getpwuid</span><span class="p">(</span><span class="nb">posix_getuid</span><span class="p">());</span>
+<span class="nv">$ts_mycnf</span> <span class="o">=</span> <span class="nb">parse_ini_file</span><span class="p">(</span><span class="nv">$ts_pw</span><span class="p">[</span><span class="s1">&#39;dir&#39;</span><span class="p">]</span> <span class="o">.</span> <span class="s2">&quot;/replica.my.cnf&quot;</span><span class="p">);</span>
+
+<span class="nv">$mysqli</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">mysqli</span><span class="p">(</span><span class="s1">&#39;enwiki.analytics.db.svc.eqiad.wmflabs&#39;</span><span class="p">,</span> <span class="nv">$ts_mycnf</span><span class="p">[</span><span class="s1">&#39;user&#39;</span><span class="p">],</span> <span class="nv">$ts_mycnf</span><span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">],</span> <span class="s1">&#39;enwiki_p&#39;</span><span class="p">);</span>
+
+<span class="c1">// YOUR REQUEST HERE</span>
+
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+<h3><span class="mw-headline" id="Java">Java</span></h3>
+<div class="mw-highlight mw-highlight-lang-java mw-content-ltr" dir="ltr"><pre><span></span><span class="n">Class</span><span class="p">.</span><span class="na">forName</span><span class="p">(</span><span class="s">&quot;com.mysql.jdbc.Driver&quot;</span><span class="p">).</span><span class="na">newInstance</span><span class="p">();</span>
+<span class="n">Properties</span> <span class="n">mycnf</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Properties</span><span class="p">();</span>
+<span class="n">mycnf</span><span class="p">.</span><span class="na">load</span><span class="p">(</span><span class="k">new</span> <span class="n">FileInputStream</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">getProperty</span><span class="p">(</span><span class="s">&quot;user.home&quot;</span><span class="p">)</span><span class="o">+</span><span class="s">&quot;/replica.my.cnf&quot;</span><span class="p">));</span>
+<span class="n">String</span> <span class="n">password</span> <span class="o">=</span> <span class="n">mycnf</span><span class="p">.</span><span class="na">getProperty</span><span class="p">(</span><span class="s">&quot;password&quot;</span><span class="p">);</span>
+<span class="n">password</span><span class="o">=</span><span class="n">password</span><span class="p">.</span><span class="na">substring</span><span class="p">((</span><span class="n">password</span><span class="p">.</span><span class="na">startsWith</span><span class="p">(</span><span class="s">&quot;\&quot;&quot;</span><span class="p">))</span><span class="o">?</span><span class="mi">1</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="n">password</span><span class="p">.</span><span class="na">length</span><span class="p">()</span><span class="o">-</span><span class="p">((</span><span class="n">password</span><span class="p">.</span><span class="na">startsWith</span><span class="p">(</span><span class="s">&quot;\&quot;&quot;</span><span class="p">))</span><span class="o">?</span><span class="mi">1</span><span class="p">:</span><span class="mi">0</span><span class="p">));</span>
+<span class="n">mycnf</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;password&quot;</span><span class="p">,</span> <span class="n">password</span><span class="p">);</span>
+<span class="n">mycnf</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;useOldUTF8Behavior&quot;</span><span class="p">,</span> <span class="s">&quot;true&quot;</span><span class="p">);</span>
+<span class="n">mycnf</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;useUnicode&quot;</span><span class="p">,</span> <span class="s">&quot;true&quot;</span><span class="p">);</span>
+<span class="n">mycnf</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;characterEncoding&quot;</span><span class="p">,</span> <span class="s">&quot;UTF-8&quot;</span><span class="p">);</span>
+<span class="n">mycnf</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;connectionCollation&quot;</span><span class="p">,</span> <span class="s">&quot;utf8_general_ci&quot;</span><span class="p">);</span>
+<span class="n">String</span> <span class="n">url</span> <span class="o">=</span> <span class="s">&quot;jdbc:mysql://tools.db.svc.eqiad.wmflabs:3306/enwiki_p&quot;</span><span class="p">;</span>
+<span class="n">Connection</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">DriverManager</span><span class="p">.</span><span class="na">getConnection</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">mycnf</span><span class="p">);</span>
+</pre></div>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul><li><a href="https://phabricator.wikimedia.org/phame/post/view/70/new_wiki_replica_servers_ready_for_use/" class="extiw" title="phab:phame/post/view/70/new wiki replica servers ready for use/">"New Wiki Replica servers ready for use"</a>(announcement post, September 25, 2017)</li></ul>
+<h2><span class="mw-headline" id="Note">Note</span></h2>
+<ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1">↑</a></span> <span class="reference-text">If your private key is in a RFC4716 format, you will have to convert it to a PEM key.</span>
+</li>
+</ol>
+
+<!-- 
+NewPP limit report
+Parsed by labweb1001
+Cached time: 20201114153339
+Cache expiry: 2592000
+Dynamic content: false
+Complications: []
+CPU time usage: 0.352 seconds
+Real time usage: 0.988 seconds
+Preprocessor visited node count: 1571/1000000
+Post‐expand include size: 19447/2097152 bytes
+Template argument size: 6556/2097152 bytes
+Highest expansion depth: 12/40
+Expensive parser function count: 0/500
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 24971/5000000 bytes
+Lua time usage: 0.018/10.000 seconds
+Lua memory usage: 799 KB/50 MB
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  158.351      1 -total
+ 40.78%   64.569      1 Template:Toolforge_nav
+ 38.12%   60.365      1 Template:Sidebar
+ 24.09%   38.145     12 Template:Dir
+ 18.52%   29.326     12 Template:Pagelang
+ 18.31%   28.993      2 Template:Note
+ 15.90%   25.175      2 Template:Mbox
+  8.39%   13.288      2 Template:See_also
+  6.87%   10.875      2 Template:Tracked
+  6.13%    9.703      3 Template:Anchor
+-->
+
+<!-- Saved in parser cache with key labswiki:pcache:idhash:18678-0!canonical and timestamp 20201114153338 and revision id 1885201. Serialized with PHP.
+ -->
+</div>
+<div class="printfooter">Retrieved from "<a dir="ltr" href="https://wikitech.wikimedia.org/w/index.php?title=Help:Toolforge/Database&amp;oldid=1885201">https://wikitech.wikimedia.org/w/index.php?title=Help:Toolforge/Database&amp;oldid=1885201</a>"</div></div>
+		<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/wiki/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="/wiki/Category:Toolforge" title="Category:Toolforge">Toolforge</a></li></ul></div></div>
+	</div>
+</div>
+
+<div id="mw-navigation">
+	<h2>Navigation menu</h2>
+	<div id="mw-head">
+		<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-personal" class="mw-portlet mw-portlet-personal vector-menu" aria-labelledby="p-personal-label" role="navigation" 
+	 >
+	<h3 id="p-personal-label">
+		<span>Personal tools</span>
+	</h3>
+	<div class="vector-menu-content">
+		<ul class="vector-menu-content-list"><li id="pt-uls" class="active"><a href="#" class="uls-trigger">English</a></li><li id="pt-createaccount"><a href="/w/index.php?title=Special:CreateAccount&amp;returnto=Help%3AToolforge%2FDatabase" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="/w/index.php?title=Special:UserLogin&amp;returnto=Help%3AToolforge%2FDatabase" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li></ul>
+		
+	</div>
+</nav>
+
+		<div id="left-navigation">
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-namespaces" class="mw-portlet mw-portlet-namespaces vector-menu vector-menu-tabs" aria-labelledby="p-namespaces-label" role="navigation" 
+	 >
+	<h3 id="p-namespaces-label">
+		<span>Namespaces</span>
+	</h3>
+	<div class="vector-menu-content">
+		<ul class="vector-menu-content-list"><li id="ca-nstab-help" class="selected"><a href="/wiki/Help:Toolforge/Database" title="View the help page [c]" accesskey="c">Help page</a></li><li id="ca-talk"><a href="/wiki/Help_talk:Toolforge/Database" rel="discussion" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li></ul>
+		
+	</div>
+</nav>
+
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-variants" class="mw-portlet mw-portlet-variants emptyPortlet vector-menu vector-menu-dropdown" aria-labelledby="p-variants-label" role="navigation" 
+	 >
+	<input type="checkbox" class="vector-menu-checkbox" aria-labelledby="p-variants-label" />
+	<h3 id="p-variants-label">
+		<span>Variants</span>
+	</h3>
+	<div class="vector-menu-content">
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+		</div>
+		<div id="right-navigation">
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-views" class="mw-portlet mw-portlet-views vector-menu vector-menu-tabs" aria-labelledby="p-views-label" role="navigation" 
+	 >
+	<h3 id="p-views-label">
+		<span>Views</span>
+	</h3>
+	<div class="vector-menu-content">
+		<ul class="vector-menu-content-list"><li id="ca-view" class="selected"><a href="/wiki/Help:Toolforge/Database">Read</a></li><li id="ca-viewsource"><a href="/w/index.php?title=Help:Toolforge/Database&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li><li id="ca-history"><a href="/w/index.php?title=Help:Toolforge/Database&amp;action=history" title="Past revisions of this page [h]" accesskey="h">View history</a></li></ul>
+		
+	</div>
+</nav>
+
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-cactions" class="mw-portlet mw-portlet-cactions emptyPortlet vector-menu vector-menu-dropdown" aria-labelledby="p-cactions-label" role="navigation" 
+	 >
+	<input type="checkbox" class="vector-menu-checkbox" aria-labelledby="p-cactions-label" />
+	<h3 id="p-cactions-label">
+		<span>More</span>
+	</h3>
+	<div class="vector-menu-content">
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+			<div id="p-search" role="search">
+	<h3 >
+		<label for="searchInput">Search</label>
+	</h3>
+	<form action="/w/index.php" id="searchform">
+		<div id="simpleSearch" data-search-loc="header-navigation">
+			<input type="search" name="search" placeholder="Search Wikitech" autocapitalize="sentences" title="Search Wikitech [f]" accesskey="f" id="searchInput"/>
+			<input type="hidden" name="title" value="Special:Search">
+			<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/>
+			<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>
+		</div>
+	</form>
+</div>
+
+		</div>
+	</div>
+	
+<div id="mw-panel">
+	<div id="p-logo" role="banner">
+		<a  title="Visit the main page" class="mw-wiki-logo" href="/wiki/Main_Page"></a>
+	</div>
+	<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-navigation" class="mw-portlet mw-portlet-navigation vector-menu vector-menu-portal portal portal-first" aria-labelledby="p-navigation-label" role="navigation" 
+	 >
+	<h3 id="p-navigation-label">
+		<span>Navigation</span>
+	</h3>
+	<div class="vector-menu-content">
+		<ul class="vector-menu-content-list"><li id="n-mainpage-description"><a href="/wiki/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-Server-admin-log-(Prod)"><a href="/wiki/Server_Admin_Log">Server admin log (Prod)</a></li><li id="n-Server-admin-log-(RelEng)"><a href="/wiki/Release_Engineering/SAL">Server admin log (RelEng)</a></li><li id="n-Deployments"><a href="/wiki/Deployments">Deployments</a></li><li id="n-SRE/Operations-Help"><a href="/wiki/SRE_Team_requests">SRE/Operations Help</a></li><li id="n-Incident-status"><a href="/wiki/Incident_documentation">Incident status</a></li></ul>
+		
+	</div>
+</nav>
+
+	<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-Cloud_VPS_&amp;_Toolforge" class="mw-portlet mw-portlet-Cloud_VPS_Toolforge vector-menu vector-menu-portal portal" aria-labelledby="p-Cloud_VPS_&amp;_Toolforge-label" role="navigation" 
+	 >
+	<h3 id="p-Cloud_VPS_&amp;_Toolforge-label">
+		<span>Cloud VPS &amp; Toolforge</span>
+	</h3>
+	<div class="vector-menu-content">
+		<ul class="vector-menu-content-list"><li id="n-Cloud-VPS-documentation"><a href="/wiki/Portal:Cloud_VPS">Cloud VPS documentation</a></li><li id="n-Toolforge-documentation"><a href="/wiki/Portal:Toolforge">Toolforge documentation</a></li><li id="n-Request-Cloud-VPS-project"><a href="https://phabricator.wikimedia.org/project/view/2875/">Request Cloud VPS project</a></li><li id="n-Server-admin-log-(Cloud-VPS)"><a href="/wiki/Cloud_VPS_Server_Admin_Log">Server admin log (Cloud VPS)</a></li></ul>
+		
+	</div>
+</nav>
+<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-tb" class="mw-portlet mw-portlet-tb vector-menu vector-menu-portal portal" aria-labelledby="p-tb-label" role="navigation" 
+	 >
+	<h3 id="p-tb-label">
+		<span>Tools</span>
+	</h3>
+	<div class="vector-menu-content">
+		<ul class="vector-menu-content-list"><li id="t-whatlinkshere"><a href="/wiki/Special:WhatLinksHere/Help:Toolforge/Database" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/Help:Toolforge/Database" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-permalink"><a href="/w/index.php?title=Help:Toolforge/Database&amp;oldid=1885201" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="/w/index.php?title=Help:Toolforge/Database&amp;action=info" title="More information about this page">Page information</a></li><li id="t-cite"><a href="/w/index.php?title=Special:CiteThisPage&amp;page=Help%3AToolforge%2FDatabase&amp;id=1885201&amp;wpFormIdentifier=titleform" title="Information on how to cite this page">Cite this page</a></li></ul>
+		
+	</div>
+</nav>
+<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-coll-print_export" class="mw-portlet mw-portlet-coll-print_export vector-menu vector-menu-portal portal" aria-labelledby="p-coll-print_export-label" role="navigation" 
+	 >
+	<h3 id="p-coll-print_export-label">
+		<span>Print/export</span>
+	</h3>
+	<div class="vector-menu-content">
+		<ul class="vector-menu-content-list"><li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Help%3AToolforge%2FDatabase">Create a book</a></li><li id="coll-download-as-rl"><a href="/w/index.php?title=Special:DownloadAsPdf&amp;page=Help%3AToolforge%2FDatabase&amp;action=show-download-screen">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=Help:Toolforge/Database&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li></ul>
+		
+	</div>
+</nav>
+
+	
+</div>
+
+</div>
+<footer id="footer" class="mw-footer" role="contentinfo" >
+	<ul id="footer-info" >
+	<li id="footer-info-lastmod"> This page was last edited on 15 October 2020, at 15:20.</li>
+	<li id="footer-info-copyright">Text is available under the <a href="https://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike License</a>;
+additional terms may apply.
+See <a href="https://foundation.wikimedia.org/wiki/Terms_of_Use">Terms of Use</a> for details.</li>
+</ul>
+
+	<ul id="footer-places" >
+	<li id="footer-places-privacy"><a href="https://foundation.wikimedia.org/wiki/Privacy_policy" class="extiw" title="wmf:Privacy policy">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="/wiki/Main_Page" title="Main Page">About Wikitech</a></li>
+	<li id="footer-places-disclaimer"><a href="https://foundation.wikimedia.org/wiki/General_disclaimer" class="extiw" title="wikimedia:General disclaimer">Disclaimers</a></li>
+	<li id="footer-places-wm-codeofconduct"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Code_of_Conduct">Code of Conduct</a></li>
+	<li id="footer-places-mobileview"><a href="//wikitech.wikimedia.org/w/index.php?title=Help:Toolforge/Database&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+	<li id="footer-places-developers"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute">Developers</a></li>
+	<li id="footer-places-statslink"><a href="https://stats.wikimedia.org/#/wikitech.wikimedia.org">Statistics</a></li>
+	<li id="footer-places-cookiestatement"><a href="https://foundation.wikimedia.org/wiki/Cookie_statement">Cookie statement</a></li>
+</ul>
+
+	<ul id="footer-icons" class="noprint">
+	<li id="footer-copyrightico"><a href="https://wikimediafoundation.org/"><img src="/static/images/footer/wikimedia-button.png" srcset="/static/images/footer/wikimedia-button-1.5x.png 1.5x, /static/images/footer/wikimedia-button-2x.png 2x" width="88" height="31" alt="Wikimedia Foundation" loading="lazy" /></a></li>
+	<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/"><img src="/static/images/footer/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/static/images/footer/poweredby_mediawiki_132x47.png 1.5x, /static/images/footer/poweredby_mediawiki_176x62.png 2x" width="88" height="31" loading="lazy"/></a></li>
+</ul>
+
+	<div style="clear: both;"></div>
+</footer>
+
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.352","walltime":"0.988","ppvisitednodes":{"value":1571,"limit":1000000},"postexpandincludesize":{"value":19447,"limit":2097152},"templateargumentsize":{"value":6556,"limit":2097152},"expansiondepth":{"value":12,"limit":40},"expensivefunctioncount":{"value":0,"limit":500},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":24971,"limit":5000000},"timingprofile":["100.00%  158.351      1 -total"," 40.78%   64.569      1 Template:Toolforge_nav"," 38.12%   60.365      1 Template:Sidebar"," 24.09%   38.145     12 Template:Dir"," 18.52%   29.326     12 Template:Pagelang"," 18.31%   28.993      2 Template:Note"," 15.90%   25.175      2 Template:Mbox","  8.39%   13.288      2 Template:See_also","  6.87%   10.875      2 Template:Tracked","  6.13%    9.703      3 Template:Anchor"]},"scribunto":{"limitreport-timeusage":{"value":"0.018","limit":"10.000"},"limitreport-memusage":{"value":818515,"limit":52428800}},"cachereport":{"origin":"labweb1001","timestamp":"20201114153339","ttl":2592000,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":130,"wgHostname":"labweb1001"});});</script>
+</body></html>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist SYSTEM "file://localost/System/Library/DTDs/PropertyList.dtd">
+<plist version="0.9">
+<dict>
+	<key>FileTypes</key>
+	<array>
+		<dict>
+			<key>type</key>
+			<string>CFMSupport</string>
+			<key>install</key>
+			<string>REQUIRED</string>
+		</dict>
+	</array>
+	<key>Files</key>
+	<array>
+		<dict>
+			<key>type</key><string>CFMSupport</string>
+			<key>from</key><string>Contents/MacOS/edb1drv</string>
+			<key>to</key><string>/Library/CFMSupport/edb1drv</string>
+			<key>isinstalled</key><false/>
+			<key>required</key><string>NO</string>
+			<key>iscolorprofile</key><false/>
+			<key>isappassociated</key><false/>
+		</dict>
+	</array>
+	<key>version</key>
+	<integer>20040212</integer>
+</dict>
+</plist>

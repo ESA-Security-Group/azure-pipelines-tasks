@@ -1,0 +1,164 @@
+#!/usr/bin/env ruby
+
+TITLE_FILTER_REGEXP = /(#\s|#{BadgesFilter::BADGES_MARKDOWN_PATTERN})/.freeze
+
+preprocess do
+  badges_filter = BadgesFilter.new
+
+  @items.each do |item|
+    if item.identifier.to_s.end_with?(".md") && !item.binary?
+      # If there isn't already a 'redirect_to' defined in the yaml frontmatter,
+      # use the text to assume the redirect URL.
+      unless item[:redirect_to]
+        if item.raw_content =~ /^This document was moved to \[.*\]\(.*\)/m
+          # Capture the intended page so the redirect page can redirect to it.
+          item[:redirect_to] = item.raw_content.match(/^This document was moved to \[.*\]\((.*)\)/m)[1]
+          # Correct the URL.
+          item[:redirect_to] = item[:redirect_to].gsub!(/\.md/, '.html')
+        end
+      else
+        # If the provided path is in Markdown
+        if item[:redirect_to].to_s.match(/.md/)
+          # If it's not a full URL
+          unless item[:redirect_to].to_s.match(/^http/)
+            # Correct it to HTML
+            item[:redirect_to] = item[:redirect_to].gsub!(/\.md/, '.html')
+          end
+        end
+      end
+
+      # We need to do some transformations for the title
+      # Let's extract and keep it first:
+      raw_title = item.raw_content.match(/^[#] .*$/).to_s
+
+      # If we don't have a title in frontmatter, reuse the one we just fetch
+      item[:title] ||= raw_title.gsub(TITLE_FILTER_REGEXP, '')
+
+      # Run badges filter with title fragment
+      item[:title_badge] = badges_filter.run_from_markdown(raw_title.match(BadgesFilter::BADGES_MARKDOWN_PATTERN).to_s)
+    end
+  end
+end
+
+compile '/404.*' do
+  filter :erb
+  layout '/404.*'
+  write '/404.html'
+end
+
+compile '/archives/index.*' do
+  filter :erb
+  layout '/archives.*'
+  write '/archives/index.html'
+end
+
+compile '/**/*.html' do
+  layout '/default.*'
+end
+
+compile '/**/*.md' do
+  if item[:redirect_to].nil?
+
+    # If 'toc' is absent in a file's yaml frontmatter, show ToC.
+    # Set to 'toc: false' to disable it.
+    include_toc = item[:toc].nil? ? true : false
+
+    # Use GitlabKramdown with Rouge.
+    # https://gitlab.com/brodock/gitlab_kramdown
+    filter :gitlab_kramdown,
+           input: 'GitlabKramdown',
+           syntax_highlighter: 'rouge',
+           syntax_highlighter_opts: {
+             # In kramdown 2.0, the plaintext parser was removed and replaced by the
+             # :guess_lang option:
+             #
+             # - https://github.com/gettalong/kramdown/blob/master/doc/news/release_2_0_0.page
+             # - https://github.com/gettalong/kramdown/pull/573
+             guess_lang: true
+           },
+           default_lang: 'Plain Text',
+           hard_wrap: false,
+           auto_ids: true,
+           toc_levels: 2..5,
+           with_toc: include_toc
+
+    filter :convert_mermaid_html
+
+    filter :colorize_syntax,
+           default_colorizer: :rouge
+
+    # GitLab price / tiers specific badges
+    filter :badges
+
+    filter :md_to_html_ext
+    filter :admonition
+    filter :icons
+    filter :introduced_in
+
+    if item[:layout].nil?
+      layout '/default.*'
+    else
+      layout "/#{item[:layout]}.*"
+    end
+  else
+    layout '/redirect.*'
+  end
+end
+
+compile '/**/*.scss' do
+  filter :erb
+  filter :sass,
+         syntax: :scss,
+         style: :compressed
+  write item.identifier.without_ext + '-v' + rep.item[:version].to_s + '.css'
+end
+
+# Do not compile minified assets
+passthrough '/**/*.min.*'
+
+compile '/assets/javascripts/*.js' do
+  filter :erb
+  write item.identifier.without_ext + '-v' + rep.item[:version].to_s + '.js'
+end
+
+compile '/index.*' do
+  filter :erb
+  layout '/home.*'
+  write '/index.html'
+end
+
+compile '/sitemap.*' do
+  filter :erb
+  write '/sitemap.xml'
+end
+
+compile '/robots.*' do
+  filter :erb
+  write '/robots.txt'
+end
+
+route '/**/*.{html,md}' do
+  if item.identifier =~ '/index.*'
+    '/index.html'
+  else
+    item.identifier.without_ext + '.html'
+  end
+end
+
+# Leave yaml files out
+ignore '/_data/*.yaml'
+
+compile '/**/*' do
+  unless item.identifier.ext == 'scss'
+    write item.identifier.to_s
+  end
+end
+
+layout '/**/*', :erb
+
+# Leave the favicon alone.
+passthrough '/favicon.ico'
+
+postprocess do
+  system('nanoc frontend')
+end

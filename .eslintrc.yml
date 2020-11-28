@@ -1,0 +1,12 @@
+root: true
+extends:
+  - 'plugin:@gitlab/default'
+env:
+  jest: true
+parserOptions:
+  parser: babel-eslint
+  import/no-extraneous-dependencies: off
+rules:
+  filenames/match-regex:
+    - error
+    - "^[a-z0-9_]+(\\.config|\\.[a-z_]+\\_spec)?$"

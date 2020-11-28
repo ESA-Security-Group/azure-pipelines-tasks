@@ -1,0 +1,47 @@
+# The two last major supported versions
+# https://about.gitlab.com/support/statement-of-support.html#we-support-the-current-major-version-and-the-two-previous-major-versions
+previous_majors:
+  - "12.10"
+  - "11.11"
+
+# The first online version should always point to the
+# current stable version.
+online:
+  - "13.5"
+  - "13.4"
+  - "13.3"
+
+# Versions not appearing in the dropdown, but available as Docker images
+# https://docs.gitlab.com/archives/#offline-archives
+offline:
+  - "13.2"
+  - "13.1"
+  - "13.0"
+  - "12.9"
+  - "12.8"
+  - "12.7"
+  - "12.6"
+  - "12.5"
+  - "12.4"
+  - "12.3"
+  - "12.2"
+  - "12.1"
+  - "12.0"
+  - "11.11"
+  - "11.10"
+  - "11.9"
+  - "11.8"
+  - "11.7"
+  - "11.6"
+  - "11.5"
+  - "11.4"
+  - "11.3"
+  - "11.2"
+  - "11.1"
+  - "11.0"
+  - "10.8"
+  - "10.7"
+  - "10.6"
+  - "10.5"
+  - "10.4"
+  - "10.3"

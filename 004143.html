@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Labs-l] Lag reporting on lab db replicas
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:labs-l%40lists.wikimedia.org?Subject=Re%3A%20%5BLabs-l%5D%20Lag%20reporting%20on%20lab%20db%20replicas&In-Reply-To=%3CCABaSSrK6yVHOvoJByNg1GvRb9pfp9kUvkVmhT8%3DyUvVEG-F5eg%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <LINK REL="Previous"  HREF="004142.html">
+   <LINK REL="Next"  HREF="004144.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Labs-l] Lag reporting on lab db replicas</H1>
+    <B>Jaime Crespo</B> 
+    <A HREF="mailto:labs-l%40lists.wikimedia.org?Subject=Re%3A%20%5BLabs-l%5D%20Lag%20reporting%20on%20lab%20db%20replicas&In-Reply-To=%3CCABaSSrK6yVHOvoJByNg1GvRb9pfp9kUvkVmhT8%3DyUvVEG-F5eg%40mail.gmail.com%3E"
+       TITLE="[Labs-l] Lag reporting on lab db replicas">jcrespo at wikimedia.org
+       </A><BR>
+    <I>Wed Nov 25 20:21:33 UTC 2015</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="004142.html">[Labs-l] [Labs-announce] Possible DNS hiccups today
+</A></li>
+        <LI>Next message: <A HREF="004144.html">[Labs-l] Lag reporting on lab db replicas
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4143">[ date ]</a>
+              <a href="thread.html#4143">[ thread ]</a>
+              <a href="subject.html#4143">[ subject ]</a>
+              <a href="author.html#4143">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Always fearing doing queries on a lagged replica on labs? Not anymore!
+
+While Betacommand's tool [0] was very useful, it was also very inaccurate,
+as it tried to check the lag by looking at the last rows updated, which can
+be a lot of time on the least popular wikis.
+
+What I offer now is sub-second accurate lag measuring, by writing on the
+production masters the current time, in microseconds, every 0.5 seconds and
+making that available on all hosts (using this tool [1]). So, it is more
+accurate than SHOW SLAVE STATUS, because it compares the difference with
+the original master, and it will work even if replication is broken.
+
+To read it, just do SELECT * FROM heartbeat_p.heartbeat;
+And you will get:
++-------+----------------------------+------+
+|<i> shard | last_updated               | lag  |
+</I>+-------+----------------------------+------+
+|<i> s6    | 2015-11-25T20:20:32.000980 |    0 |
+</I>|<i> s2    | 2015-11-25T20:20:32.001030 |    0 |
+</I>|<i> s7    | 2015-11-25T20:20:32.001070 |    0 |
+</I>|<i> s3    | 2015-11-25T20:20:32.001000 |    0 |
+</I>|<i> s4    | 2015-11-25T20:20:32.000920 |    0 |
+</I>|<i> s1    | 2015-11-25T20:20:32.000740 |    0 |
+</I>|<i> s5    | 2015-11-25T20:20:32.000830 |    0 |
+</I>+-------+----------------------------+------+
+
+Read the detailed documentation on: [2]
+
+Use it, create a web page if you want to make it public! Report a ticket if
+it gets too high! Report a ticket if you need more info (a record per
+wiki?). But I wanted to give you the essentials, and you can build
+yourselves on top of that.
+
+Only 2 know bugs:
+- There is microsecond accuracy, but it cannot be used until a bug in
+MariaDB is fixed [3]
+- enwiki will only report s1 lag until that server is restarted due to some
+existing filters. We will schedule that at some time in the future.
+
+[0]&lt;<A HREF="http://tools.wmflabs.org/betacommand-dev/cgi-bin/replag">http://tools.wmflabs.org/betacommand-dev/cgi-bin/replag</A>&gt;
+[1]&lt;<A HREF="https://www.percona.com/doc/percona-toolkit/2.2/pt-heartbeat.html">https://www.percona.com/doc/percona-toolkit/2.2/pt-heartbeat.html</A>&gt;
+[2]&lt;
+<A HREF="https://wikitech.wikimedia.org/wiki/Help:Tool_Labs/Database#Identifying_lag">https://wikitech.wikimedia.org/wiki/Help:Tool_Labs/Database#Identifying_lag</A>&gt;
+[3]&lt;<A HREF="https://mariadb.atlassian.net/browse/MDEV-9175">https://mariadb.atlassian.net/browse/MDEV-9175</A>&gt;
+-- 
+Jaime Crespo
+&lt;<A HREF="http://wikimedia.org">http://wikimedia.org</A>&gt;
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.wikimedia.org/pipermail/labs-l/attachments/20151125/0af156e0/attachment.html">https://lists.wikimedia.org/pipermail/labs-l/attachments/20151125/0af156e0/attachment.html</A>&gt;
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="004142.html">[Labs-l] [Labs-announce] Possible DNS hiccups today
+</A></li>
+	<LI>Next message: <A HREF="004144.html">[Labs-l] Lag reporting on lab db replicas
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4143">[ date ]</a>
+              <a href="thread.html#4143">[ thread ]</a>
+              <a href="subject.html#4143">[ subject ]</a>
+              <a href="author.html#4143">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.wikimedia.org/mailman/listinfo/labs-l">More information about the Labs-l
+mailing list</a><br>
+</body></html>

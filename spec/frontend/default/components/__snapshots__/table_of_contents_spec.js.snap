@@ -1,0 +1,137 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`frontend/default/components/table_of_contents matches snapshot 1`] = `
+<div
+  class="table-of-contents-container position-relative"
+  id="markdown-toc"
+>
+  <div
+    class="table-of-contents"
+  >
+    <h4
+      class="border-0 toc-sm d-lg-none"
+    >
+      <a
+        aria-controls="markdown-toc"
+        aria-expanded="true"
+        class="d-flex text-decoration-none"
+        data-testid="collapse"
+        href="#"
+        role="button"
+      >
+        <i
+          class="fa d-flex align-items-center justify-content-center mr-1 gl-w-3 fa-angle-down"
+          role="presentation"
+        />
+        
+        On this page
+      
+      </a>
+    </h4>
+     
+    <h4
+      class="border-0 gl-font-base font-weight-bold toc-lg"
+    >
+      On this page
+    </h4>
+     
+    <div
+      class=""
+      data-testid="container"
+    >
+      <ul
+        class="nav nav-pills flex-column my-0"
+        data-testid="main-list"
+      >
+        <li>
+          <a
+            class="nav-link d-block toc-level-0"
+            href="#lorem"
+            id="Lorem-anchor"
+          >
+            Lorem
+          </a>
+           
+          <!---->
+        </li>
+        <li>
+          <a
+            class="nav-link d-block toc-level-1"
+            href="#lorem-"
+            id="Lorem 2-anchor"
+          >
+            Lorem 2
+          </a>
+           
+          <!---->
+        </li>
+        <li>
+          <a
+            class="nav-link d-block toc-level-0"
+            href="#ipsum"
+            id="Ipsum-anchor"
+          >
+            Ipsum
+          </a>
+           
+          <!---->
+        </li>
+        <li>
+          <a
+            class="nav-link d-block toc-level-1"
+            href="#dolar"
+            id="Dolar-anchor"
+          >
+            Dolar
+          </a>
+           
+          <!---->
+        </li>
+        <li>
+          <a
+            class="nav-link d-block toc-level-2"
+            href="#sit"
+            id="Sit-anchor"
+          >
+            Sit
+          </a>
+           
+          <!---->
+        </li>
+        <li>
+          <a
+            class="nav-link d-block toc-level-2"
+            href="#amit"
+            id="Amit-anchor"
+          >
+            Amit
+          </a>
+           
+          <!---->
+        </li>
+        <li>
+          <a
+            class="nav-link d-block toc-level-2"
+            href="#test"
+            id="Test-anchor"
+          >
+            Test
+          </a>
+           
+          <!---->
+        </li>
+        <li>
+          <a
+            class="nav-link d-block toc-level-0"
+            href="#test-help-and-feedback"
+          >
+            Help and feedback
+          </a>
+           
+          <!---->
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;

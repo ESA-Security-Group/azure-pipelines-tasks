@@ -1,0 +1,132 @@
+---
+title: GitLab Documentation
+---
+<section class="container-fluid px-0 d-flex">
+  <nav class="sidebar-left d-none d-md-block border-right p-0">
+    <div class="list-group list-group-flush pt-5">
+      <a href="/" class="list-group-item list-group-item-action active border-bottom-0 border-top-0 d-flex align-items-center text-decoration-none">
+        <%= icon('home', nil, 'menu-icon') %><span class="pl-1">Home</span></a>
+      <% if is_production? %>
+        <% @config[:products].each do |name, product| %>
+          <% if product[:expose] == true %>
+            <a href="<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>" class="list-group-item list-group-item-action border-bottom-0 border-top-0 d-flex align-items-center"><%= icon(product[:icon], nil, 'menu-icon') %><span class="pl-1"><%= product[:short_name] %></span></a>
+          <% end %>
+        <% end %>
+      <% else %>
+        <% @config[:products].each do |name, product| %>
+          <% if Dir.exist?("#{@config[:content_dir]}/#{product[:slug]}")%>
+            <a href="<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>" class="list-group-item list-group-item-action border-bottom-0 border-top-0 d-flex align-items-center"><%= icon(product[:icon], nil, 'menu-icon') %><span class="pl-1"><%= product[:short_name] %></span></a>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  </nav>
+  <main class="content">
+    <div class="row px-4 pt-4">
+      <div class="col-12">
+        <% if @config[:show_banner] %>
+        <div class="d-lg-block">
+          <%= render '/banner.*' %>
+        </div>
+        <% end %>
+        <h1 class="landing-header-title border-bottom-0 font-weight-bold">Welcome to GitLab Docs</h1>
+        <p class="text-break">Here you can access the complete documentation for GitLab, the single application for the <span class="text-decoration-underline"><a href="https://docs.gitlab.com/ee/README.html#the-entire-devops-lifecycle">entire DevOps lifecycle</a></span>.</p>
+      </div>
+      <div class="col-12 pb-3">
+        <h2 class="landing-header-subtitle border-bottom-0 font-weight-bold">Select a product area</h2>
+      </div>
+    </div>
+    <div class="row px-4" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
+      <% if is_production? %>
+        <% @config[:products].each do |name, product| %>
+          <% if product[:expose] == true %>
+            <% if product[:short_name] == 'GitLab' %>
+              <div class="col-md-12 mb-3 gitlab-product-card">
+            <% else %>
+              <div class="col-12 col-lg-4 mb-3">
+            <% end %>
+                <a itemprop="url" href="<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>" class="text-decoration-none">
+                  <div class="card h-100">
+                    <div class="flex-nowrap w-100">
+                      <div class="col-12 d-flex flex-md-row">
+                        <div>
+                          <img class="product-img py-4" src="<%= product[:img] %>" alt="<%= product[:short_name] %> line logo">
+                        </div>
+                        <div>
+                          <div class="card-body">
+                            <p class="card-title border-bottom-0 font-weight-bold pb-0 mb-0 text-break"><%= product[:short_name] %></p>
+                            <p class="card-text text-break"><%= product[:description] %></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+      <% end %>
+      <% end %>
+      <% else %>
+        <% @config[:products].each do |name, product| %>
+          <% if Dir.exist?("#{@config[:content_dir]}/#{product[:slug]}")%>
+            <% if product[:short_name] == 'GitLab' %>
+              <div class="col-md-12 mb-3 gitlab-product-card">
+            <% else %>
+              <div class="col-12 col-lg-4 mb-3">
+            <% end %>
+                <a itemprop="url" href="<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>" class="text-decoration-none">
+                  <div class="card h-100">
+                    <div class="flex-nowrap w-100">
+                      <div class="col-12 d-flex flex-md-row">
+                        <div>
+                          <img class="product-img py-4" src="<%= product[:img] %>" alt="<%= product[:short_name] %> line logo">
+                        </div>
+                        <div>
+                          <div class="card-body">
+                            <p class="card-title border-bottom-0 font-weight-bold pb-0 mb-0 text-break"><%= product[:short_name] %></p>
+                            <p class="card-text text-break"><%= product[:description] %></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+      <div class="row px-4 mb-3">
+        <div class="col-12 pb-3">
+          <h2 class="landing-header-subtitle border-bottom-0 font-weight-bold">Popular topics</h2>
+        </div>
+        <% @items['/_data/popular_topics.yaml'][:topics].each do |topic| %>
+          <!--
+            The first item of the URL is the product slug
+          -->
+          <% product = topic[:url].split('/')[1] %>
+          <!--
+            Check if content/{slug} is present and hide the topic otherwise
+          -->
+          <% if Dir.exist?("#{@config[:content_dir]}/#{product}") %>
+          <div class="col-12 col-lg-4">
+            <a class="text-decoration-none" href="<%= topic[:url] %>">
+              <h3 class="popular-topics-title border-bottom-0 font-weight-bold pb-0 mb-0 text-break"><%= icon("#{topic[:icon]}", nil, 'menu-icon') %> <%= topic[:title] %></h3>
+              <p class="pl-4 ml-1 mt-1 text-break"><%= topic[:description] %></p>
+            </a>
+          </div>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="row px-4">
+        <div class="col">
+          <%= render '/feedback.*' %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <%= render '/footer.*' %>
+      </div>
+    </div>
+  </main>
+  <aside class="sidebar-right d-none d-lg-block"></aside>
+</section>

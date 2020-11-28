@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Classes</key>
+	<dict>
+		<key>NSApplication</key>
+		<dict>
+			<key>Attributes</key>
+			<dict>
+				<key>locale</key>
+				<dict>
+					<key>Description</key>
+					<string>Three character language code for Distiller's UI (ENU is English)</string>
+					<key>Name</key>
+					<string>locale</string>
+				</dict>
+				<key>postScriptVersion</key>
+				<dict>
+					<key>Description</key>
+					<string>PostScript interpreter version</string>
+					<key>Name</key>
+					<string>postScriptVersion</string>
+				</dict>
+			</dict>
+			<key>Description</key>
+			<string>Distiller's top level scripting object.</string>
+			<key>Name</key>
+			<string>application</string>
+			<key>PluralName</key>
+			<string>applications</string>
+		</dict>
+	</dict>
+	<key>Commands</key>
+	<dict>
+		<key>Distill</key>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>adobePDFSettingsPath</key>
+				<dict>
+					<key>Description</key>
+					<string>Optional POSIX path to the Adobe PDF Settings file.  If adobePDFSettingsPath is not specified the default is used (the one selected in the UI).</string>
+					<key>Name</key>
+					<string>adobePDFSettingsPath</string>
+				</dict>
+				<key>destinationPath</key>
+				<dict>
+					<key>Description</key>
+					<string>Optional POSIX path to the output file (for example "/hello.pdf").  If desinationPath is not specified the PDF will be generated in the same folder as the source file.</string>
+					<key>Name</key>
+					<string>destinationPath</string>
+				</dict>
+				<key>sourcePath</key>
+				<dict>
+					<key>Description</key>
+					<string>Required POSIX path to the input file (for example "/hello.ps").</string>
+					<key>Name</key>
+					<string>sourcePath</string>
+				</dict>
+			</dict>
+			<key>Description</key>
+			<string>Distill a file.</string>
+			<key>IsVerb</key>
+			<string>YES</string>
+			<key>Name</key>
+			<string>Distill</string>
+		</dict>
+		<key>JobOptions</key>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>jobOptionName</key>
+				<dict>
+					<key>Description</key>
+					<string>Adobe PDF Settings name</string>
+					<key>Name</key>
+					<string>adobePDFSettingsName</string>
+				</dict>
+			</dict>
+			<key>Description</key>
+			<string>*** Not used for general AppleScripting. *** It displays the Distiller Edit Adobe PDF Settings dialog for the Distiller plugin.</string>
+			<key>IsVerb</key>
+			<string>YES</string>
+			<key>Name</key>
+			<string>EditAdobePDFSettings</string>
+		</dict>
+		<key>Security</key>
+		<dict>
+			<key>Description</key>
+			<string>*** Not used for general AppleScripting. *** It displays the Distiller Security dialog for the Distiller plugin.</string>
+			<key>IsVerb</key>
+			<string>YES</string>
+			<key>Name</key>
+			<string>EditSecurity</string>
+		</dict>
+	</dict>
+	<key>Description</key>
+	<string>Classes and commands for Distiller.</string>
+	<key>Name</key>
+	<string>Distiller Suite</string>
+</dict>
+</plist>

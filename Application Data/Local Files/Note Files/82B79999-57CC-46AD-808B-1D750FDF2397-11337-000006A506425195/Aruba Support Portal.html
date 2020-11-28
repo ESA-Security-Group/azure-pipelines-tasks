@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!-- 
+  Disable prettier in this file to avoid an IE issue with trailing commas.
+    Specifically, our IE detection fails with `document.write('<IE message>',)`. 
+-->
+<!-- prettier-ignore -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Aruba Support Portal</title>
+    <base href="/" />
+
+    <!--
+      This identifier verifies that we own the domain to Google Search Console.
+    -->
+    <meta
+      name="google-site-verification"
+      content="BwYd3_1oNg6L-XygI6QbUABsUydL3uaKmWJj8C-YzgA"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <noscript
+      >You do not have JavaScript enabled in the browser. JavaScript is required
+      for this website. For instructions on enabling JavaScript in your browser,
+      please refer to http://activatejavascript.org/en/instructions.</noscript
+    >
+    <script type="text/javascript">
+      /**
+       * detect IE
+       * returns version of IE or false, if browser is not Internet Explorer
+       * https://codepen.io/gapcode/pen/vEJNZN
+       */
+      function detectIE() {
+        var ua = window.navigator.userAgent;
+
+        // Test values; Uncomment to check result …
+
+        // IE 10
+        // ua = 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)';
+
+        // IE 11
+        // ua = 'Mozilla/5.0 (Windows NT 6.3; Trident/7.0; rv:11.0) like Gecko';
+
+        // Edge 12 (Spartan)
+        // ua = 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36 Edge/12.0';
+
+        // Edge 13
+        // ua = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2486.0 Safari/537.36 Edge/13.10586';
+
+        var msie = ua.indexOf('MSIE ');
+        if (msie > 0) {
+          // IE 10 or older => return version number
+          return parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
+        }
+
+        var trident = ua.indexOf('Trident/');
+        if (trident > 0) {
+          // IE 11 => return version number
+          var rv = ua.indexOf('rv:');
+          return parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 10);
+        }
+
+        // other browser
+        return false;
+      }
+    </script>
+
+    <script>
+      // Report fatal errors to Google Analytics
+      window.onerror = function() {
+        ga('send', 'exception', {
+          exDescription: formatError.apply(null, arguments),
+          exFatal: true,
+        });
+        function formatError(msg, url, line, col, e) {
+          var stack;
+          msg = msg.replace(/^Error: /, '');
+          if (e) {
+            stack = e.stack
+              // strip the leading "Error: " from the stack trace
+              .replace(/^Error: /, '')
+              // strip the message from the stack trace, if present
+              .replace(msg + '\n', '')
+              // strip leading spaces
+              .replace(/^ +/gm, '')
+              // strip all leading "at " for each frame
+              .replace(/^at /gm, '')
+              // replace long urls with just the last segment: `filename:line:column`
+              .replace(/(?: \(|@)http.+\/([^/)]+)\)?(?:\n|$)/gm, '@$1\n')
+              // replace "eval code" in Edge
+              .replace(/ *\(eval code(:\d+:\d+)\)(?:\n|$)/gm, '@???$1\n');
+          } else {
+            line = line || '?';
+            col = col || '?';
+            stack = url + ':' + line + ':' + col;
+          }
+          return (msg + '\n' + stack).substr(0, 150);
+        }
+      };
+    </script>
+
+    <!-- Load IE polyfills for IE and for Googlebot. -->
+    <script nomodule src="assets/js/ie-polyfills.min.js"></script>
+  <link rel="stylesheet" href="styles.f8e9729b99881de495ef.css"></head>
+
+  <body>
+    <asp-root>
+      <script type="text/javascript">
+        document.write('Loading...');
+      </script>
+    </asp-root>
+    <script type="text/javascript">
+      if (detectIE()) {
+        var app = document.getElementsByTagName('asp-root')[0];
+        app.parentElement.removeChild(app);
+        document.write(
+          'Microsoft Internet Explorer is not supported. Please use Google Chrome, Firefox, Apple Safari or Microsoft Edge.'
+        );
+      }
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      // gtag('config', 'GA_TRACKING_ID');
+      // gtag('config', 'GA_TRACKING_ID', { 'send_page_view': false });
+    </script>
+
+    <noscript>
+      <h2 style="color: red; text-align: center; margin-top: -50px;">
+        <b> <i>This website requires JavaScript.</i> </b>
+      </h2>
+    </noscript>
+  <script src="runtime-es2015.86faae00a838f5824f5a.js" type="module"></script><script src="runtime-es5.86faae00a838f5824f5a.js" nomodule defer></script><script src="polyfills-es5.af80f40248e97b39c7cf.js" nomodule defer></script><script src="polyfills-es2015.3d97c05130ac2d61b468.js" type="module"></script><script src="main-es2015.371daef6d27fcaf406e1.js" type="module"></script><script src="main-es5.371daef6d27fcaf406e1.js" nomodule defer></script></body>
+</html>

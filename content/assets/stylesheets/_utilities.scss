@@ -1,0 +1,25 @@
+---
+version: 5
+---
+
+@import "variables";
+
+@mixin sidebar-fixed {
+  overflow: auto;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  min-width: $sidebar-width;
+}
+
+.text-decoration-underline {
+  text-decoration: underline;
+}
+
+.gl-font-base {
+  font-size: 1rem;
+}
+
+.gl-w-3 {
+  width: 1rem;
+}

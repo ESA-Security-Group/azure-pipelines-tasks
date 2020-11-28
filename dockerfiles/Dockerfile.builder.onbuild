@@ -1,0 +1,37 @@
+# Get Nanoc bootstrap
+FROM registry.gitlab.com/gitlab-org/gitlab-docs:bootstrap
+
+# Make the variables of the archive Dockerfiles accessible to this build-stage
+ONBUILD ARG VER
+ONBUILD ARG NANOC_ENV
+ONBUILD ARG CI_COMMIT_REF_NAME
+ONBUILD ARG BRANCH_EE
+ONBUILD ARG BRANCH_OMNIBUS
+ONBUILD ARG BRANCH_RUNNER
+ONBUILD ARG BRANCH_CHARTS
+
+# Build the docs from this branch
+ONBUILD COPY . /source/
+ONBUILD RUN NOKOGIRI_USE_SYSTEM_LIBRARIES=1 bundle install --jobs 4
+ONBUILD RUN yarn install
+ONBUILD RUN bundle exec rake setup_git default
+ONBUILD RUN yarn install
+ONBUILD RUN bundle exec nanoc compile -VV
+
+# Move generated HTML to /site
+ONBUILD RUN mkdir /site
+ONBUILD RUN mv public /site/${VER}
+
+# Do some HTML post-processing on the archive
+ONBUILD RUN [ -f /scripts/normalize-links.sh ] && /scripts/normalize-links.sh /site ${VER} || "/scripts/normalize-links.sh not found"
+
+# Compress images
+ONBUILD RUN [ -f /scripts/compress_images.sh ] && /scripts/compress_images.sh /site ${VER} || "/scripts/compress_images.sh not found"
+
+# Minify assets
+# ATTENTION: This should be the last script to run
+ONBUILD RUN [ -f /scripts/minify-assets.sh ] && /scripts/minify-assets.sh /site ${VER} || "/scripts/minify-assets.sh not found"
+
+# Make an index.html and 404.html which will redirect / to /${VER}/
+ONBUILD RUN echo "<html><head><title>Redirect for ${VER}</title><meta http-equiv=\"refresh\" content=\"0;url='/${VER}/'\" /></head><body><p>If you are not redirected automatically, click <a href=\"/${VER}/\">here</a>.</p></body></html>" > /site/index.html
+ONBUILD RUN echo "<html><head><title>Redirect for ${VER}</title><meta http-equiv=\"refresh\" content=\"0;url='/${VER}/'\" /></head><body><p>If you are not redirected automatically, click <a href=\"/${VER}/\">here</a>.</p></body></html>" > /site/404.html

@@ -1,0 +1,371 @@
+From d4da4a627323196cc21d3dc44313c8bfae169618 Mon Sep 17 00:00:00 2001
+From: Ambjoern Shield 🛡 <sekhmet396gripen@gmail.com>
+Date: Sat, 14 Nov 2020 07:43:23 +0100
+Subject: [PATCH] Dockerfile.archives Dockerfile.builder.onbuild Dockerfile.gitlab-docs-base
+
+Dockerfile.archives Dockerfile.builder.onbuild
+Dockerfile.gitlab-docs-base
+---
+ Dockerfile.archives         | 47 +++++++++++++++++++++++++++++++++++++++++++++++
+ Dockerfile.bootstrap        | 35 +++++++++++++++++++++++++++++++++++
+ Dockerfile.builder.onbuild  | 37 +++++++++++++++++++++++++++++++++++++
+ Dockerfile.gitlab-docs-base | 34 ++++++++++++++++++++++++++++++++++
+ Dockerfile.gitlab-docs-lint | 79 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ Dockerfile.nginx.onbuild    | 21 +++++++++++++++++++++
+ Dockerfile.single           | 22 ++++++++++++++++++++++
+ README.md                   |  1 +
+ nginx-overrides.conf        |  9 +++++++++
+ 9 files changed, 285 insertions(+)
+ create mode 100644 Dockerfile.archives
+ create mode 100644 Dockerfile.bootstrap
+ create mode 100644 Dockerfile.builder.onbuild
+ create mode 100644 Dockerfile.gitlab-docs-base
+ create mode 100644 Dockerfile.gitlab-docs-lint
+ create mode 100644 Dockerfile.nginx.onbuild
+ create mode 100644 Dockerfile.single
+ create mode 100644 README.md
+ create mode 100644 nginx-overrides.conf
+
+diff --git a/Dockerfile.archives b/Dockerfile.archives
+new file mode 100644
+index 0000000..07d7fa5
+--- /dev/null
++++ b/Dockerfile.archives
+@@ -0,0 +1,47 @@
++FROM nginx:stable-alpine
++
++ENV TARGET=/usr/share/nginx/html
++
++# Get the nginx config from the nginx-onbuild image
++# This hardly ever changes so should usually be cached
++COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:nginx-onbuild /etc/nginx/conf.d/default.conf /etc/nginx/conf.d/default.conf
++
++# Get all the archive static HTML and put it into place
++COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:13.5 ${TARGET} ${TARGET}
++COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:13.4 ${TARGET} ${TARGET}
++COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:13.3 ${TARGET} ${TARGET}
++COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:13.2 ${TARGET} ${TARGET}
++COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:13.1 ${TARGET} ${TARGET}
++COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:13.0 ${TARGET} ${TARGET}
++COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:12.10 ${TARGET} ${TARGET}
++COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:12.9 ${TARGET} ${TARGET}
++COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:12.8 ${TARGET} ${TARGET}
++COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:12.7 ${TARGET} ${TARGET}
++COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:12.6 ${TARGET} ${TARGET}
++COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:12.5 ${TARGET} ${TARGET}
++COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:12.4 ${TARGET} ${TARGET}
++COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:12.3 ${TARGET} ${TARGET}
++COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:12.2 ${TARGET} ${TARGET}
++COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:12.1 ${TARGET} ${TARGET}
++COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:12.0 ${TARGET} ${TARGET}
++COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:11.11 ${TARGET} ${TARGET}
++COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:11.10 ${TARGET} ${TARGET}
++COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:11.9 ${TARGET} ${TARGET}
++COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:11.8 ${TARGET} ${TARGET}
++COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:11.7 ${TARGET} ${TARGET}
++COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:11.6 ${TARGET} ${TARGET}
++COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:11.5 ${TARGET} ${TARGET}
++COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:11.4 ${TARGET} ${TARGET}
++COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:11.3 ${TARGET} ${TARGET}
++COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:11.2 ${TARGET} ${TARGET}
++COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:11.1 ${TARGET} ${TARGET}
++COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:11.0 ${TARGET} ${TARGET}
++COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:10.8 ${TARGET} ${TARGET}
++COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:10.7 ${TARGET} ${TARGET}
++COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:10.6 ${TARGET} ${TARGET}
++COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:10.5 ${TARGET} ${TARGET}
++COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:10.4 ${TARGET} ${TARGET}
++COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:10.3 ${TARGET} ${TARGET}
++
++# Serve the site (target), which is now all static HTML
++CMD echo -e "GitLab docs are viewable at:\nhttp://0.0.0.0:4000"; exec nginx -g 'daemon off;'
+diff --git a/Dockerfile.bootstrap b/Dockerfile.bootstrap
+new file mode 100644
+index 0000000..9dfdd85
+--- /dev/null
++++ b/Dockerfile.bootstrap
+@@ -0,0 +1,35 @@
++# This is the Nanoc boostrap Dockerfile which builds an image that contains
++# all Nanoc's runtime dependencies and gems.
++
++#
++# Build minifier utility
++# Adapted from https://github.com/docker/docker.github.io/blob/publish-tools/Dockerfile.builder
++#
++FROM golang:1.13-alpine AS minifier
++RUN apk add --no-cache git
++RUN export GO111MODULE=on \
++  && go get -d github.com/tdewolff/minify/v2@latest \
++  && go build -v -o /minify github.com/tdewolff/minify/cmd/minify
++
++#
++# Image that contains all needed dependencies
++#
++FROM registry.gitlab.com/gitlab-org/gitlab-docs:base
++
++# Copy only the Gemfiles and yarn.lock to install the dependencies
++COPY /Gemfile* /source/
++COPY /yarn.lock /source/
++WORKDIR /source
++
++# Install gems
++RUN NOKOGIRI_USE_SYSTEM_LIBRARIES=1 bundle install --jobs 4
++# Install node libraries
++RUN yarn install
++
++# Copy scripts used for static HTML post-processing
++COPY scripts /scripts/
++COPY --from=minifier /minify /usr/local/bin/minify
++
++MAINTAINER GitLab Documentation Team
++
++CMD echo "Nothing to do here. This is the bootstrap image that contains all dependencies to build the docs site."
+diff --git a/Dockerfile.builder.onbuild b/Dockerfile.builder.onbuild
+new file mode 100644
+index 0000000..48491a2
+--- /dev/null
++++ b/Dockerfile.builder.onbuild
+@@ -0,0 +1,37 @@
++# Get Nanoc bootstrap
++FROM registry.gitlab.com/gitlab-org/gitlab-docs:bootstrap
++
++# Make the variables of the archive Dockerfiles accessible to this build-stage
++ONBUILD ARG VER
++ONBUILD ARG NANOC_ENV
++ONBUILD ARG CI_COMMIT_REF_NAME
++ONBUILD ARG BRANCH_EE
++ONBUILD ARG BRANCH_OMNIBUS
++ONBUILD ARG BRANCH_RUNNER
++ONBUILD ARG BRANCH_CHARTS
++
++# Build the docs from this branch
++ONBUILD COPY . /source/
++ONBUILD RUN NOKOGIRI_USE_SYSTEM_LIBRARIES=1 bundle install --jobs 4
++ONBUILD RUN yarn install
++ONBUILD RUN bundle exec rake setup_git default
++ONBUILD RUN yarn install
++ONBUILD RUN bundle exec nanoc compile -VV
++
++# Move generated HTML to /site
++ONBUILD RUN mkdir /site
++ONBUILD RUN mv public /site/${VER}
++
++# Do some HTML post-processing on the archive
++ONBUILD RUN [ -f /scripts/normalize-links.sh ] && /scripts/normalize-links.sh /site ${VER} || "/scripts/normalize-links.sh not found"
++
++# Compress images
++ONBUILD RUN [ -f /scripts/compress_images.sh ] && /scripts/compress_images.sh /site ${VER} || "/scripts/compress_images.sh not found"
++
++# Minify assets
++# ATTENTION: This should be the last script to run
++ONBUILD RUN [ -f /scripts/minify-assets.sh ] && /scripts/minify-assets.sh /site ${VER} || "/scripts/minify-assets.sh not found"
++
++# Make an index.html and 404.html which will redirect / to /${VER}/
++ONBUILD RUN echo "<html><head><title>Redirect for ${VER}</title><meta http-equiv=\"refresh\" content=\"0;url='/${VER}/'\" /></head><body><p>If you are not redirected automatically, click <a href=\"/${VER}/\">here</a>.</p></body></html>" > /site/index.html
++ONBUILD RUN echo "<html><head><title>Redirect for ${VER}</title><meta http-equiv=\"refresh\" content=\"0;url='/${VER}/'\" /></head><body><p>If you are not redirected automatically, click <a href=\"/${VER}/\">here</a>.</p></body></html>" > /site/404.html
+diff --git a/Dockerfile.gitlab-docs-base b/Dockerfile.gitlab-docs-base
+new file mode 100644
+index 0000000..e2ba47a
+--- /dev/null
++++ b/Dockerfile.gitlab-docs-base
+@@ -0,0 +1,34 @@
++#
++# Image that contains all Nanoc dependencies and tools that
++# are needed to build the docs site and run the tests.
++#
++FROM ruby:2.7.2-alpine3.12
++MAINTAINER GitLab Technical Writing team
++
++# Install dependencies
++RUN apk add --no-cache -U \
++    bash        \
++    build-base  \
++    curl        \
++    git         \
++    gnupg       \
++    gzip        \
++    grep        \
++    libcurl     \
++    libxslt     \
++    libxslt-dev \
++    nodejs      \
++    openssl     \
++    pngquant    \
++    ruby-dev    \
++    tar         \
++    xz          \
++    xz-dev      \
++    go          \
++    yarn
++
++# Do not install rdoc to save some space
++RUN echo 'gem: --no-document' >> /etc/gemrc
++
++# Update bundler
++RUN gem install bundler -v "1.17.3"
+diff --git a/Dockerfile.gitlab-docs-lint b/Dockerfile.gitlab-docs-lint
+new file mode 100644
+index 0000000..d3b3ee5
+--- /dev/null
++++ b/Dockerfile.gitlab-docs-lint
+@@ -0,0 +1,79 @@
++############################
++#
++# Image the contains the dependencies to run the lints.
++# It downloads the gitlab-docs repository based on the
++# branch the Docker image is invoked from.
++# Based on Alpine.
++#
++############################
++
++# RUBY_VERSION and ALPINE_VERSION are defined in .gitlab-ci.yml
++ARG RUBY_VERSION
++ARG ALPINE_VERSION
++
++FROM ruby:${RUBY_VERSION}-alpine${ALPINE_VERSION}
++MAINTAINER GitLab Technical Writing team
++
++# VALE_VERSION and MARKDOWNLINT_VERSION are defined in .gitlab-ci.yml
++ARG VALE_VERSION
++ARG MARKDOWNLINT_VERSION
++ENV GOBIN=/usr/local/bin
++
++# Install dependencies
++RUN apk add --no-cache -U \
++    bash        \
++    build-base  \
++    curl        \
++    git         \
++    gnupg       \
++    gzip        \
++    grep        \
++    libcurl     \
++    libxslt     \
++    libxslt-dev \
++    nodejs      \
++    openssl     \
++    pngquant    \
++    ruby-dev    \
++    tar         \
++    xz          \
++    xz-dev      \
++    go          \
++    yarn
++
++# Do not install rdoc to save some space
++RUN echo 'gem: --no-document' >> /etc/gemrc
++
++# Update bundler
++RUN gem install bundler -v "1.17.3"
++
++# Install vale
++RUN curl -L https://github.com/errata-ai/vale/archive/v${VALE_VERSION}.tar.gz -o v${VALE_VERSION}.tar.gz && \
++    tar -xvzf v${VALE_VERSION}.tar.gz && \
++    cd vale-${VALE_VERSION} && \
++    os=linux exe=vale make && \
++    make install && \
++    cd .. && \
++    rm -r vale-${VALE_VERSION} && \
++    rm v${VALE_VERSION}.tar.gz && \
++    apk del go
++
++# Set up needed environment variables that are called with --build-arg when
++# the Docker image is built (see .gitlab-ci.yml).
++ARG CI_COMMIT_REF_NAME
++# If CI_COMMIT_REF_NAME is not set (local development), set it to master
++ENV CI_COMMIT_REF_NAME ${CI_COMMIT_REF_NAME:-master}
++
++WORKDIR /tmp
++
++# markdownlint-cli pinned to control when new versions are put in place.
++RUN yarn global add markdownlint-cli@${MARKDOWNLINT_VERSION} && yarn cache clean
++
++RUN wget https://gitlab.com/gitlab-org/gitlab-docs/-/archive/$CI_COMMIT_REF_NAME/gitlab-docs-$CI_COMMIT_REF_NAME.tar.bz2 \
++  && tar xvjf gitlab-docs-$CI_COMMIT_REF_NAME.tar.bz2 \
++  && mv gitlab-docs-$CI_COMMIT_REF_NAME gitlab-docs \
++  && rm gitlab-docs-$CI_COMMIT_REF_NAME.tar.bz2
++
++RUN cd gitlab-docs \
++  && yarn install --frozen-lockfile \
++  && NOKOGIRI_USE_SYSTEM_LIBRARIES=1 bundle install --jobs 4
+diff --git a/Dockerfile.nginx.onbuild b/Dockerfile.nginx.onbuild
+new file mode 100644
+index 0000000..74a041e
+--- /dev/null
++++ b/Dockerfile.nginx.onbuild
+@@ -0,0 +1,21 @@
++# Base image to use for building documentation archives.
++# This image uses "ONBUILD" to perform all required steps in the archives
++# and relies upon its parent image having a layer called `builder`.
++
++FROM nginx:alpine
++
++# Make the version accessible to this build-stage, and copy it to an ENV so
++# that it persists in the final image.
++ONBUILD ARG VER
++ONBUILD ENV VER=$VER
++
++# Clean out any existing HTML files, and copy the HTML from the builder stage
++# to the default location for Nginx.
++ONBUILD RUN rm -rf /usr/share/nginx/html/*
++ONBUILD COPY --from=builder /site /usr/share/nginx/html
++
++# Copy the Nginx config
++COPY dockerfiles/nginx-overrides.conf /etc/nginx/conf.d/default.conf
++
++# Start Nginx to serve the archive at / (which will redirect to the version-specific dir)
++CMD echo -e "GitLab docs are viewable at:\nhttp://0.0.0.0:4000"; exec nginx -g 'daemon off;'
+diff --git a/Dockerfile.single b/Dockerfile.single
+new file mode 100644
+index 0000000..d55ea11
+--- /dev/null
++++ b/Dockerfile.single
+@@ -0,0 +1,22 @@
++#
++# Copy this Dockerfile to the root of each branch you want to create an archive
++#
++
++# Set to the version for this archive (must match the branch name)
++ARG VER=X.Y
++
++# Replace the versions to march the stable branches of the upstream projects
++ARG BRANCH_EE=X-Y-stable-ee
++ARG BRANCH_OMNIBUS=X-Y-stable
++ARG BRANCH_RUNNER=X-Y-stable
++ARG BRANCH_CHARTS=W-Z-stable
++
++# This image comes from the Dockerfile.builder.onbuild file
++# https://gitlab.com/gitlab-org/gitlab-docs/blob/master/dockerfiles/Dockerfile.builder.onbuild
++# Build the website
++FROM registry.gitlab.com/gitlab-org/gitlab-docs:builder-onbuild AS builder
++
++# This image comes from the Dockerfile.nginx.onbuild file
++# https://gitlab.com/gitlab-org/gitlab-docs/blob/master/dockerfiles/Dockerfile.nginx.onbuild
++# Copy the generated HTML files to a smaller image
++FROM registry.gitlab.com/gitlab-org/gitlab-docs:nginx-onbuild
+diff --git a/README.md b/README.md
+new file mode 100644
+index 0000000..4158a7d
+--- /dev/null
++++ b/README.md
+@@ -0,0 +1 @@
++[Read what all those Dockerfiles are about.](https://docs.gitlab.com/ee/development/documentation/site_architecture/release_process.html)
+diff --git a/nginx-overrides.conf b/nginx-overrides.conf
+new file mode 100644
+index 0000000..7564d0c
+--- /dev/null
++++ b/nginx-overrides.conf
+@@ -0,0 +1,9 @@
++server {
++  port_in_redirect off;
++  listen 4000;
++  error_page 403 404 /404.html;
++  location / {
++    root   /usr/share/nginx/html;
++    index  index.html index.htm;
++  }
++}
+\ No newline at end of file
+--
+Working Copy 4.4.7
+
