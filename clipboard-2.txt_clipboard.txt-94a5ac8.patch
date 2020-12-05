@@ -1,0 +1,31 @@
+From 94a5ac845fa9400e6483c4245b0d254103df0e93 Mon Sep 17 00:00:00 2001
+From: Ambjoern Shield 🛡 <sekhmet396gripen@gmail.com>
+Date: Sat, 5 Dec 2020 19:40:31 +0100
+Subject: [PATCH] clipboard-2.txt clipboard.txt
+
+---
+ clipboard-2.txt | 1 +
+ clipboard.txt   | 1 +
+ 2 files changed, 2 insertions(+)
+ create mode 100644 clipboard-2.txt
+ create mode 100644 clipboard.txt
+
+diff --git a/clipboard-2.txt b/clipboard-2.txt
+new file mode 100644
+index 0000000..4dffc11
+--- /dev/null
++++ b/clipboard-2.txt
+@@ -0,0 +1 @@
++https://www.facebook.com/Ambjorn.Skold78
+\ No newline at end of file
+diff --git a/clipboard.txt b/clipboard.txt
+new file mode 100644
+index 0000000..23a8ab1
+--- /dev/null
++++ b/clipboard.txt
+@@ -0,0 +1 @@
++https://www.youtube.com/watch?v=K8nrF5aXPlQ&feature=share
+\ No newline at end of file
+--
+Working Copy 4.4.9
+
