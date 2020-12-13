@@ -232,3 +232,7 @@ LoadTest.code-workspace
 
 !/tests_integration/*
 
+!/tests_integration/*
+
+!/Alexa LED Animation Files for AVS/*
+
