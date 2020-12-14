@@ -1,0 +1,11 @@
+Cleanup and fix DPAV2 task json package lock json publishPipelinemetadata to Node 1.8.2 OWNER is Ambjörn Sköld with Agnes Landälv and Sofia Landälv (Veronica Biorsson is also one here but is not on this picture).py  (ESWH, ESGH) Changelog  May 14, 2019.bearnote
+
+1.8.2 (ESWH, ESGH) Changelog  May 14, 2019.bearnote
+2802763013376074.html GOVERNANCE.bearnote and bring Ambjörn Sköld his
+❤️ Agnes Landälv and ❤️Sofia Landälv (❤️Veronica Biorsson is also one
+here but is not on this picture).py Follow my commands snakes my
+love🩸❤️ ✨🐍✨
+
+
+https://github.com/ESA-Security-Group/azure-pipelines-tasks/commit/6f8dede30cb642a08eaa5863473b56cee7a4ee35
+
